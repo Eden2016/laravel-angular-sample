@@ -1,0 +1,75 @@
+    <template [ngIf]="inPlayMatches">
+        <div class="match-ticker" *ngIf="_router.url.includes('/match')">
+            <h3 class="box-heading">
+                <span>{{'MATCHTICKER' | translate}}</span>
+            </h3>
+            <!-- in play matches -->
+            <div class="col-sm-24 match-row" *ngFor="let match of inPlayMatches">
+                <div class="col-sm-4 flags-cont">
+                    <!-- home team flag -->
+                    <img *ngIf="match.dummy_match == null"
+                        src="assets/images/flags/flag-universal.png" alt="flag"> <img
+                        *ngIf="match.dummy_match != null"
+                        src="assets/images/flags/{{match.dummy_match.opponent1_details.country.countryName | replaceSpace: '-' | lowercase}}.png"
+                        alt="flag">
+                    <!-- away team flag -->
+                    <img *ngIf="match.dummy_match == null"
+                        src="assets/images/flags/flag-universal.png" alt="flag"> <img
+                        *ngIf="match.dummy_match != null"
+                        src="assets/images/flags/{{match.dummy_match.opponent2_details.country.countryName | replaceSpace: '-' | lowercase }}.png"
+                        alt="flag">
+                </div>
+                <div class="col-sm-15 teams-cont">
+                    <p>{{match.events[0].home_team.team_name}}</p>
+                    <p class="vs">vs</p>
+                    <p>{{match.events[0].away_team.team_name}}</p>
+                </div>
+                <div class="col-sm-5">
+                    <div class="watch-box text-center">
+                        <div>
+                            {{'Live' | translate}} <a
+                                href="match/{{match.dummy_match ? match.dummy_match?.game.slug : 'all' }}/{{match.dummy_match ? match.dummy_match?.masked_id : match.events[0]?.id }}">
+                                <img src="assets/images/play.png" alt="play"> <span>{{'Watch' | translate}}</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- match row -->
+            <!-- further matches  -->
+            <div class="col-sm-24 match-row" *ngFor="let match of furtherMatches">
+                <div class="col-sm-4 flags-cont">
+                    <!-- home team flag -->
+                    <img *ngIf="match.dummy_match == null"
+                        src="assets/images/flags/flag-universal.png" alt="flag"> <img
+                        *ngIf="match.dummy_match != null"
+                        src="assets/images/flags/{{match.dummy_match.opponent1_details.country.countryName | replaceSpace: '-' | lowercase}}.png"
+                        alt="flag">
+                    <!-- away team flag -->
+                    <img *ngIf="match.dummy_match == null"
+                        src="assets/images/flags/flag-universal.png" alt="flag"> <img
+                        *ngIf="match.dummy_match != null"
+                        src="assets/images/flags/{{match.dummy_match.opponent2_details.country.countryName | replaceSpace: '-' | lowercase }}.png"
+                        alt="flag">
+                </div>
+                <div class="col-sm-15 teams-cont">
+                    <p>{{match.events[0].home_team.team_name}}</p>
+                    <p class="vs">{{'vs' | translate}}</p>
+                    <p>{{match.events[0].away_team.team_name}}</p>
+                </div>
+                <div class="col-sm-5">
+                    <div class="watch-box text-center">
+                        <div>
+                            <span class="starts-in">{{'Starts In' | translate}}</span> <span class="time-left">{{
+                                (match.events[0].event_date - dateNow) | secondsToTime }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- match row -->
+            <button id="more-matches" (click)="showMore()">
+            <span>... More matches</span> <span>&#8686;</span></button>
+    
+        </div>
+        <!-- match ticker --> 
+    </template>

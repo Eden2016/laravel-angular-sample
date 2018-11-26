@@ -1,0 +1,926 @@
+@media (max-width: 1850px) and (min-width: 1366px) {
+  #menu-products {
+    display: none; }
+
+  .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-hand .bets-first-hand {
+    -webkit-justify-content: center;
+    justify-content: center;
+    padding-right: 20px; }
+    .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-hand .bets-first-hand.over {
+      -webkit-justify-content: center;
+      justify-content: center;
+      padding-right: 20px !important; }
+  .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-hand .bets-second-hand {
+    -webkit-justify-content: center;
+    justify-content: center;
+    padding-right: 20px; }
+    .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-hand .bets-second-hand.over {
+      -webkit-justify-content: center;
+      justify-content: center;
+      padding-right: 20px !important; }
+      .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-hand .bets-second-hand.over:after {
+        display: none; }
+  .main-content .content-container .main-conntent .index-change-position .tournament-content .medals-cont {
+    width: calc(50% - 30px);
+    right: 15px;
+    left: auto; }
+  .main-content .content-container .main-conntent .index-change-position .tournament-content .medals {
+    margin-top: 0; }
+  .main-content .content-container .main-conntent .index-change-position .left-custom-grid {
+    width: 284px !important; }
+  .main-content .content-container .main-conntent .index-change-position .right-custom-grid {
+    width: calc(100% - 284px) !important; }
+  .main-content .content-container .main-conntent .index-change-position .left-cont .topics {
+    display: none; }
+  .main-content .content-container .main-conntent .index-change-position .left-cont .statistics .m-right {
+    margin-right: 0; }
+  .main-content .content-container .main-conntent .index-change-position .left-cont .statistics .stat-blocks .part {
+    width: 100%; }
+  .main-content .content-container .main-conntent .index-change-position .left-cont .news .cont-news.m-right {
+    margin-right: 0; }
+  .main-content .content-container .main-conntent .index-change-position .left-cont .news .cont-news.m-left {
+    margin-left: 0; }
+  .main-content .content-container .main-conntent .index-change-position .left-cont .news .cont-news .post .big-news .post-title {
+    margin: 0 0 12px 14px;
+    max-width: 200px; }
+  .main-content .content-container .main-conntent .index-change-position .left-cont .news .cont-news .post .big-news .post-desc {
+    margin: 0 0 29px 13px; }
+  .main-content .content-container .main-conntent .index-change-position .left-cont .news .cont-news .post.big img {
+    height: 288px; }
+  .main-content .content-container .main-conntent .index-change-position .left-cont .news .news-blocks > div {
+    width: 100%; }
+  .main-content .content-container .main-conntent .tournament-content .medals-cont {
+    width: calc(100% - 30px);
+    left: 15px; }
+  .main-content .content-container .main-conntent .tournament-content .medals {
+    margin-top: 20px; } }
+@media (max-width: 1850px) and (min-width: 1600px) {
+  .main-content .content-container .main-conntent .index-change-position .tournament {
+    padding-left: 21px; }
+  .main-content .content-container .main-conntent .index-change-position .left-custom-grid {
+    padding-right: 0; }
+  .main-content .content-container .main-conntent .index-change-position .left-cont .statistics .stat-blocks .part:last-child {
+    margin-top: 15px; }
+  .main-content .content-container .main-conntent .index-change-position .right-cont {
+    padding-left: 10px !important; }
+    .main-content .content-container .main-conntent .index-change-position .right-cont .topics {
+      display: block !important;
+      padding-left: 26px; }
+  .main-content .content-container .main-conntent .index-change-position .topics .game .top-cont.game-date img {
+    margin: 0 5px 0 5px; }
+  .main-content .content-container .main-conntent .tournament-change-position .left-full-grid {
+    width: 284px !important; }
+  .main-content .content-container .main-conntent .tournament-change-position .right-full-grid {
+    width: calc(100% - 284px) !important; }
+  .main-content .content-container .main-conntent .tournament-change-position .stat-container {
+    margin-right: 0; }
+  .main-content .content-container .main-conntent .tournament-change-position .statistics .m-right {
+    margin-right: 0; }
+  .main-content .content-container .main-conntent .tournament-change-position .statistics .stat-blocks .part {
+    width: 100%; }
+    .main-content .content-container .main-conntent .tournament-change-position .statistics .stat-blocks .part:last-child {
+      margin-top: 15px; }
+  .main-content .content-container .main-conntent .tournament-change-position .tournament-content.tourn-page .tour-cont > .row > div {
+    width: 100%; }
+  .main-content .content-container .main-conntent .topics {
+    display: none; }
+  .main-content .content-container .main-conntent .left-cont .news .cont-news.m-left {
+    margin-top: 15px; }
+  .main-content .content-container .main-conntent .left-cont .news .cont-news.m-right {
+    margin-right: 0; }
+  .main-content .content-container .main-conntent .left-cont .news .news-blocks > div {
+    width: 100%; } }
+@media (max-width: 1700px) and (min-width: 1600px) {
+  .bracket-plugin .bracket-holder .match-holder .opponent-holder span:nth-child(2) {
+    font-size: 8px; }
+
+  .main-content .content-container .main-conntent .topics .game .top-cont.game-status {
+    letter-spacing: -1px; } }
+@media (max-width: 1600px) {
+  .main-content .header .wrapper-header {
+    width: 100%; }
+    .main-content .header .wrapper-header .menu-products {
+      display: none; }
+  .main-content .content-container .main-conntent .hero-img {
+    height: 43px;
+    padding-right: 17px; }
+    .main-content .content-container .main-conntent .hero-img img {
+      max-width: 100%; }
+  .main-content .content-container .main-conntent .left-custom-grid {
+    width: 35%; }
+  .main-content .content-container .main-conntent .right-custom-grid {
+    width: 65%; }
+  .main-content .content-container .main-conntent .left-cont {
+    padding-right: 0; }
+  .main-content .content-container .main-conntent .right-cont {
+    padding-left: 10px; }
+    .main-content .content-container .main-conntent .right-cont .left-part {
+      display: none !important; }
+    .main-content .content-container .main-conntent .right-cont .right-part {
+      width: 100%; }
+      .main-content .content-container .main-conntent .right-cont .right-part.desc {
+        letter-spacing: -1px; }
+        .main-content .content-container .main-conntent .right-cont .right-part.desc .bets .title-cont {
+          margin-left: 4px; }
+        .main-content .content-container .main-conntent .right-cont .right-part.desc .over .title-cont {
+          margin-left: -1px; }
+      .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-label {
+        margin: 9px 0 0 11px; }
+      .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-match .bets-match-first:before {
+        left: 6px; }
+      .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-match .bets-match-second:before {
+        left: 6px; }
+      .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-match img {
+        margin: 3px 0 0 21px; }
+      .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-match .bets-match-second img {
+        margin: 9px 0 0 21px; }
+      .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-ml .bets-first-ml span {
+        margin: 7px 0 0 13px;
+        width: 42px; }
+      .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-ml .bets-first-ml:before {
+        left: -2px; }
+      .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-ml .bets-second-ml span {
+        margin: 13px 0 0 13px; }
+      .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-ml .bets-second-ml:before {
+        left: -2px; }
+      .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-hand .bets-first-hand.over {
+        padding: 8px 0 0 2px; }
+        .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-hand .bets-first-hand.over:after {
+          right: 0; }
+      .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-hand .bets-second-hand.over {
+        padding: 11px 0 0 2px; }
+        .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-hand .bets-second-hand.over:after {
+          right: 0; }
+      .main-content .content-container .main-conntent .right-cont .right-part .right-part.desc .game .title-cont {
+        margin-left: 10px; }
+  .main-content .content-container .sidebar-bet {
+    width: 303px;
+    font-size: 16px;
+    padding: 0 10px 0 10px; }
+    .main-content .content-container .sidebar-bet .control {
+      padding: 0 11px; }
+  .main-content .content-container .sidebar-menu {
+    width: 235px;
+    padding: 0 10px 0 7px; }
+  .main-content .content-container .main-conntent {
+    width: calc(100% - 538px); }
+    .main-content .content-container .main-conntent .left-cont .main-title {
+      text-transform: capitalize; }
+    .main-content .content-container .main-conntent .left-cont .game-slide .slick-slide img {
+      width: 100%; }
+    .main-content .content-container .main-conntent .left-cont .game-slide .next {
+      top: 35%; }
+    .main-content .content-container .main-conntent .left-cont .game-slide .prev {
+      top: 35%;
+      left: -7px; }
+    .main-content .content-container .main-conntent .left-cont .video-info .leng-cont {
+      float: right;
+      margin-top: 4px;
+      margin-right: 12px; }
+    .main-content .content-container .main-conntent .left-cont .video-bg iframe {
+      height: 178px;
+      margin: 0; }
+    .main-content .content-container .main-conntent .left-cont .news .cont-news.m-right {
+      margin: 0; }
+    .main-content .content-container .main-conntent .left-cont .news .cont-news.m-left {
+      margin: 0;
+      margin-top: 10px; }
+    .main-content .content-container .main-conntent .left-cont .news .cont-news .post.big img {
+      height: 288px; }
+    .main-content .content-container .main-conntent .left-cont .news .cont-news .post .read-more {
+      background-image: url(../../assets/images/shadow-grey.png); }
+    .main-content .content-container .main-conntent .left-cont .news .cont-news .post .big-news .post-title {
+      margin: 0 0 12px 14px;
+      max-width: 200px; }
+    .main-content .content-container .main-conntent .left-cont .news .cont-news .post .big-news .post-desc {
+      margin: 0 0 29px 13px; }
+    .main-content .content-container .main-conntent .left-cont .news.big {
+      margin-top: 10px; }
+    .main-content .content-container .main-conntent .left-cont .statistics {
+      margin-top: 10px;
+      margin-bottom: 0; }
+      .main-content .content-container .main-conntent .left-cont .statistics .stat-blocks .stat-container .stat-in.grey {
+        background: #eaeaea; }
+      .main-content .content-container .main-conntent .left-cont .statistics .stat-blocks .stat-container .stat-in .heroes .heroes-cont {
+        padding: 0 0 0 14px; }
+        .main-content .content-container .main-conntent .left-cont .statistics .stat-blocks .stat-container .stat-in .heroes .heroes-cont .stat-content {
+          width: calc(100% - 14px);
+          position: relative;
+          padding-right: 0; }
+          .main-content .content-container .main-conntent .left-cont .statistics .stat-blocks .stat-container .stat-in .heroes .heroes-cont .stat-content .statistic {
+            width: 50px;
+            position: relative;
+            z-index: 2; }
+          .main-content .content-container .main-conntent .left-cont .statistics .stat-blocks .stat-container .stat-in .heroes .heroes-cont .stat-content .graph {
+            width: calc(100% - 40px);
+            position: relative;
+            margin-left: 24px; }
+            .main-content .content-container .main-conntent .left-cont .statistics .stat-blocks .stat-container .stat-in .heroes .heroes-cont .stat-content .graph > * {
+              display: block;
+              position: relative; }
+          .main-content .content-container .main-conntent .left-cont .statistics .stat-blocks .stat-container .stat-in .heroes .heroes-cont .stat-content:before {
+            position: absolute;
+            background: #fff;
+            height: 136px;
+            width: 100%;
+            content: '';
+            z-index: 0;
+            top: 15px;
+            left: 0; }
+      .main-content .content-container .main-conntent .left-cont .statistics .m-left {
+        margin: 0;
+        margin-top: 10px; } }
+@media (max-width: 1600px) and (min-width: 1366px) {
+  .main-content .content-container .main-conntent .index-change-position .left-cont .statistics .stat-blocks .part:last-child {
+    margin-top: 10px; }
+  .main-content .content-container .main-conntent .tournament-change-position .right-cont {
+    padding-left: 0 !important; }
+  .main-content .content-container .main-conntent .right-cont {
+    padding-left: 10px !important; }
+  .main-content .content-container .main-conntent .tournament {
+    padding-left: 10px; }
+    .main-content .content-container .main-conntent .tournament .tournament-content .tour-right-desc {
+      margin-top: 0; }
+    .main-content .content-container .main-conntent .tournament .tournament-content .medals-cont {
+      width: calc(50% - 30px);
+      right: 15px;
+      left: auto; }
+    .main-content .content-container .main-conntent .tournament .tournament-content .medals {
+      margin-top: 0; } }
+@media (max-width: 1365px) and (min-width: 1100px) {
+  .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-hand .bets-first-hand {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    padding-right: 19px; }
+  .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-hand .bets-second-hand {
+    -webkit-justify-content: center;
+    justify-content: center;
+    padding-right: 19px; } }
+@media (max-width: 1365px) {
+  .main-content .content-container .main-conntent .tournament {
+    padding-left: 0; }
+
+  .main-content .content-container .main-conntent .index-change-position {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column; }
+    .main-content .content-container .main-conntent .index-change-position > div:nth-child(1) {
+      order: 2; }
+    .main-content .content-container .main-conntent .index-change-position > div:nth-child(2) {
+      order: 1; }
+    .main-content .content-container .main-conntent .index-change-position > div:nth-child(3) {
+      order: 3; }
+  .main-content .content-container .main-conntent .left-cont.index-in-left {
+    margin-top: 10px; }
+  .main-content .content-container .main-conntent .left-cont .statistics .part {
+    width: 50%;
+    float: left; }
+    .main-content .content-container .main-conntent .left-cont .statistics .part .m-left {
+      margin: 0; }
+    .main-content .content-container .main-conntent .left-cont .statistics .part .m-right {
+      padding-right: 1px; }
+  .main-content .content-container .main-conntent .left-cont .game-slide .slick-slide img {
+    width: 100%; }
+  .main-content .content-container .main-conntent .left-cont .video-bg iframe {
+    height: 350px; }
+  .main-content .content-container .main-conntent .left-cont .news .cont-news .post.big img {
+    height: auto; }
+  .main-content .content-container .main-conntent .right-cont {
+    padding-left: 0;
+    margin-top: 10px; }
+  .main-content .content-container .main-conntent .left-custom-grid {
+    width: 100%; }
+  .main-content .content-container .main-conntent .right-custom-grid {
+    width: 100%; } }
+@media (max-width: 1250px) {
+  .bracket-plugin .bracket-holder .match-holder .opponent-holder span:nth-child(2) {
+    font-size: 8px; }
+
+  .right-cont .group-stage .stage-format-cont > div .group-content {
+    width: 100%; }
+    .right-cont .group-stage .stage-format-cont > div .group-content > div {
+      padding: 0 !important; }
+    .right-cont .group-stage .stage-format-cont > div .group-content:last-child {
+      margin-top: 10px; }
+
+  .main-content .content-container .main-conntent .tournament .tournament-content > .row > div {
+    width: 100%; }
+  .main-content .content-container .main-conntent .tournament .tournament-content .tour-right-desc {
+    margin-top: 0; } }
+@media (min-width: 992px) and (max-width: 1060px) {
+  .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-match img {
+    margin: 3px 0 0 12px; }
+  .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-match span {
+    padding-left: 5px;
+    letter-spacing: -.5px; }
+  .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-match .bets-match-second img {
+    margin: 9px 0 0 12px; }
+  .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-ml .bets-first-ml:before {
+    left: 2px; }
+  .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-ml .bets-first-ml span {
+    margin: 7px 0 0 7px; }
+  .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-ml .bets-second-ml:before {
+    left: 2px; }
+  .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-ml .bets-second-ml span {
+    margin: 13px 0 0 7px; }
+  .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-hand .bets-first-hand {
+    padding: 8px 0 0 2px; }
+    .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-hand .bets-first-hand.over:after {
+      right: -5px; }
+  .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-hand .bets-second-hand {
+    padding: 12px 0 0px 2px; }
+    .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-hand .bets-second-hand.over:after {
+      right: -5px; }
+  .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-hand span.selected {
+    margin-left: 1px; } }
+@media (max-width: 992px) {
+  .main-content .content-container {
+    padding-top: 105px; }
+    .main-content .content-container .burger {
+      visibility: visible; }
+    .main-content .content-container .sidebar-menu {
+      position: absolute;
+      overflow: hidden;
+      width: 100%;
+      z-index: 2;
+      height: 0;
+      left: 0; }
+      .main-content .content-container .sidebar-menu .banner {
+        display: none; }
+    .main-content .content-container .main-conntent {
+      padding-left: 10px;
+      width: calc(100% - 303px); }
+      .main-content .content-container .main-conntent .left-cont .video-info {
+        height: 32px;
+        display: flex;
+        display: -webkit-flex; }
+        .main-content .content-container .main-conntent .left-cont .video-info .leng-cont .lang .language {
+          display: none; }
+        .main-content .content-container .main-conntent .left-cont .video-info .leng-cont .lang .lent-title {
+          display: none; }
+        .main-content .content-container .main-conntent .left-cont .video-info .leng-cont .lang .lang-flag {
+          position: relative;
+          top: -2px; }
+          .main-content .content-container .main-conntent .left-cont .video-info .leng-cont .lang .lang-flag:before {
+            top: 4px;
+            content: '';
+            left: -18px;
+            position: absolute;
+            border: 6px solid transparent;
+            border-top: 7px solid #fff; }
+      .main-content .content-container .main-conntent .tournament .tournament-content .tour-right-desc {
+        margin-top: 0; }
+      .main-content .content-container .main-conntent .tournament .tournament-content .medals-cont {
+        width: calc(100% - 30px);
+        left: 15px; }
+      .main-content .content-container .main-conntent .tournament .tournament-content .medals {
+        margin-top: 20px; } }
+@media (max-width: 850px) {
+  .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-match img {
+    margin: 3px 0 0 13px; }
+  .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-match .bets-match-second img {
+    margin: 9px 0 0 13px; }
+  .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-match span {
+    letter-spacing: -.5px;
+    white-space: nowrap;
+    padding-left: 5px; }
+  .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-ml .bets-first-ml:before {
+    left: 2px; }
+  .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-ml .bets-first-ml span {
+    margin: 7px 0 0 8px; }
+  .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-ml .bets-second-ml:before {
+    left: 2px; }
+  .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-ml .bets-second-ml span {
+    margin: 13px 0 0 8px; }
+  .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-hand.over-under span.selected {
+    margin-left: 0; }
+  .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-hand .bets-first-hand {
+    padding: 8px 0 0 5px; }
+    .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-hand .bets-first-hand.over:after {
+      right: -9px; }
+  .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-hand .bets-second-hand.over:after {
+    right: -9px; }
+  .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-hand span.selected.sm-left {
+    position: relative;
+    left: -5px; } }
+@media (min-width: 768px) and (max-width: 992px) {
+  .hero-img {
+    min-height: 43px; } }
+@media (max-width: 768px) {
+  .col-sm-1 {
+    width: 4.16666667%;
+    float: left; }
+
+  .col-sm-2 {
+    width: 8.33333333%;
+    float: left; }
+
+  .col-sm-3 {
+    width: 12.5%;
+    float: left; }
+
+  .col-sm-4 {
+    width: 16.66666667%;
+    float: left; }
+
+  .col-sm-5 {
+    width: 20.83333333%;
+    float: left; }
+
+  .col-sm-6 {
+    width: 25%;
+    float: left; }
+
+  .col-sm-7 {
+    width: 29.16666667%;
+    float: left; }
+
+  .col-sm-8 {
+    width: 33.33333333%;
+    float: left; }
+
+  .col-sm-9 {
+    width: 37.5%;
+    float: left; }
+
+  .col-sm-10 {
+    width: 41.66666667%;
+    float: left; }
+
+  .col-sm-11 {
+    width: 45.83333333%;
+    float: left; }
+
+  .col-sm-12 {
+    width: 50%;
+    float: left; }
+
+  .col-sm-13 {
+    width: 54.16666667%;
+    float: left; }
+
+  .col-sm-14 {
+    width: 58.33333333%;
+    float: left; }
+
+  .col-sm-15 {
+    width: 62.5%;
+    float: left; }
+
+  .col-sm-16 {
+    width: 66.66666667%;
+    float: left; }
+
+  .col-sm-17 {
+    width: 70.83333333%;
+    float: left; }
+
+  .col-sm-18 {
+    width: 75%;
+    float: left; }
+
+  .col-sm-19 {
+    width: 79.16666667%;
+    float: left; }
+
+  .col-sm-20 {
+    width: 83.33333333%;
+    float: left; }
+
+  .col-sm-21 {
+    width: 87.5%;
+    float: left; }
+
+  .col-sm-22 {
+    width: 91.66666667%;
+    float: left; }
+
+  .col-sm-23 {
+    width: 95.83333333%;
+    float: left; }
+
+  .col-sm-24 {
+    width: 100%;
+    float: left; }
+
+  body.no-scroll {
+    overflow: hidden; }
+
+  .mobile-button-container {
+    left: -60px;
+    width: 110px;
+    z-index: 10;
+    height: 80px;
+    cursor: pointer;
+    position: fixed;
+    top: calc(50% - 25px); }
+    .mobile-button-container .bet-mobile-button {
+      width: 80px;
+      height: 80px;
+      border-radius: 50% 50% 50% 50%;
+      background: rgba(219, 219, 219, 0.7); }
+      .mobile-button-container .bet-mobile-button .bet-btn-arrow {
+        background-image: url(images/arrow-menu.png);
+        -webkit-transform: rotate(270deg);
+        -moz-transform: rotate(270deg);
+        -ms-transform: rotate(270deg);
+        background-position: 33px 0;
+        transform: rotate(270deg);
+        position: relative;
+        display: block;
+        height: 10px;
+        width: 15px;
+        left: 63px;
+        top: 35px; }
+    .mobile-button-container.active {
+      left: auto;
+      right: -60px; }
+      .mobile-button-container.active .bet-mobile-button {
+        float: right; }
+        .mobile-button-container.active .bet-mobile-button .bet-btn-arrow {
+          -webkit-transform: rotate(90deg);
+          -moz-transform: rotate(90deg);
+          -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+          left: 5px; }
+
+  .left-cont .game-slider .slick-dots li {
+    display: none; }
+    .left-cont .game-slider .slick-dots li.slick-active {
+      display: block; }
+
+  .main-content .header .wrapper-header .nav-login {
+    display: none; }
+  .main-content .content-container .match-ticker {
+    display: none; }
+  .main-content .content-container .sidebar-bet {
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    transform: translateX(-100%);
+    -webkit-transition: .3s ease;
+    -moz-transition: .3s ease;
+    -ms-transition: .3s ease;
+    padding: 8px 0 30px 0;
+    transition: .3s ease;
+    background: #222222;
+    position: fixed;
+    z-index: 9;
+    width: 100%;
+    top: 70px;
+    left: 0; }
+    .main-content .content-container .sidebar-bet.active {
+      -webkit-transform: translateX(0);
+      -moz-transform: translateX(0);
+      -ms-transform: translateX(0);
+      transform: translateX(0);
+      max-height: calc(100vh - 70px);
+      overflow: auto; }
+  .main-content .content-container .main-conntent {
+    width: 100%;
+    padding-right: 10px; }
+    .main-content .content-container .main-conntent .left-cont .game-slide .next {
+      right: -9px; }
+    .main-content .content-container .main-conntent .left-cont .statistics .part {
+      width: 100%; }
+
+  .footer .pre-footer {
+    display: none; }
+  .footer .post-footer {
+    display: none; }
+
+  app-match-table ng-select {
+    position: inherit !important;
+    width: calc(100% + 30px) !important;
+    margin: 10px -15px 4px -15px; }
+
+  .lol-page {
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    flex-direction: column; }
+    .lol-page > div:last-child {
+      order: 1; }
+    .lol-page > div:first-child {
+      order: 2; } }
+@media (max-width: 480px) {
+  .stream-hide {
+    display: none !important; }
+
+  .right-cont .group-stage .prev {
+    display: none !important; }
+  .right-cont .group-stage .next {
+    display: none !important; }
+  .right-cont .group-stage .stages-cont:after {
+    width: 35px; }
+  .right-cont .group-stage .stages-cont h3.box-heading:after {
+    width: 40px;
+    background: linear-gradient(-90deg, #4b4b4b 10%, transparent) !important; }
+  .right-cont .group-stage .stages-cont .stages-nav .slick-list {
+    padding: 8px 0; }
+  .right-cont .group-stage .stages-cont .group-slider .group a {
+    padding: 9px 8px 0 8px; }
+  .right-cont .group-stage .stages-cont .group-title::-webkit-scrollbar {
+    width: 0;
+    height: 0; }
+  .right-cont .group-stage .stages-cont .group-title .group a {
+    padding: 9px 0 0 0;
+    width: 78px; }
+  .right-cont .group-stage .stages-cont .tab-pane h3 {
+    overflow: scroll; }
+    .right-cont .group-stage .stages-cont .tab-pane h3.box-heading {
+      padding: 6px 14px 0px 18px; }
+    .right-cont .group-stage .stages-cont .tab-pane h3 ul {
+      width: auto;
+      display: -webkit-inline-flex;
+      display: inline-flex;
+      padding-right: 25px; }
+
+  .main-content .content-container .main-conntent .left-cont .stream-box {
+    display: none; }
+  .main-content .content-container .main-conntent .right-cont .right-part.desc .game .title-cont {
+    margin-left: 5px; }
+  .main-content .content-container .main-conntent .right-cont .right-part.desc .money .title-cont {
+    margin-left: 8px; }
+
+  .bracket-plugin .bracket-holder .match-holder .opponent-holder span {
+    width: 50%;
+    text-align: center; }
+    .bracket-plugin .bracket-holder .match-holder .opponent-holder span:nth-child(1) {
+      width: 50%; }
+    .bracket-plugin .bracket-holder .match-holder .opponent-holder span:nth-child(2) {
+      display: none; }
+    .bracket-plugin .bracket-holder .match-holder .opponent-holder span:nth-child(3) {
+      width: 50%;
+      text-align: center; }
+
+  .main-content .content-container .main-conntent .csgo-page .left-cont .statistics {
+    margin-top: 0; }
+    .main-content .content-container .main-conntent .csgo-page .left-cont .statistics .part .m-right {
+      margin-right: 0; }
+    .main-content .content-container .main-conntent .csgo-page .left-cont .statistics .part:last-child {
+      margin-top: 10px;
+      margin-bottom: 10px; }
+  .main-content .content-container .main-conntent .csgo-page .left-cont .recent-performance .past-encounters-graphs .graph-cont-right .opp-graph-stats {
+    border-right: none; }
+  .main-content .content-container .main-conntent .csgo-page .left-cont .recent-performance .past-encounters-graphs.match-chart .graph-cont-right {
+    width: calc(100% - 9px); }
+  .main-content .content-container .main-conntent .lol-page .left-cont .statistics {
+    margin-top: 0; }
+    .main-content .content-container .main-conntent .lol-page .left-cont .statistics .part .m-right {
+      margin: 0;
+      padding: 0; }
+    .main-content .content-container .main-conntent .lol-page .left-cont .statistics .part:last-child {
+      margin-bottom: 10px; }
+  .main-content .content-container .main-conntent .dota2-page .left-cont .statistics {
+    margin-top: 0; }
+    .main-content .content-container .main-conntent .dota2-page .left-cont .statistics .part .m-right {
+      margin: 0;
+      padding: 0; }
+    .main-content .content-container .main-conntent .dota2-page .left-cont .statistics .part:last-child {
+      margin-bottom: 10px; }
+  .main-content .content-container .main-conntent .tournament-change-position .participans {
+    margin-top: 10px; }
+  .main-content .content-container .main-conntent .tournament-change-position .margin-right .stat-container {
+    margin: 0; }
+  .main-content .content-container .main-conntent .tournament-change-position .left-cont .statistics .part:nth-child(2) {
+    margin-top: 10px; }
+  .main-content .content-container .main-conntent .index-change-position .left-cont .statistics .part .m-right {
+    margin-right: 0;
+    padding-right: 0; }
+  .main-content .content-container .main-conntent .index-change-position .left-cont .statistics .part:last-child {
+    margin-top: 10px; }
+  .main-content .content-container .main-conntent .starts-in-matches-cont .pre-title {
+    display: none; }
+  .main-content .content-container .main-conntent .in-play-matches-cont .pre-title {
+    display: none; }
+  .main-content .content-container .main-conntent .right-cont .right-part.match.grey {
+    background: transparent; }
+  .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-hand.over-under span.selected {
+    margin-left: 6px; }
+  .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-hand span {
+    left: 0 !important;
+    font-size: 12px !important;
+    color: #000 !important; }
+    .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-hand span.no-select {
+      color: #fff !important; }
+    .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-hand span.lock:after {
+      background-size: auto 50%; }
+  .main-content .content-container .main-conntent .right-cont .right-part > div {
+    width: 100%; }
+    .main-content .content-container .main-conntent .right-cont .right-part > div .bets-ml {
+      width: 100%;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-direction: row;
+      flex-direction: row; }
+      .main-content .content-container .main-conntent .right-cont .right-part > div .bets-ml > div {
+        width: 50%; }
+    .main-content .content-container .main-conntent .right-cont .right-part > div .bets-hand {
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-direction: row;
+      flex-direction: row;
+      padding: 0; }
+      .main-content .content-container .main-conntent .right-cont .right-part > div .bets-hand .bets-first-hand {
+        padding: 0 !important;
+        border-right: 1px solid #222;
+        border-top: 1px solid #222;
+        border-bottom: 1px solid #222;
+        -webkit-align-items: center;
+        align-items: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        height: 31px !important;
+        border-radius: 3px 3px 3px 3px; }
+        .main-content .content-container .main-conntent .right-cont .right-part > div .bets-hand .bets-first-hand:before {
+          display: none; }
+        .main-content .content-container .main-conntent .right-cont .right-part > div .bets-hand .bets-first-hand.over:after {
+          display: none; }
+      .main-content .content-container .main-conntent .right-cont .right-part > div .bets-hand .bets-second-hand {
+        padding: 0 !important;
+        border-left: 1px solid #222;
+        border-top: 1px solid #222;
+        border-bottom: 1px solid #222;
+        -webkit-align-items: center;
+        align-items: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        height: 31px !important;
+        border-radius: 3px 3px 3px 3px; }
+        .main-content .content-container .main-conntent .right-cont .right-part > div .bets-hand .bets-second-hand:before {
+          display: none; }
+        .main-content .content-container .main-conntent .right-cont .right-part > div .bets-hand .bets-second-hand.over:after {
+          display: none; }
+      .main-content .content-container .main-conntent .right-cont .right-part > div .bets-hand > div {
+        width: 50%;
+        background: #C7C8CC; }
+      .main-content .content-container .main-conntent .right-cont .right-part > div .bets-hand.over-under {
+        background: grey; }
+    .main-content .content-container .main-conntent .right-cont .right-part > div .more {
+      height: 31px !important;
+      background: #C7C8CC !important; }
+  .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .more {
+    border-radius: 3px 3px 3px 3px;
+    border-top: 1px solid #222;
+    padding-left: 0;
+    font-size: 12px;
+    color: #000 !important; }
+  .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-label {
+    margin: 9px 0 0 3px;
+    height: 40px;
+    width: 28px;
+    position: relative;
+    left: -2px;
+    margin-bottom: 9px; }
+  .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-ml .bets-first-ml {
+    border-right: 1px solid #222;
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
+    border-radius: 3px 3px 3px 3px;
+    background: #C7C8CC;
+    height: 31px;
+    width: 50%; }
+    .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-ml .bets-first-ml span {
+      font-size: 12px;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-align-items: center;
+      align-items: center;
+      height: 100%;
+      color: #000;
+      width: 100%;
+      margin: 0; }
+    .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-ml .bets-first-ml:before {
+      display: none; }
+  .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-ml .bets-second-ml {
+    border-left: 1px solid #222;
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
+    border-radius: 3px 3px 3px 3px;
+    background: #C7C8CC;
+    height: 31px;
+    width: 50%; }
+    .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-ml .bets-second-ml span {
+      font-size: 12px;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-align-items: center;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+      color: #000;
+      margin: 0; }
+    .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-ml .bets-second-ml:before {
+      display: none; }
+  .main-content .content-container .main-conntent .left-cont .video-info .game-info .team {
+    margin-left: 4px; }
+    .main-content .content-container .main-conntent .left-cont .video-info .game-info .team.rev {
+      margin-left: 4px; }
+  .main-content .content-container .main-conntent .left-cont .video-info .game-info .flag.rev {
+    margin-left: 4px; }
+  .main-content .content-container .main-conntent .left-cont .video-info .game-info .vs {
+    margin-left: 4px; }
+  .main-content .content-container .main-conntent .left-cont .statistics .part .m-left {
+    margin-top: 10px; }
+
+  .main-content .content-container .main-conntent .right-cont .bets-math {
+    width: 100%;
+    float: right;
+    margin-bottom: 0 !important; }
+    .main-content .content-container .main-conntent .right-cont .bets-math > .row {
+      margin-top: 5px;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-direction: row-reverse;
+      flex-direction: row-reverse; }
+      .main-content .content-container .main-conntent .right-cont .bets-math > .row:before {
+        content: '';
+        width: 50%;
+        background: green;
+        height: 100%;
+        position: absolute;
+        left: 0; }
+      .main-content .content-container .main-conntent .right-cont .bets-math > .row .right-part {
+        display: block;
+        width: 65%; }
+      .main-content .content-container .main-conntent .right-cont .bets-math > .row .mobile-part {
+        display: block;
+        width: calc(35% - 4px);
+        margin-right: 4px; }
+  .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-match {
+    display: -webkit-flex;
+    display: flex; }
+    .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-match .bets-match-first {
+      width: 50%;
+      background: #EAEAEA;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-direction: column;
+      flex-direction: column;
+      -webkit-align-items: center;
+      align-items: center;
+      padding-bottom: 5px;
+      border-right: 1px solid #222;
+      border-top: 2px solid #222;
+      border-bottom: 1px solid #222; }
+      .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-match .bets-match-first:before {
+        display: none; }
+      .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-match .bets-match-first img {
+        margin: 0;
+        width: 31px;
+        height: 32px;
+        margin-top: 6px;
+        max-width: 100% !important; }
+    .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-match .bets-match-second {
+      width: 50%;
+      background: #EAEAEA;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-direction: column;
+      flex-direction: column;
+      -webkit-align-items: center;
+      align-items: center;
+      padding-bottom: 5px;
+      border-left: 1px solid #222;
+      border-top: 2px solid #222;
+      border-bottom: 1px solid #222; }
+      .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-match .bets-match-second:before {
+        display: none; }
+      .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-match .bets-match-second img {
+        margin: 0;
+        width: 31px;
+        height: 32px;
+        margin-top: 6px;
+        max-width: 100% !important; }
+    .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-match span {
+      padding: 0;
+      margin: 0 !important;
+      max-width: 100%; }
+  .main-content .content-container .main-conntent .right-cont .right-part.match {
+    background: transparent; }
+    .main-content .content-container .main-conntent .right-cont .right-part.match a div {
+      width: 100%;
+      background: #fff; }
+      .main-content .content-container .main-conntent .right-cont .right-part.match a div .bets-cont {
+        display: block;
+        text-align: center;
+        width: calc(100% + 30px); } }
+@media (max-width: 320px) {
+  .main-content .content-container .main-conntent .left-cont .news .cont-news .post .big-news .post-title {
+    min-width: 250px;
+    font-size: 15px; }
+  .main-content .content-container .main-conntent .right-cont .right-part.desc .money .title-cont {
+    margin-left: 4px; }
+
+  .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .more a {
+    padding: 0 2px; } }

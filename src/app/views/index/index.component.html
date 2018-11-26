@@ -1,0 +1,112 @@
+<div class="index-change-position">
+
+  <div class="col-lg-11 col-md-8 left-custom-grid">
+    <div class="row">
+      <div class="left-cont index-in-left">      
+        <div class="stream-box" *ngIf="matchStream?.dummy_match">
+        <h3 class="main-title">
+          <img *ngIf="matchStream?.dummy_match.game.slug" src="assets/images/menu/{{matchStream?.dummy_match.game.slug}}.png" alt="game-logo">
+          <img *ngIf="!matchStream?.dummy_match.game.slug" src="assets/images/label/game-universal.png" alt="game-logo">
+          {{matchStream?.dummy_match.stage_round.stage_format.stage.tournament.name}}
+        </h3>
+        <div class="video-info">
+          <div class="game-info">
+            <div class="flag"><img src="assets/images/flags/{{matchStream?.dummy_match.opponent1_details.country.countryName | replaceSpace: '-' | lowercase}}.png" alt="flag"></div>
+            <h4 class="team">{{matchStream?.dummy_match.opponent1_details.name}}</h4>
+            <span class="vs">{{'vs' | translate}}</span>
+            <h4 class="team rev">{{matchStream?.dummy_match.opponent2_details.name}}</h4>
+            <div class="flag rev"><img src="assets/images/flags/{{matchStream?.dummy_match.opponent2_details.country.countryName | replaceSpace: '-' | lowercase}}.png" alt="flag"></div>
+          </div>
+          <div class="leng-cont">
+            <div class="lang">
+              <ul>
+                <template ngFor let-stream [ngForOf]="matchStream?.dummy_match.streams">
+                  <li class="lang-flag">
+                    <img *ngIf="stream?.lang != null" (click)="loadStream($event.target, stream.embed)" src="assets/images/flags/iso/{{stream?.lang | lowercase }}.png" alt="{{stream?.lang}}">
+                    <img *ngIf="stream?.lang == null" (click)="loadStream($event.target, stream.embed)" src="assets/images/flags/iso/unknown.png" alt="un">
+                  </li>
+                </template>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Select steam-->
+        <div class="col-lg-24 col-md-24 col-sm-24" *ngIf="stream">
+          <div class="row video-bg">
+            <div [innerHTML]="stream"></div>
+          </div>
+        </div>
+        <div class="col-lg-24 col-md-24 col-sm-24" *ngIf="!stream">
+          <div class="row video-bg">
+            <span>No live stream</span>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+        </div>
+        <div class="stream-box" *ngIf="matchStream?.events && (!matchStream?.dummy_match)">
+          <h3 class="main-title">
+             <img src="assets/images/label/game-universal.png" alt="game-logo">
+             {{matchStream?.events[0].competition_name}}
+          </h3>
+          <div class="video-info">
+            <div class="game-info">
+              <h4 class="team">{{matchStream?.events[0].home_team.team_name}}</h4>
+              <span class="vs">{{'vs' | translate}}</span>
+              <h4 class="team rev">{{matchStream?.events[0].away_team.team_name}}</h4>
+            </div>
+            <div class="leng-cont">
+              <div class="lang">
+                <ul>
+                  <template ngFor let-stream [ngForOf]="matchStream?.events[0].streams">
+                    <li class="lang-flag">
+                      <img *ngIf="stream?.lang != null" (click)="loadStream($event.target, stream.embed)" src="assets/images/flags/iso/{{stream?.lang | lowercase }}.png" alt="{{stream?.lang}}">
+                      <img *ngIf="stream?.lang == null" (click)="loadStream($event.target, stream.embed)" src="assets/images/flags/iso/unknown.png" alt="un">
+                    </li>
+                  </template>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Select steam-->
+          <div class="col-lg-24 col-md-24 col-sm-24" *ngIf="stream">
+            <div class="row video-bg">
+              <div [innerHTML]="stream"></div>
+            </div>
+          </div>
+          <div class="col-lg-24 col-md-24 col-sm-24" *ngIf="!stream">
+            <div class="row video-bg">
+              <span> No live stream </span>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+        <!--     News     -->
+
+        <app-posts [game]="all"></app-posts>
+
+        <!--     statistics     -->
+
+        <div class="col-lg-24 col-md-24 col-sm-24 col-xs-24 statistics">
+          <div class="row stat-blocks">
+            <div class="col-lg-12 col-md-24 col-sm-24 col-xs-24 part">
+              <app-player-spotlight [game]="'dota2'" [playerId]="47029891891201"></app-player-spotlight>
+            </div>
+            <div class="col-lg-12 col-md-24 col-sm-24 col-xs-24 part">
+              <app-team-spotlight [teamId]="1116691496961"></app-team-spotlight>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-13 col-md-16 col-sm-16 col-xs-16 right-custom-grid">
+      <app-match-table [queryParams]="queryParams"></app-match-table>
+    <div class="tournament">
+      <app-tournament-spotlight [gameId]="'dota2'" [tournamentId]="9835475107841"></app-tournament-spotlight>
+    </div>
+  </div>
+
+
+
+</div>

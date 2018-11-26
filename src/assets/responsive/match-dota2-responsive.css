@@ -1,0 +1,127 @@
+@media (max-width: 1900px) {
+  .main-content .content-container .main-conntent .table > tbody > tr > td:first-child {
+    padding-left: 14px !important;
+    letter-spacing: -1px; }
+  .main-content .content-container .main-conntent .table > tbody > tr > td:last-child {
+    padding-right: 10px; }
+
+  .left-cont .game-slider .slick-dots li {
+    display: -webkit-flex;
+    display: flex; }
+    .left-cont .game-slider .slick-dots li button {
+      line-height: 13px; } }
+@media (max-width: 1800px) and (min-width: 1600px) {
+  .left-cont .game-slider .slide .score-container .home-team:before {
+    left: 42px; }
+  .left-cont .game-slider .slide .score-container .guest-team:after {
+    right: 42px; } }
+@media (max-width: 1600px) {
+  .main-content .content-container .main-conntent .right-full-grid.dota-right-cont {
+    padding: 0 15px 0 15px; }
+
+  .left-cont .game-slider .slick-dots li {
+    display: -webkit-flex;
+    display: flex; }
+    .left-cont .game-slider .slick-dots li button {
+      font-size: .7em;
+      line-height: 12px; } }
+@media (max-width: 1890px) and (min-width: 1600px) {
+  .group-stage .group-title .group a {
+    width: 70px;
+    overflow: hidden;
+    text-overflow: ellipsis; } }
+@media (max-width: 1300px) {
+  .group-stage .group-title .group a {
+    width: 58px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 8px !important; } }
+@media (max-width: 1200px) {
+  .group-a {
+    width: 100%;
+    padding: 0 !important; }
+
+  .group-b {
+    margin-top: 10px;
+    width: 100%;
+    padding: 0; }
+
+  .schedule-a {
+    width: 100%;
+    padding: 0 !important; }
+
+  .schedule-b {
+    margin-top: 10px;
+    width: 100%;
+    padding: 0; }
+
+  .main-content .content-container .main-conntent .left-cont .statistics .stat-blocks .stat-container .stat-in .heroes .heroes-cont img {
+    width: 0%;
+    flex-grow: 1; }
+
+  .right-cont .playoffs .rounds .round {
+    letter-spacing: -.5px; }
+  .right-cont .playoffs .rounds .bracket-cont img {
+    height: 14px; }
+  .right-cont .bets-container .wrap-text span {
+    position: relative;
+    line-height: 10px;
+    height: 34px;
+    top: -8px;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center; }
+  .right-cont .bets-container.prematch .bets-row > div:first-child {
+    padding-right: 52px; }
+  .right-cont .bets-container.prematch .bets-row > div:last-child {
+    padding-right: 55px; }
+  .right-cont .bets-container.prematch .bets-row > div:first-child span {
+    padding-left: 8px; }
+  .right-cont .bets-container.prematch .bets-row > div:first-child strong {
+    padding-left: 8px; }
+  .right-cont .bets-container.prematch .bets-row > div:last-child span {
+    padding-left: 8px; }
+  .right-cont .bets-container.prematch .bets-row > div:last-child strong {
+    padding-left: 8px; } }
+@media (max-width: 992px) {
+  .main-content .content-container .main-conntent .table > tbody > tr > td {
+    padding: 2px 15px; } }
+@media (max-width: 480px) {
+  .dota-slider .slick-track .slide {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center; }
+    .dota-slider .slick-track .slide .col-sm-2 {
+      display: none; }
+    .dota-slider .slick-track .slide > div {
+      width: 33.33%; }
+
+  .main-content .dota-spot-top {
+    margin-top: 10px; }
+
+  .left-cont .game-slider .slide .score-container .home-team:before {
+    left: 18px; }
+  .left-cont .game-slider .slide .score-container .guest-team:after {
+    right: 18px !important; }
+  .left-cont .recent-performance .past-encounters-graphs.dota-chart .graph-cont-left {
+    width: calc(100% - 9px); }
+  .left-cont .recent-performance .past-encounters-graphs.dota-chart .past-score-cont {
+    width: calc(100% - 30px);
+    display: -webkit-flex;
+    position: relative;
+    margin-top: 2px;
+    display: flex;
+    left: 15px; }
+    .left-cont .recent-performance .past-encounters-graphs.dota-chart .past-score-cont .past-score {
+      flex-grow: 1;
+      margin-right: 1px;
+      -webkit-flex-grow: 1; }
+      .left-cont .recent-performance .past-encounters-graphs.dota-chart .past-score-cont .past-score:last-child {
+        margin-right: 0; }
+  .left-cont .recent-performance .past-encounters-graphs.dota-chart .graph-cont-right {
+    width: calc(100% - 8px);
+    position: relative; } }

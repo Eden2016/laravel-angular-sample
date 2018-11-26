@@ -1,0 +1,61 @@
+.main-content .content-container .main-conntent .left-cont .statistics .stat-blocks .stat-container .stat-in .heroes .heroes-cont.cs .chart {
+  width: calc(100% - 15px) !important; }
+  .main-content .content-container .main-conntent .left-cont .statistics .stat-blocks .stat-container .stat-in .heroes .heroes-cont.cs .chart > * {
+    position: relative;
+    display: block; }
+
+@media (max-width: 1600px) and (min-width: 1366px) {
+  .main-content .content-container .main-conntent .left-cont .statistics .part.cs-go-part {
+    width: 100%; }
+    .main-content .content-container .main-conntent .left-cont .statistics .part.cs-go-part:nth-child(2) {
+      margin-top: 10px; }
+  .main-content .content-container .main-conntent .left-cont .map-breakdown .cs1 {
+    width: 100%; }
+  .main-content .content-container .main-conntent .left-cont .map-breakdown .cs2 {
+    margin-top: 10px;
+    margin-left: 0;
+    width: 100%; }
+  .main-content .content-container .main-conntent .game-slider .slide .score-container .score.csgo .area {
+    font-size: 1.625em; } }
+@media (max-width: 1550px) and (min-width: 1366px) {
+  .left-cont .game-slider .slick-dots li {
+    display: none; }
+    .left-cont .game-slider .slick-dots li.slick-active {
+      display: -webkit-flex;
+      display: flex; } }
+@media (max-width: 768px) {
+  .right-cont .playoffs {
+    width: calc(100% + 30px);
+    overflow: hidden;
+    margin-top: 15px; }
+
+  .main-content .content-container .main-conntent .left-cont .map-breakdown {
+    width: 100%;
+    margin-left: 0; }
+    .main-content .content-container .main-conntent .left-cont .map-breakdown > div {
+      padding: 0; } }
+@media (max-width: 480px) {
+  .main-content .content-container .main-conntent .game-slider .slide .score-container .score.csgo .area {
+    margin-bottom: 5px;
+    font-size: 1.5em; }
+  .main-content .content-container .main-conntent .game-slider.csgo .slick-track .slide .col-sm-2 {
+    display: none; }
+  .main-content .content-container .main-conntent .game-slider.csgo .slick-track .slide > div {
+    width: 33.33%; }
+  .main-content .content-container .main-conntent .left-cont .statistics .stat-blocks .cs-go-part {
+    width: 100%; }
+  .main-content .content-container .main-conntent .left-cont .map-breakdown > div > div {
+    width: 100% !important;
+    margin-left: 0 !important; }
+    .main-content .content-container .main-conntent .left-cont .map-breakdown > div > div:nth-child(2) {
+      margin-top: 10px; }
+    .main-content .content-container .main-conntent .left-cont .map-breakdown > div > div:nth-child(3) {
+      margin-top: 10px; }
+
+  .left-cont .game-slider .slick-dots li {
+    display: none; }
+    .left-cont .game-slider .slick-dots li.slick-active {
+      display: -webkit-flex;
+      display: flex; } }
+
+/*# sourceMappingURL=csgo-responsive.css.map */

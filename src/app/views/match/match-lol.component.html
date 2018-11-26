@@ -1,0 +1,537 @@
+<div class="lol-page">
+	<div class="col-md-11 left-full-grid">
+		<div class="row">
+			<div class="left-cont">
+				<h3 class="box-heading stream-hide">
+					<span>{{match.match?.tournament_name}}</span>
+				</h3>
+
+				<div class="video-info stream-hide">
+					<div class="game-info">
+						<div class="flag">
+							<img *ngIf="match.match?.opponent1country == null"
+								src="assets/images/flags/flag-universal.png" alt="flag"> <img
+								*ngIf="match.match?.opponent1country != null"
+								src="assets/images/flags/{{match.match?.opponent1country | replaceSpace: '-' | lowercase }}.png"
+								alt="flag">
+						</div>
+						<h4 class="team">{{match.match?.opponent1name}}</h4>
+						<span class="vs">{{ 'vs' | translate}}</span>
+						<h4 class="team rev">{{match.match?.opponent2name}}</h4>
+						<div class="flag rev">
+							<img *ngIf="match.match?.opponent2country == null"
+								src="assets/images/flags/flag-universal.png" alt="flag"> <img
+								*ngIf="match.match?.opponent2country != null"
+								src="assets/images/flags/{{match.match?.opponent2country | replaceSpace: '-' | lowercase}}.png"
+								alt="flag">
+						</div>
+					</div>
+					<div class="leng-cont" *ngIf="match.streams?.length">
+						<div class="lang">
+							<ul>
+								<template ngFor let-stream [ngForOf]="match?.streams">
+								<li class="lang-flag"><img *ngIf="stream?.lang != null"
+									(click)="loadStream($event.target, stream.embed)"
+									src="assets/images/flags/iso/{{stream?.lang | lowercase }}.png"
+									alt="{{stream?.lang}}"> <img *ngIf="stream?.lang == null"
+									(click)="loadStream($event.target, stream.embed)"
+									src="assets/images/flags/iso/unknown.png" alt="un"></li>
+								</template>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- Select steam-->
+				<div class="col-md-24">
+					<div *ngIf="match.streams" class="row video-bg stream-hide">
+						<div [innerHTML]="stream"></div>
+					</div>
+					<div *ngIf="match.match_games" class="row">
+
+						<div class="game-slider dota-slider lol-slider">
+							<div *ngFor="let match_game of match.match_games" class="slide">
+								<div class="col-sm-6 players-list">
+									<p *ngFor="let opp1Player of match_game.opponent1_members">
+										<img *ngIf="opp1Player.avatar"
+											src="http://static.esportsconstruct.com/{{opp1Player.avatar}}"
+											alt="player"> <img *ngIf="!opp1Player.avatar"
+											src="assets/images/team-universal.jpg" alt="player"> <strong>{{opp1Player.nickname}}</strong>
+										<span>{{opp1Player.first_name}}
+											{{opp1Player.last_name}}</span>
+									</p>
+								</div>
+								<!-- players list -->
+								<div class="col-sm-2 bottom-hero-devider">
+									<div class="heroes-list active purple lol-style">
+										<template ngFor let-pick [ngForOf]="match_game.picks">
+										<template ngFor let-member
+											[ngForOf]="match_game.opponent1_members"> <span
+											*ngIf="pick.player_id === member.id"> <img
+											src="assets/images/lol/champions/{{pick.champion_name | replaceSpace:'' | replaceWith :'\'':'' | capitalize }}.png"
+											alt="{{pick.champion_name}}" title="{{pick.champion_name}}">
+										</span> </template> </template>
+									</div>
+									<!-- heroes list -->
+									<div class="heroes-list ban-heroes lol-style">
+										<template ngFor let-ban [ngForOf]="match_game.bans">
+										<span *ngIf="ban.team_id === match.opponent1?.id"> <img
+											src="assets/images/lol/champions/{{ban.champion_name | replaceSpace:'' | replaceWith :'\'':'' | capitalize}}.png"
+											alt="hero" title="{{ban.champion_name}}">
+										</span> </template>
+									</div>
+									<!-- heroes list -->
+								</div>
+								<div class="col-sm-8 text-center score-container lol-style">
+									<div class="home-team">
+										<img *ngIf="match.match?.opponent1country == null"
+											src="assets/images/flags/flag-universal.png" alt="flag">
+										<img *ngIf="match.match?.opponent1country != null"
+											src="assets/images/flags/{{match.match?.opponent1country | replaceSpace: '-' | lowercase }}.png"
+											alt="flag"> <span>{{match.match?.opponent1name}}</span>
+									</div>
+									<!-- home team -->
+									<div class="score">{{match_game.opponent1_score}}:{{match_game.opponent2_score}}
+									</div>
+									<div class="guest-team">
+										<img *ngIf="match.match?.opponent2country == null"
+											src="assets/images/flags/flag-universal.png" alt="flag">
+										<img *ngIf="match.match?.opponent2country != null"
+											src="assets/images/flags/{{match.match?.opponent2country | replaceSpace: '-' | lowercase }}.png"
+											alt="flag"> <span>{{match.match?.opponent2name}}</span>
+									</div>
+									<!-- guest team -->
+								</div>
+								<div class="col-sm-2 bottom-hero-devider">
+									<div class="heroes-list ban-heroes lol-style">
+										<template ngFor let-ban [ngForOf]="match_game.bans">
+										<span *ngIf="ban.team_id === match.opponent2?.id"> <img
+											src="assets/images/lol/champions/{{ban.champion_name | replaceSpace:'' | replaceWith :'\'':'' | capitalize}}.png"
+											alt="hero" title="{{ban.champion_name}}">
+										</span> </template>
+									</div>
+									<!-- heroes list -->
+									<div class="heroes-list active blue lol-style">
+										<span *ngFor="let pick of match_game.picks"> <span
+											*ngFor="let member of match_game.opponent2_members"> <span
+												*ngIf="pick.player_id === member.id"> <img
+													src="assets/images/lol/champions/{{pick.champion_name | replaceSpace:'' | replaceWith :'\'':'' | capitalize }}.png"
+													alt="{{pick.champion_name}}" title="{{pick.champion_name}}">
+											</span>
+										</span>
+										</span>
+									</div>
+									<!-- heroes list -->
+								</div>
+								<div class="col-sm-6 players-list right">
+									<p *ngFor="let opp2Player of match_game.opponent2_members">
+										<img *ngIf="opp2Player.avatar"
+											src="http://static.esportsconstruct.com/{{opp2Player.avatar}}"
+											alt="player"> <img *ngIf="!opp2Player.avatar"
+											src="assets/images/team-universal.jpg" alt="player"> <strong>{{opp2Player.nickname}}</strong>
+										<span>{{opp2Player.first_name}}
+											{{opp2Player.last_name}}</span>
+									</p>
+								</div>
+							</div>
+							<!-- slide -->
+						</div>
+						<!-- game slider -->
+					</div>
+				</div>
+
+				<div class="col-sm-24 statistics">
+					<div class="row stat-blocks">
+						<div class="col-sm-12 part dota-spot-top" *ngIf="player1Id">
+							<app-player-lol-spotlight [game]="'lol'" [playerId]="player1Id"></app-player-lol-spotlight>
+							<!-- row -->
+						</div>
+						<!-- part -->
+						<div class="col-sm-12 part dota-spot-top" *ngIf="player2Id">
+							<app-player-lol-spotlight [game]="'lol'" [playerId]="player2Id"></app-player-lol-spotlight>
+							<!-- row -->
+						</div>
+						<!-- part -->
+					</div>
+					<!-- stat blocks -->
+				</div>
+				<!-- statistics -->
+				<div class="row recent-performance">
+					<div class="col-sm-24">
+						<h3 class="box-heading">
+							<span>{{ 'RECENT PERFORMANCE' | translate}}</span>
+						</h3>
+						<div class="performance-info">
+							<div class="game-info">
+								<div class="flags-cont">
+									<div class="flag">
+										<img *ngIf="!match.match?.opponent1country"
+											src="assets/images/flags/flag-universal.png" alt="flag">
+										<img *ngIf="match.match?.opponent1country"
+											src="assets/images/flags/{{match.match?.opponent1country | replaceSpace: '-' | lowercase }}.png"
+											alt="flag">
+									</div>
+									<h4 class="team">{{match.match?.opponent1name}}</h4>
+								</div>
+								<span class="past-enc">{{ 'PAST ENCOUNTERS' | translate}}</span>
+								<div class="flags-cont">
+									<h4 class="team rev">{{match.match?.opponent2name}}</h4>
+									<div class="flag rev">
+										<img *ngIf="!match.match?.opponent2country"
+											src="assets/images/flags/flag-universal.png" alt="flag">
+										<img *ngIf="match.match?.opponent2country"
+											src="assets/images/flags/{{match.match?.opponent2country | replaceSpace: '-' | lowercase }}.png"
+											alt="flag">
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- performance info -->
+					</div>
+					<div class="col-sm-24 past-encounters-graphs dota-chart">
+						<div class="row">
+							<div class="col-sm-11 graph-cont-left">
+								<p class="opp-graph-stats">
+									<span>{{ 'W' | translate}} : <i class="orange">{{opp1currentYearWins}}</i></span>
+									<span>{{ 'L' | translate}} : <i class="gray">{{opp1currentYearLosses}}</i></span>
+									<span>% : <i>{{ opp1winRate | number: '1.0-0' }}</i></span> <strong
+										class="pull-right">{{currentYear}}</strong>
+								</p>
+								<div class="graph">
+									<chart [options]="options1" (load)="saveInstance('chart1', $event.context)"></chart>
+								</div>
+							</div>
+							<div class="col-sm-2 past-score-cont"
+								*ngIf="match.past_matchups?.length">
+								<div *ngFor="let past_matches of match.past_matchups"
+									class="past-score">
+									<div class="hover-tooltip">
+										<p>{{ 'Tournament' | translate}}</p>
+										<p class="enc-tour">{{past_matches.tournament_name}}</p>
+										<p class="enc-date">{{past_matches.start_date | date}}</p>
+									</div>
+									{{past_matches.score?.opp1score}} :
+									{{past_matches.score?.opp2score}}
+								</div>
+							</div>
+							<div class="col-sm-11 graph-cont-right pull-right">
+								<p class="opp-graph-stats">
+									<span>{{ 'W' | translate}} : <i class="orange">{{opp2currentYearWins}}</i></span>
+									<span>{{ 'L' | translate}} : <i class="gray">{{opp2currentYearLosses}}</i></span>
+									<span>% : <i>{{ opp2winRate | number: '1.0-0' }}</i></span> <strong
+										class="pull-right">{{currentYear}}</strong>
+								</p>
+								<div class="graph">
+									<chart [options]="options2" (load)="saveInstance( 'chart2' ,$event.context)"></chart>
+								</div>
+							</div>
+						</div>
+						<!-- row -->
+						<div class="past-enc-results row">
+							<div class="home-opps col-sm-12">
+								<div *ngFor="let oppPastMatch of match.opponent1_past_matches">
+									<span
+										*ngIf="oppPastMatch.opponent1name != match.match?.opponent1name">{{
+										'vs' | translate}} <img
+										*ngIf="oppPastMatch.opponent1country == null"
+										src="assets/images/flags/flag-universal.png" alt="flag">
+										<img *ngIf="oppPastMatch.opponent1country != null"
+										src="assets/images/flags/{{oppPastMatch.opponent1country | replaceSpace: '-' | lowercase}}.png"
+										alt="flag"> {{oppPastMatch.opponent1name}}
+									</span> <span
+										*ngIf="oppPastMatch.opponent1name == match.match?.opponent1name">{{
+										'vs' | translate}} <img
+										*ngIf="oppPastMatch.opponent2country == null"
+										src="assets/images/flags/flag-universal.png" alt="flag">
+										<img *ngIf="oppPastMatch.opponent2country != null"
+										src="assets/images/flags/{{oppPastMatch.opponent2country | replaceSpace: '-' | lowercase }}.png"
+										alt="flag"> {{oppPastMatch.opponent2name}}
+									</span> <span
+										*ngIf="oppPastMatch.opponent1name == match.match?.opponent1name">{{oppPastMatch.score?.opp1score}}:{{oppPastMatch.score?.opp2score}}</span>
+									<span
+										*ngIf="oppPastMatch.opponent1name != match.match?.opponent1name">{{oppPastMatch.score?.opp2score}}:{{oppPastMatch.score?.opp1score}}</span>
+								</div>
+							</div>
+							<!-- home opps -->
+							<div class="guest-opps col-sm-12">
+								<div *ngFor="let oppPastMatch of match.opponent2_past_matches">
+									<span
+										*ngIf="oppPastMatch.opponent1name != match.match?.opponent2name">{{
+										'vs' | translate}} <img
+										*ngIf="oppPastMatch.opponent1country == null"
+										src="assets/images/flags/flag-universal.png" alt="flag">
+										<img *ngIf="oppPastMatch.opponent1country != null"
+										src="assets/images/flags/{{oppPastMatch.opponent1country | replaceSpace: '-' | lowercase }}.png"
+										alt="flag"> {{oppPastMatch.opponent1name}}
+									</span> <span
+										*ngIf="oppPastMatch.opponent1name == match.match?.opponent2name">{{
+										'vs' | translate}} <img
+										*ngIf="oppPastMatch.opponent2country == null"
+										src="assets/images/flags/flag-universal.png" alt="flag">
+										<img *ngIf="oppPastMatch.opponent2country != null"
+										src="assets/images/flags/{{oppPastMatch.opponent2country | replaceSpace: '-' | lowercase }}.png"
+										alt="flag"> {{oppPastMatch.opponent2name}}
+									</span> <span
+										*ngIf="oppPastMatch.opponent1name != match.match?.opponent2name">{{oppPastMatch.score?.opp2score}}:{{oppPastMatch.score?.opp1score}}</span>
+									<span
+										*ngIf="oppPastMatch.opponent1name == match.match?.opponent2name">{{oppPastMatch.score?.opp1score}}:{{oppPastMatch.score?.opp2score}}</span>
+								</div>
+							</div>
+							<!-- home opps -->
+						</div>
+					</div>
+					<!-- past graphs -->
+				</div>
+				<!-- recent performance -->
+				<div class="row featured-promotions">
+					<div class="col-sm-24">
+						<h3 class="box-heading">{{ 'FEATURED PROMOTIONS' |
+							translate}}</h3>
+						<img class="img-responsive" src="assets/images/promotions2.jpg"
+							alt="promotion">
+					</div>
+				</div>
+				<!-- promo -->
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-13 right-cont right-full-grid dota-right-cont">
+		<div class="bets-container prematch" *ngIf="prematchBets?.length">
+			<div class="row">
+				<h3 class="box-heading">
+					<span>{{ 'PREMATCH BETS' | translate}}</span>
+					<div class="timeout">
+						{{ 'Odds update in' | translate}}: <span>{{counter}}</span>
+						<div class="rotate"></div>
+					</div>
+				</h3>
+				<h4 class="box-subheading">
+					<span>{{match.match?.opponent1name | uppercase }}</span> <span>{{match.match?.opponent2name
+						| uppercase }}</span>
+				</h4>
+			</div>
+			<div *ngFor="let prematchBet of prematchBets">
+				<div class="row bets-row" *ngIf="prematchBet.odds?.ah">
+					<div class="col-sm-8 text-right">
+						<span>{{prematchBet.odds?.ah[1]}}</span><strong
+							*ngIf="prematchBet?.odds?.ah && prematchBet.odds?.ah[5] != '0.00'">{{prematchBet.odds?.ah[5]}}</strong>
+						<span *ngIf="prematchBet.odds?.ah[5] == '0.00'"><img
+							src="assets/images/lock-icon.png" alt="lock"></span>
+					</div>
+					<div class="col-sm-8 text-center">
+						<span>{{ 'HANDICAP' | translate}}</span>
+					</div>
+					<div class="col-sm-8 text-right">
+						<span>{{prematchBet.odds?.ah[3]}}</span><strong
+							*ngIf="prematchBet.odds?.ah && prematchBet.odds?.ah[7] != '0.00'">{{prematchBet.odds?.ah[7]}}</strong>
+						<span *ngIf="prematchBet.odds?.ah[7] == '0.00'"><img
+							src="assets/images/lock-icon.png" alt="lock"></span>
+					</div>
+				</div>
+				<!-- bets row -->
+				<div class="row bets-row" *ngIf="prematchBet.odds?.ou">
+					<div class="col-sm-8 text-right">
+						<span>{{prematchBet.odds?.ou[1]}}</span><strong
+							*ngIf="prematchBet?.odds?.ou && prematchBet.odds?.ou[5] != '0.00'">{{prematchBet.odds?.ou[5]}}</strong>
+						<span *ngIf="prematchBet.odds?.ou[5] == '0.00'"><img
+							src="assets/images/lock-icon.png" alt="lock"></span>
+					</div>
+
+					<div class="col-sm-8 text-center">
+						<span>{{ 'OVER/UNDER' | translate}}</span>
+					</div>
+					<div class="col-sm-8 text-right">
+						<span>{{prematchBet.odds?.ou[3]}}</span><strong
+							*ngIf="prematchBet?.odds?.ou && prematchBet.odds?.ou[7] != '0.00'">{{prematchBet.odds?.ou[7]}}</strong>
+						<span *ngIf="prematchBet.odds?.ou[7] == '0.00'"><img
+							src="assets/images/lock-icon.png" alt="lock"></span>
+					</div>
+				</div>
+				<!-- bets row -->
+				<div class="row bets-row" *ngIf="prematchBet.odds?.ml">
+					<div class="col-sm-8 text-right">
+						<strong
+							*ngIf="prematchBet?.odds?.ml && prematchBet.odds?.ml[1] != '0.00'">{{prematchBet.odds?.ml[1]}}</strong>
+						<span *ngIf="prematchBet.odds?.ml[1] == '0.00'"><img
+							src="assets/images/lock-icon.png" alt="lock"></span>
+					</div>
+					<div class="col-sm-8 text-center">
+						<span>{{ 'MONEYLINE' | translate}}</span>
+					</div>
+					<div class="col-sm-8 text-right">
+						<strong
+							*ngIf="prematchBet?.odds?.ml && prematchBet.odds?.ml[3] != '0.00'">{{prematchBet.odds?.ml[3]}}</strong>
+						<span *ngIf="prematchBet.odds?.ml[3] == '0.00'"><img
+							src="assets/images/lock-icon.png" alt="lock"></span>
+					</div>
+				</div>
+				<!-- bets row -->
+			</div>
+			<!-- loop -->
+		</div>
+		<!-- bets container -->
+		<div *ngIf="prematchBets?.length">
+			<div class="bets-container row in-play-bets-table"
+				*ngFor="let prematchBet of prematchBets">
+				<div>
+					<h3 class="box-heading">
+						<span>{{ 'IN-PLAY BETS' | translate}}</span>
+						<!--<span class="col-lg-12 com-md-14 com-sm-14 game-running">-->
+						<!--Game running:-->
+						<!--<span>01</span>h <span>01</span>m <span>01</span>s-->
+						<i class="btn-collapse" data-toggle="collapse"
+							data-target="#game-one-collapse"></i>
+						<!--</span>-->
+						<!-- game running -->
+					</h3>
+				</div>
+				<div class="body collapse in" id="game-one-collapse">
+					<div *ngFor="let bet of prematchBet?.new_odds">
+						<div>
+							<h4 class="box-subheading padding-left-small">
+								<span>{{bet.n}}</span>
+							</h4>
+						</div>
+						<div class=" bets-row">
+							<div class="col-sm-12 text-center display-flex">
+								<strong>{{bet.o[0][0]}}</strong> <strong class="odd-btn"
+									[ngClass]="{'lock': bet.o[0][2] == '0.00'}">{{bet.o[0][2]}}</strong>
+							</div>
+							<div class="col-sm-12 display-flex">
+								<strong>{{bet.o[1][0]}}</strong> <strong class="odd-btn"
+									[ngClass]="{'lock': bet.o[1][2] == '0.00'}">{{bet.o[1][2]}}</strong>
+							</div>
+						</div>
+						<!-- bets row -->
+					</div>
+					<!-- loop -->
+				</div>
+			</div>
+		</div>
+		<!-- bets container -->
+		<div class="row featured-promotions">
+			<h3 class="box-heading">{{ 'FEATURED PROMOTIONS' | translate}}</h3>
+			<img class="img-responsive" src="assets/images/promotions.jpg"
+				alt="promotion">
+		</div>
+		<!-- featured promotions -->
+		<div class="row group-stage">
+			<div class="stages-cont">
+				<ul class="nav nav-tabs stages-nav stage-slider">
+					<li *ngFor="let group of match.group; let i = index;"><span
+						class="group" [ngClass]="{'active':i == 0}"> <a
+							(click)="createActive($event)" data-toggle="tab"
+							href="#{{group.name | replaceSpace: '_' | replaceWith: '#' : ''}}">{{group.name}}</a>
+					</span></li>
+				</ul>
+				<div *ngFor="let group of match.group; let i=index;"
+					class="tab-pane fade"
+					id="{{group.name | replaceSpace: '_' | replaceWith: '#' : ''}}">
+					<h3 class="box-heading group-title">
+						<ul class="nav nav-tabs group-slider">
+							<template ngFor let-stage_format [ngForOf]="group.stage_formats"
+								let-s="index">
+							<li
+								[ngClass]="{'playoff-btn': stage_format?.type == 1 || stage_format?.type == 0}">
+								<span class="group" [ngClass]="{'active':  i == 0 && s == 0}">
+									<a (click)="createActive($event)" data-toggle="tab"
+									href="#stage_format_{{stage_format.name | replaceSpace: '_' | replaceWith: '#' : ''}}{{i}}"><img
+										*ngIf="stage_format?.bracket_data != null"
+										src="assets/images/ico-grid.png"> {{stage_format.name}}</a>
+							</span>
+							</li>
+							</template>
+						</ul>
+						<!-- game running -->
+					</h3>
+					<div class="stage-format-cont">
+						<div
+							*ngFor="let stage_format of group.stage_formats; let b = index;"
+							class="tab-pane fade"
+							id="stage_format_{{stage_format.name | replaceSpace: '_' | replaceWith: '#' : ''}}{{i}}">
+							<div *ngIf="stage_format?.group_data">
+								<!-- group -->
+								<div class="no-padding group-content col-sm-12">
+									<div class="no-padding np-mobile p-right-add">
+										<table class="table group in-group">
+											<thead>
+												<tr>
+													<th>{{stage_format.name}} - {{ 'TEAMS' | translate}}</th>
+													<th title="Played">{{ 'P' | translate}}</th>
+													<th title="Won">{{ 'W' | translate}}</th>
+													<th title="Draw">{{ 'D' | translate}}</th>
+													<th title="Lost">{{ 'L' | translate}}</th>
+													<th title="Points">{{ 'Pts' | translate}}</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr
+													*ngFor="let team of stage_format.group_data?.teams | orderByNumber">
+													<td><span> <img *ngIf="team.logo"
+															src="http://static.esportsconstruct.com/{{team.logo}}"
+															alt="logo"> <img *ngIf="!team.logo"
+															src="assets/images/team-universal.jpg" alt="logo">
+													</span> {{team.name}}</td>
+													<td>{{team.total_matches}}</td>
+													<td>{{team.wins}}</td>
+													<td>{{team.draws}}</td>
+													<td>{{team.loses}}</td>
+													<td>{{team.points}}</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<!-- group -->
+								<div class="no-padding group-content col-sm-12">
+									<div class="schedule no-padding np-mobile">
+										<div class="schedule-a">
+											<table class="table">
+												<thead>
+													<tr>
+														<th>{{ 'SCHEDULE' | translate}}</th>
+														<th></th>
+														<th></th>
+														<th></th>
+													</tr>
+												</thead>
+											</table>
+											<div class="body collapse in">
+												<table class="table tour">
+													<tbody>
+														<template ngFor let-schedule
+															[ngForOf]="stage_format.group_data?.schedule | orderByDate">
+														<tr *ngIf="schedule.start_date != null">
+															<td>{{schedule.home_team}}</td>
+															<td class="vs">{{'vs' | translate}}</td>
+															<td>{{schedule.away_team}}</td>
+															<td
+																*ngIf="(schedule.start_date | timeToSeconds) < dateNow">{{schedule.home_team_score}}:{{schedule.away_team_score}}
+															</td>
+															<td
+																*ngIf="(schedule.start_date | timeToSeconds) > dateNow">{{schedule.start_date
+																| date}}</td>
+														</tr>
+														</template>
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+									<!-- schedule -->
+								</div>
+							</div>
+							<!-- body -->
+							<div
+								class="col-md-24 bracket-cont-{{group.name | replaceSpace: '_' | replaceWith: '#' : '' }}-{{stage_format.name | replaceSpace: '_' | replaceWith: '#' : '' }}{{b}}"
+								*ngIf="stage_format?.bracket_data">
+								<app-bracket-match [upperBracketOnly]="stage_format?.type == 0"
+									[singleElThirdPlace]="stage_format?.type == 0 && stage_format?.bracket_data[3] != ''"
+									[bracketData]="stage_format.bracket_data"
+									containerName="{{group.name | replaceSpace: '_' | replaceWith: '#' : ''}}-{{stage_format.name | replaceSpace: '_' | replaceWith: '#' : '' }}{{b}}"></app-bracket-match>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>

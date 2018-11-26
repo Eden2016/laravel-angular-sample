@@ -1,0 +1,155 @@
+@media (max-width: 1750px) {
+  .main-content .content-container .blog-page-section .blog-content {
+    padding: 80px 100px; } }
+@media (max-width: 1600px) {
+  .main-content .content-container .blog-page-section .blog-content {
+    padding: 69px 46px; }
+    .main-content .content-container .blog-page-section .blog-content .blog-med {
+      width: 100%; }
+    .main-content .content-container .blog-page-section .blog-content .img-responsive {
+      width: 100%; }
+    .main-content .content-container .blog-page-section .blog-content .blog-tour-image {
+      width: 100%; }
+    .main-content .content-container .blog-page-section .blog-content .blog-tour-content {
+      width: 100%;
+      margin-top: 10px; }
+      .main-content .content-container .blog-page-section .blog-content .blog-tour-content > .row {
+        margin: 0; } }
+@media (max-width: 1400px) {
+  .main-content .content-container .blog-page-section .blog-content .containet-embded-mathes, .main-content .content-container .blog-page-section .blog-content .containet-embded-game {
+    position: relative;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    width: 100%;
+    height: 366px; }
+  .main-content .content-container .blog-page-section .blog-content .embed.video-embed {
+    width: 100%; }
+    .main-content .content-container .blog-page-section .blog-content .embed.video-embed iframe {
+      width: 100%; }
+  .main-content .content-container .blog-page-section .blog-content .embed.matches-embed {
+    margin-left: 0;
+    max-width: 572px;
+    float: left !important; }
+  .main-content .content-container .blog-page-section .blog-content .embed.game-embed {
+    width: 517px;
+    margin-left: 0; }
+    .main-content .content-container .blog-page-section .blog-content .embed.game-embed .avatar img {
+      width: 68px; }
+  .main-content .content-container .blog-page-section .blog-content img.pull-left {
+    padding-right: 0;
+    width: 100%; }
+  .main-content .content-container .blog-page-section .blog-content .embed.table-embed {
+    width: 100%; }
+    .main-content .content-container .blog-page-section .blog-content .embed.table-embed th {
+      width: 244px; } }
+@media (max-width: 1200px) {
+  .main-content .content-container .blog-page-section .blog-content .container-embed-profile {
+    width: 100%;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center; }
+  .main-content .content-container .blog-page-section .blog-content .containet-embded-game {
+    height: auto; }
+  .main-content .content-container .blog-page-section .blog-content .response-mathes {
+    height: auto !important; }
+  .main-content .content-container .blog-page-section .blog-content .embed.table-embed td span {
+    width: 100%;
+    display: block;
+    margin-top: 7px; }
+  .main-content .content-container .blog-page-section .blog-content .embed.table-embed td img {
+    margin-right: 0; }
+  .main-content .content-container .blog-page-section .blog-content .embed.game-embed .team-roster .roster > div:last-child .avatar {
+    margin-right: 5px; }
+  .main-content .content-container .blog-page-section .blog-content .embed.matches-embed {
+    padding: 42px 0 0;
+    width: 100%;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: center;
+    align-items: center; }
+    .main-content .content-container .blog-page-section .blog-content .embed.matches-embed .single-match {
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-direction: column;
+      flex-direction: column; }
+      .main-content .content-container .blog-page-section .blog-content .embed.matches-embed .single-match .score {
+        margin: 13px 0;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-justify-content: center;
+        justify-content: center; }
+  .main-content .content-container .blog-page-section .blog-content .embed.upcoming-match-embed {
+    padding: 20px 20px;
+    width: 100% !important; }
+    .main-content .content-container .blog-page-section .blog-content .embed.upcoming-match-embed .vs {
+      width: 43px; }
+  .main-content .content-container .blog-page-section .blog-content .embed.scoreboard-embed .scoreboard-cont {
+    padding: 15px 5px 1px 5px; }
+  .main-content .content-container .blog-page-section .blog-content .embed.scoreboard-embed table td.heroes-list:first-child {
+    margin-right: 3px; }
+  .main-content .content-container .blog-page-section .blog-content .embed.scoreboard-embed table .stats {
+    padding: 0 5px; }
+  .main-content .content-container .blog-page-section .blog-content .embed.game-embed .avatar img {
+    width: 100%;
+    max-width: 100%; }
+  .main-content .content-container .blog-page-section .blog-content .embed.game-embed .team-roster .roster {
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -webkit-justify-content: center;
+    justify-content: center; }
+    .main-content .content-container .blog-page-section .blog-content .embed.game-embed .team-roster .roster > div {
+      width: 33.3%; } }
+@media (max-width: 1130px) {
+  .main-content .content-container .blog-page-section .blog-content .blog-tour-content .blog-tour-loc {
+    width: 100%; }
+  .main-content .content-container .blog-page-section .blog-content .embed.tournament-embed .tour-title.top {
+    padding: 3px 0 0 0; }
+  .main-content .content-container .blog-page-section .blog-content .embed.tournament-embed .tour-desc.left {
+    margin-left: 0; } }
+@media (max-width: 768px) {
+  .main-content .content-container .blog-page-section {
+    width: 100%;
+    margin: 0; }
+    .main-content .content-container .blog-page-section .blog-title {
+      display: -webkit-flex;
+      position: relative;
+      -webkit-align-items: center;
+      align-items: center;
+      display: flex;
+      height: 40px;
+      top: -14px; }
+      .main-content .content-container .blog-page-section .blog-title img {
+        top: -1px; }
+    .main-content .content-container .blog-page-section > div {
+      padding: 0; }
+    .main-content .content-container .blog-page-section .blog-content .embed.player-profile-embed {
+      margin-left: 0; } }
+@media (max-width: 480px) {
+  .main-content .content-container .blog-page-section .blog-content {
+    padding: 40px 10px; }
+    .main-content .content-container .blog-page-section .blog-content h1 {
+      font-size: 1.92em; }
+    .main-content .content-container .blog-page-section .blog-content p.date-posted {
+      margin-bottom: 34px; }
+    .main-content .content-container .blog-page-section .blog-content .embed.player-profile-embed .stat-in .heroes .heroes-cont .stat-content .statistic {
+      width: 60px; }
+    .main-content .content-container .blog-page-section .blog-content .embed.player-profile-embed .stat-in .player img {
+      max-width: 100%; }
+    .main-content .content-container .blog-page-section .blog-content .embed.upcoming-match-embed .text-right img {
+      position: relative;
+      right: 20px; }
+    .main-content .content-container .blog-page-section .blog-content .embed.scoreboard-embed .scoreboard-cont {
+      display: none; }
+    .main-content .content-container .blog-page-section .blog-content .embed.tournament-embed .medals-cont.tour-marg {
+      margin: 0;
+      width: 250px;
+      height: 146px;
+      background-size: contain;
+      padding: 98px 11px 0 9px; } }
+
+/*# sourceMappingURL=blog-responsive.css.map */

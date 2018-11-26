@@ -1,0 +1,385 @@
+<ng-select #selectedOdds
+    [options]="oddsTypeOptions"
+    (selected)="loadOdds($event.value, true, true)"
+    [noFilter]="10"
+    highlightColor="#4B4B4B"
+    placeholder="{{selectPlaceholder}}"
+    [ngStyle]="{
+    	'background':'#4B4B4B',
+    	'color':'#fff',
+    	'width':'291px',
+    	'font-family':'Arial-Bold',
+    	'font-size':'12px',
+    	'position': 'absolute',
+    	'top':'-20px',
+    	'left':'calc(100% + 20px)'
+    }"
+    >
+</ng-select>
+
+<div class="row">
+  <div class="right-cont tour-out-right">
+    <!--                    =============================== First list ===========================================                 -->
+    <div class="in-play-matches-cont" *ngIf="inPlayMatches != ''">
+      <div class="col-lg-24 col-md-24 col-sm-24 col-xs-24">
+        <div class="row">
+          <div class="left-part"></div>
+          <div class="right-part">
+            <h3 class="main-title only-text">{{ 'LIVE BETS' | translate}} <div class="timeout" (click)="refreshOdds(0)">{{counter[0]}}<div class="rotate"></div></div></h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-24 col-md-24 col-sm-24 col-xs-24 pre-title">
+        <div class="row">
+          <div class="left-part desc">{{ 'In Play' | translate}}</div>
+          <div class="right-part desc">
+            <div class="col-lg-5 col-sm-2 tour"><div class="row"><div class="title-cont">{{ 'Tournament' | translate}}</div></div></div>
+            <div class="col-lg-6 col-md-7 col-sm-7 col-xs-7 match"><div class="row"><div class="title-cont">{{ 'Match' | translate}}</div></div></div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 money"><div class="row"><div class="title-cont">{{ 'MONEYLINE' | translate}}</div></div></div>
+            <div class="col-lg-4 col-md-5 col-sm-5 col-xs-5 hand"><div class="row"><div class="title-cont">{{ 'HANDICAP' | translate}}</div></div></div>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4 over"><div class="row"><div class="title-cont">{{ 'OVER/UNDER' | translate}}</div></div></div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 bets"><div class="row"><div class="title-cont">{{ 'MORE BETS' | translate}}</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-24 col-md-24 col-sm-24 col-xs-24 bets-math">
+          <div *ngFor="let match of inPlayMatches" class="row">
+            <!--<div *ngIf="match.dummy_match !== null && tournamentId === match.dummy_match.stage_round.stage_format.stage.tournament.id || tournamentId === 0">-->
+              <div class="left-part match">
+                <a (click)="setStream(match)">
+                <div class="play">
+                  <div class="time">
+                      <span>{{ (dateNow - match.events[0].event_date) | secondsToTime }}</span>
+                      <img src="assets/images/play.png" alt="play">
+                  </div>
+                </div>
+                </a>
+              </div>
+              <div class="right-part match">
+                <a href="match/{{match.dummy_match ? match.dummy_match?.game.slug : 'all' }}/{{match.dummy_match ? match.dummy_match?.masked_id : match.events[0]?.id }}{{queryParams}}">
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                  <div class="row">
+                    <div class="bets-cont">
+                      <img *ngIf="match.dummy_match == null" class="bets-label" src="assets/images/label/game-universal.png" alt="label">
+                      <img *ngIf="match.dummy_match != null" class="bets-label" src="assets/images/label/{{match.dummy_match.game.slug}}.png" alt="label">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-3 hidden-md hidden-sm hidden-xs">
+                  <div class="row">
+                    <div class="bets-cont">
+                      <div class="bets-text">
+                        <h4 class="bets-title" *ngIf="match.dummy_match">{{match.dummy_match?.stage_round.stage_format.stage.tournament.name}}</h4>
+                        <h4 class="bets-title" *ngIf="!match.dummy_match">{{match.events[0].competition_name}}</h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-6 col-md-7 col-sm-7 col-xs-7">
+                  <div class="row">
+                    <div class="bets-cont">
+                      <div class="bets-match">
+                        <div class="bets-match-first">
+                          <img *ngIf="match.dummy_match == null" src="assets/images/flags/flag-universal.png" alt="flag">
+                          <img  *ngIf="match.dummy_match != null" src="assets/images/flags/{{match.dummy_match.opponent1_details.country.countryName | replaceSpace: '-' | lowercase}}.png" alt="flag">
+                          <span *ngIf="match.dummy_match == null" >{{match.events[0].home_team.team_name}}</span>
+                          <span *ngIf="match.dummy_match != null" >{{match.dummy_match.opponent1_details.name}}</span>
+                        </div>
+
+                        <div class="bets-match-second">
+                          <img *ngIf="match.dummy_match == null" src="assets/images/flags/flag-universal.png" alt="flag">
+                          <img  *ngIf="match.dummy_match != null" src="assets/images/flags/{{match.dummy_match.opponent2_details.country.countryName | replaceSpace: '-' | lowercase }}.png" alt="flag">
+                          <span *ngIf="match.dummy_match == null">{{match.events[0].away_team.team_name}}</span>
+                          <span *ngIf="match.dummy_match != null" >{{match.dummy_match.opponent2_details.name}}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </a>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                  <div class="row">
+                    <div class="bets-cont">
+                      <div class="bets-ml">
+                        <div class="bets-first-ml">
+                          <span (click)="bet(match.events[0].id, match.events[0].odds.ml[0], match.events[0].odds.ml[1], 0, match.events[0].home_team.team_name, 'Money Line')" *ngIf="match.events[0].odds?.ml != null" [ngClass]="{'lock': match.events[0].odds?.ml[1] == '0.00'}" >{{match.events[0].odds?.ml[1]}}</span>
+                          <span class="dev-span" *ngIf="match.events[0].odds?.ml == null"></span>
+                        </div>
+                        <div class="bets-second-ml">
+                          <span (click)="bet(match.events[0].id, match.events[0].odds.ml[2], match.events[0].odds.ml[3], 0, match.events[0].away_team.team_name, 'Money Line')" *ngIf="match.events[0].odds?.ml != null" [ngClass]="{'lock': match.events[0].odds?.ml[3] == '0.00'}" >{{match.events[0].odds?.ml[3]}}</span>
+                          <span class="dev-span" *ngIf="match.events[0].odds?.ml == null"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-4 col-md-5 col-sm-5 col-xs-5">
+                  <div class="row">
+                    <div class="bets-cont">
+                      <div class="bets-hand">
+                        <div class="bets-first-hand">
+                          <span *ngIf="match?.events[0].odds.ah != null" class="no-select" [ngClass]="{'lock': match.events[0].odds.ah[1] == '0.00'}" >{{match.events[0].odds.ah[1]}}</span>
+                          <span (click)="bet(match.events[0].id, match.events[0].odds.ah[0], match.events[0].odds.ah[5], match.events[0].odds.ah[1], match.events[0].home_team.team_name, 'Handicap')" *ngIf="match?.events[0].odds.ah != null" class="selected" [ngClass]="{'lock': match.events[0].odds.ah[5] == '0.00'}" >{{match.events[0].odds.ah[5]}}</span>
+                        </div>
+                        <div class="bets-second-hand">
+                          <span *ngIf="match?.events[0].odds.ah != null" class="no-select" [ngClass]="{'lock': match.events[0].odds.ah[3] == '0.00'}" >{{match.events[0].odds.ah[3]}}</span>
+                          <span (click)="bet(match.events[0].id, match.events[0].odds.ah[2], match.events[0].odds.ah[7], match.events[0].odds.ah[3], match.events[0].away_team.team_name, 'Handicap')" *ngIf="match?.events[0].odds.ah != null" class="selected" [ngClass]="{'lock': match.events[0].odds.ah[7] == '0.00'}" >{{match.events[0].odds.ah[7]}}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-5">
+                  <div class="row">
+                    <div class="bets-cont">
+                      <div class="bets-hand over-under">
+                        <div class="bets-first-hand over">
+                          <span *ngIf="match.events[0].odds.ou != null" class="no-select" [ngClass]="{'lock': match.events[0].odds.ou[1] == '0.00'}" >{{match.events[0].odds.ou[1]}}</span>
+                          <span (click)="bet(match.events[0].id, match.events[0].odds.ou[0], match.events[0].odds.ou[5], match.events[0].odds.ou[1], match.events[0].home_team.team_name, 'Over/Under')" *ngIf="match.events[0].odds.ou != null" class="selected" [ngClass]="{'lock': match.events[0].odds.ou[5] == '0.00'}" >{{match.events[0].odds.ou[5]}}</span>
+                        </div>
+                        <div class="bets-second-hand over">
+                          <span *ngIf="match.events[0].odds.ou != null" class="no-select" [ngClass]="{'lock': match.events[0].odds.ou[3] == '0.00'}" >{{match.events[0].odds.ou[3]}}</span>
+                          <span (click)="bet(match.events[0].id, match.events[0].odds.ah[2], match.events[0].odds.ah[7], match.events[0].odds.ah[3], match.events[0].away_team.team_name, 'Over/Under')" *ngIf="match.events[0].odds.ou != null" class="selected" [ngClass]="{'lock': match.events[0].odds.ou[7] == '0.00'}" >{{match.events[0].odds.ou[7]}}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                  <div class="row">
+                    <div class="bets-cont">
+                      <div class="more">
+                        <a *ngIf="match.events[0].new_odds.length" href="match/{{match.dummy_match ? match.dummy_match?.game.slug : 'all' }}/{{match.dummy_match ? match.dummy_match?.masked_id : match.events[0]?.id }}{{queryParams}}">
+                          {{match.events[0].new_odds.length}}
+                        </a>
+                        <span *ngIf="match.events[0].new_odds.length == '' ">-</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mobile-part">
+                <div class="m-game">{{ 'Tournament' | translate}}</div>
+	              <div class="m-match">{{ 'Match' | translate}}</div>
+	              <div class="m-moneyline">{{ 'MONEYLINE' | translate}}</div>
+	              <div class="m-handicap">{{ 'HANDICAP' | translate}}</div>
+	              <div class="m-over">{{ 'OVER/UNDER' | translate}}</div>
+	              <div class="m-morebets">{{ 'More Bets' | translate}}</div>
+              </div>
+
+            <!--</div>-->
+          </div>
+        <!-- row -->
+      </div>
+      <!-- bets match -->
+    </div>
+    <!-- in play matches container -->
+    <!--                     ================================= Second list =========================================                 -->
+    <div class="starts-in-matches-cont" *ngIf="furtherMatches != ''">
+      <div class="col-lg-24 col-md-24 col-sm-24 col-xs-24">
+        <div class="row">
+          <div class="left-part"></div>
+          <div class="right-part">
+            <h3 class="main-title only-text top">{{'UPCOMING BETS' | translate }} <div class="timeout" (click)="refreshOdds(1)">{{counter[1]}}<div class="rotate"></div></div></h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-24 col-md-24 col-sm-24 col-xs-24 pre-title">
+        <div class="row">
+          <div class="left-part desc">{{ 'Starts In' | translate}}</div>
+          <div class="right-part desc">
+            <div class="col-lg-5 col-sm-2 tour"><div class="row"><div class="title-cont">{{ 'Tournament' | translate}}</div></div></div>
+            <div class="col-lg-6 col-md-7 col-sm-7 col-xs-7 match"><div class="row"><div class="title-cont">{{ 'Match' | translate}}</div></div></div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 money"><div class="row"><div class="title-cont">{{ 'MONEYLINE' | translate}}</div></div></div>
+            <div class="col-lg-4 col-md-5 col-sm-5 col-xs-5 hand"><div class="row"><div class="title-cont">{{ 'HANDICAP' | translate}}</div></div></div>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4 over"><div class="row"><div class="title-cont">{{ 'OVER/UNDER' | translate}}</div></div></div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 bets"><div class="row"><div class="title-cont">{{ 'MORE BETS' | translate}}</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-24 col-md-24 col-sm-24 col-xs-24 bets-math">
+        <div *ngFor="let match of furtherMatches" class="row">
+          <!--<div *ngIf="match.dummy_match !== null && tournamentId === match.dummy_match.stage_round.stage_format.stage.tournament.id || tournamentId === 0">-->
+            <div class="left-part match">
+              <a href="match/{{match.dummy_match ? match.dummy_match?.game.slug : 'all' }}/{{match.dummy_match ? match.dummy_match?.masked_id : match.events[0]?.id }}{{queryParams}}">
+                <div class="play">
+                  <div class="time orange">
+                    {{ (match.events[0].event_date - dateNow) | secondsToTime }}
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="right-part match">
+              <a href="match/{{match.dummy_match ? match.dummy_match?.game.slug : 'all' }}/{{match.dummy_match ? match.dummy_match?.masked_id : match.events[0]?.id }}{{queryParams}}">
+              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                <div class="row">
+                  <div class="bets-cont">
+                    <img *ngIf="!match.dummy_match" class="bets-label" src="assets/images/label/game-universal.png" alt="label">
+                    <img *ngIf="match.dummy_match" class="bets-label" src="assets/images/label/{{match.dummy_match.game.slug}}.png" alt="label">
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 hidden-md hidden-sm hidden-xs">
+                <div class="row">
+                  <div class="bets-cont">
+                    <div class="bets-text">
+                        <h4 class="bets-title" *ngIf="match.dummy_match">{{match.dummy_match?.stage_round.stage_format.stage.tournament.name}}</h4>
+                        <h4 class="bets-title" *ngIf="!match.dummy_match">{{match.events[0].competition_name}}</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-7 col-sm-7 col-xs-7">
+                <div class="row">
+                  <div class="bets-cont">
+                    <div class="bets-match">
+                      <div class="bets-match-first">
+                        <img *ngIf="!match.dummy_match" src="assets/images/flags/flag-universal.png" alt="flag">
+                        <img  *ngIf="match.dummy_match" src="assets/images/flags/{{match.dummy_match.opponent1_details.country.countryName | replaceSpace: '-' | lowercase }}.png" alt="flag">
+                        <span *ngIf="match.dummy_match == null" >{{match.events[0].home_team.team_name}}</span>
+                        <span *ngIf="match.dummy_match != null" >{{match.dummy_match.opponent1_details.name}}</span>
+                      </div>
+
+                      <div class="bets-match-second">
+                        <img *ngIf="!match.dummy_match" src="assets/images/flags/flag-universal.png" alt="flag">
+                        <img  *ngIf="match.dummy_match" src="assets/images/flags/{{match.dummy_match.opponent2_details.country.countryName | replaceSpace: '-' | lowercase }}.png" alt="flag">
+                        <span *ngIf="match.dummy_match == null">{{match.events[0].away_team.team_name}}</span>
+                        <span *ngIf="match.dummy_match != null" >{{match.dummy_match.opponent2_details.name}}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </a>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <div class="row">
+                  <div class="bets-cont">
+                    <div class="bets-ml">
+                      <div class="bets-first-ml">
+                        <span (click)="bet(match.events[0].id, match.events[0].odds.ml[0], match.events[0].odds.ml[1], 0, match.events[0].home_team.team_name, 'Money Line')" *ngIf="match.events[0].odds?.ml != null" [ngClass]="{'lock': match.events[0].odds?.ml[1] == '0.00'}" >{{match.events[0].odds?.ml[1]}}</span>
+                        <span class="dev-span" *ngIf="match.events[0].odds?.ml == null"></span>
+                      </div>
+
+                      <div class="bets-second-ml">
+                        <span (click)="bet(match.events[0].id, match.events[0].odds.ml[2], match.events[0].odds.ml[3], 0, match.events[0].away_team.team_name, 'Money Line')" *ngIf="match.events[0].odds?.ml != null" [ngClass]="{'lock': match.events[0].odds?.ml[3] == '0.00'}" >{{match.events[0].odds?.ml[3]}}</span>
+                        <span class="dev-span" *ngIf="match.events[0].odds?.ml == null"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-5 col-sm-5 col-xs-5">
+                <div class="row">
+                  <div class="bets-cont">
+                    <div class="bets-hand">
+                      <div class="bets-first-hand">
+                        <span *ngIf="match?.events[0].odds.ah != null" class="no-select" [ngClass]="{'lock': match.events[0].odds.ah[1] == '0.00'}" >{{match.events[0].odds.ah[1]}}</span>
+                        <span (click)="bet(match.events[0].id, match.events[0].odds.ah[0], match.events[0].odds.ah[5], match.events[0].odds.ah[1], match.events[0].home_team.team_name, 'Handicap')" *ngIf="match?.events[0].odds.ah != null" class="selected" [ngClass]="{'lock': match.events[0].odds.ah[5] == '0.00'}" >{{match.events[0].odds.ah[5]}}</span>
+                      </div>
+                      <div class="bets-second-hand">
+                        <span *ngIf="match?.events[0].odds.ah != null" class="no-select" [ngClass]="{'lock': match.events[0].odds.ah[3] == '0.00'}" >{{match.events[0].odds.ah[3]}}</span>
+                        <span (click)="bet(match.events[0].id, match.events[0].odds.ah[2], match.events[0].odds.ah[7], match.events[0].odds.ah[3], match.events[0].away_team.team_name, 'Handicap')" *ngIf="match?.events[0].odds.ah != null" class="selected" [ngClass]="{'lock': match.events[0].odds.ah[7] == '0.00'}" >{{match.events[0].odds.ah[7]}}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-4 col-sm-4 col-xs-5">
+                <div class="row">
+                  <div class="bets-cont">
+                    <div class="bets-hand over-under">
+                      <div class="bets-first-hand over">
+                        <span *ngIf="match.events[0].odds.ou != null" class="no-select" [ngClass]="{'lock': match.events[0].odds.ou[1] == '0.00'}" >{{match.events[0].odds.ou[1]}}</span>
+                        <span (click)="bet(match.events[0].id, match.events[0].odds.ou[0], match.events[0].odds.ou[5], match.events[0].odds.ou[1], match.events[0].home_team.team_name, 'Over/Under')" *ngIf="match.events[0].odds.ou != null" class="selected" [ngClass]="{'lock': match.events[0].odds.ou[5] == '0.00'}" >{{match.events[0].odds.ou[5]}}</span>
+                      </div>
+                      <div class="bets-second-hand over">
+                        <span *ngIf="match.events[0].odds.ou != null" class="no-select" [ngClass]="{'lock': match.events[0].odds.ou[3] == '0.00'}" >{{match.events[0].odds.ou[3]}}</span>
+                        <span (click)="bet(match.events[0].id, match.events[0].odds.ou[2], match.events[0].odds.ou[7], match.events[0].odds.ou[3], match.events[0].away_team.team_name, 'Over/Under')" *ngIf="match.events[0].odds.ou != null" class="selected" [ngClass]="{'lock': match.events[0].odds.ou[7] == '0.00'}" >{{match.events[0].odds.ou[7]}}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <div class="row">
+                  <div class="bets-cont">
+                    <div class="more">
+                      <a *ngIf="match.events[0].new_odds.length" href="match/{{match.dummy_match ? match.dummy_match?.game.slug : 'all' }}/{{match.dummy_match ? match.dummy_match?.masked_id : match.events[0]?.id }}{{queryParams}}">
+                        {{match.events[0].new_odds.length}}
+                      </a>
+                      <span *ngIf="match.events[0].new_odds.length == '' ">-</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="mobile-part">
+              <div class="m-game">{{ 'Tournament' | translate}}</div>
+              <div class="m-match">{{ 'Match' | translate}}</div>
+	          <div class="m-moneyline">{{ 'MONEYLINE' | translate}}</div>
+	          <div class="m-handicap">{{ 'HANDICAP' | translate}}</div>
+	          <div class="m-over">{{ 'OVER/UNDER' | translate}}</div>
+	          <div class="m-morebets">{{ 'More Bets' | translate}}</div>
+            </div>
+          <!--</div>-->
+        </div>
+      </div>
+
+      <!--     Topics Right    -->
+
+      <div class="hidden-lg col-md-24 col-sm-24 col-xs-24 topics">
+        <div class="row">
+          <h3 class="main-title fixed-height m-top">{{ 'TOPICS' | translate}}</h3>
+
+          <div class="col-lg-24 col-md-24 col-sm-24 col-xs-24 game grey">
+            <div class="row">
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <div class="row">
+                  <div class="top-cont game-date">
+                    <img src="assets/images/menu/dota.png" alt="game-logo">
+                    <div class="top-date">9. Oct. 2016.</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <div class="row">
+                  <div class="top-cont game-status">
+                    RECAP
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-15 col-md-15 col-sm-15 col-xs-15">
+                <div class="row">
+                  <div class="top-cont game-desc">
+                    Dota 2 weekly recap September...
+                    <span class="arrow-top">
+<!--                                                        <img src="assets/images/arrow-top-dark.png" alt="arrow">-->
+                                                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <!--                        ======================================= End lists ==================================             -->
+  </div>
+</div>

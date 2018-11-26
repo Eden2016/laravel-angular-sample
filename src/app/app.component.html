@@ -1,0 +1,25 @@
+<main class="container-fluide main-content">
+  <app-header></app-header>
+   <!--    Left sidebat     -->
+  <div class="content-container">
+    <div class="burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <app-left-sidebar></app-left-sidebar>
+    <!--    Content     -->
+    <section class="main-conntent">
+      <div class="mobile-button-container">
+        <div class="bet-mobile-button">
+          <i class="bet-btn-arrow"></i>
+        </div>
+      </div>
+      <router-outlet></router-outlet>
+    </section>
+    <app-right-sidebar></app-right-sidebar>
+  </div>
+</main>
+<app-footer></app-footer>
+

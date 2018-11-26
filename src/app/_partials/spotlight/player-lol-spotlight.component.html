@@ -1,0 +1,83 @@
+<div class="row">
+	<div class="stat-container m-right">
+		<h3 class="main-title reverce">
+			<span class="stat-title p-left">{{'PLAYER SPOTLIGHT' |
+				translate}}</span>
+		</h3>
+
+		<div class="col-lg-24 col-md-24 col-sm-24 col-xs-24 stat-in">
+			<div class="row">
+				<div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+					<div class="row">
+						<div class="stat-cont player">
+							<img *ngIf="player.avatar"
+								src="http://static.esportsconstruct.com/{{player.avatar}}"
+								alt="player"> <img *ngIf="!player.avatar"
+								src="assets/images/team-universal.jpg" alt="player">
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-13 col-md-13 col-sm-13 col-xs-13">
+					<div class="row">
+						<div class="stat-desc">
+							<div class="col-lg-24 col-md-24 col-sm-24 col-xs-24 double">
+								<div class="row">
+									<div class="col-xs-16">
+										<div class="row nickname">{{player.nickname}}</div>
+									</div>
+									<div class="col-xs-8">
+										<div class="row">
+											<div class="flag-content">
+												<img *ngIf="player.country?.countryName"
+													src="assets/images/flags/{{player.country?.countryName | replaceSpace: '-' | lowercase }}.png"
+													alt="flag">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-24 col-md-24 col-sm-24 col-xs-24">
+								<div class="row name">{{player.first_name}}
+									{{player.last_name}}</div>
+							</div>
+							<div *ngIf="player?.player_teams"
+								class="col-lg-24 col-md-24 col-sm-24 col-xs-24">
+								<div class="row teams">
+									<span>{{'Team' | translate}}:</span>
+									{{player.player_teams[0]?.team.name}}
+								</div>
+							</div>
+							<div class="col-lg-24 col-md-24 col-sm-24 col-xs-24">
+								<div class="row wins">
+									<span>{{'Wins' | translate}}:</span> {{player.games?.won}}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--                                                    --------                                            -->
+				<div class="col-lg-24 col-md-24 col-sm-24 col-xs-24 heroes">
+					<div class="row">
+						<div class="heroes-cont">
+							<h4 class="heroes-title" *ngIf="player?.most_played_champions">{{'Favourite
+								Champions' | translate}}:</h4>
+							<div class="hero-img">
+								<template ngFor let-champ
+									[ngForOf]="player?.most_played_champions" let-i="index">
+								<img *ngIf="i < 5"
+									src="assets/images/lol/champions/{{champ.champion_name | replaceSpace:'' | replaceWith :'\'':'' | capitalize }}.png"
+									alt="{{champ.champion_name}}" title="{{champ.champion_name}}">
+								</template>
+							</div>
+							<div class="stat-content">
+								<div class="graph">
+									<chart [options]="options" (load)="saveInstance($event.context)"></chart>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

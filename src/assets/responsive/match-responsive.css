@@ -1,0 +1,136 @@
+@media (max-width: 1800px) and (min-width: 1366px) {
+  .right-cont .bets-container.prematch .bets-row > div:first-child {
+    padding-right: 60px; }
+    .right-cont .bets-container.prematch .bets-row > div:first-child span {
+      padding-left: 14px; }
+    .right-cont .bets-container.prematch .bets-row > div:first-child strong {
+      padding-left: 14px; }
+  .right-cont .bets-container.prematch .bets-row > div:last-child {
+    padding-right: 60px; }
+    .right-cont .bets-container.prematch .bets-row > div:last-child span {
+      padding-left: 14px; }
+    .right-cont .bets-container.prematch .bets-row > div:last-child strong {
+      padding-left: 14px; } }
+@media (max-width: 1700px) {
+  .main-content .content-container .main-conntent .match-table .schedule .table > tbody > tr > td {
+    padding: 2px 1px;
+    letter-spacing: -.7px; }
+    .main-content .content-container .main-conntent .match-table .schedule .table > tbody > tr > td:first-child {
+      padding-left: 14px; }
+  .main-content .content-container .main-conntent .match-table #group-stage-collapse .table > tbody > tr > td {
+    padding: 2px 0;
+    letter-spacing: -.7px; } }
+@media (min-width: 1366px) and (max-width: 1600px) {
+  .main-content .content-container .main-conntent .right-cont {
+    padding-left: 25px; }
+
+  .left-cont .final-team-scores {
+    font-size: .7em; }
+    .left-cont .final-team-scores .final-score-vs {
+      font-size: 1.5em !important; }
+    .left-cont .final-team-scores img {
+      width: 53px;
+      height: 28px;
+      margin: 10px 4px; }
+  .left-cont .recent-performance .past-enc-results .home-opps {
+    width: calc(100% - 12px); }
+  .left-cont .recent-performance .past-enc-results .guest-opps {
+    width: 100%;
+    padding-left: 15px; }
+  .left-cont .recent-performance .performance-info .game-info .past-enc {
+    display: none; }
+  .left-cont .recent-performance .past-encounters-graphs.match-chart .graph-cont-left {
+    width: calc(100% - 9px); }
+  .left-cont .recent-performance .past-encounters-graphs.match-chart .past-score-cont {
+    width: calc(100% - 30px);
+    display: -webkit-flex;
+    position: relative;
+    margin-top: 2px;
+    display: flex;
+    left: 15px; }
+    .left-cont .recent-performance .past-encounters-graphs.match-chart .past-score-cont .past-score {
+      flex-grow: 1;
+      margin-right: 1px;
+      -webkit-flex-grow: 1; }
+      .left-cont .recent-performance .past-encounters-graphs.match-chart .past-score-cont .past-score:last-child {
+        margin-right: 0; }
+  .left-cont .recent-performance .past-encounters-graphs.match-chart .graph-cont-right {
+    width: calc(100% - 8px);
+    position: relative;
+    left: 9px; } }
+@media (max-width: 1365px) {
+  .main-content .content-container .main-conntent .match-right-cont {
+    padding-left: 15px; }
+  .main-content .content-container .main-conntent .match-table .table > tbody > tr > td:last-child {
+    padding-right: 14px; } }
+@media (max-width: 1200px) {
+  .playoffs img {
+    height: 14px; } }
+@media (max-width: 992px) {
+  .main-content .content-container .main-conntent .right-custom-grid.match-right-cont {
+    padding-left: 15px; } }
+@media (max-width: 768px) {
+  .left-cont .featured-promotions {
+    width: 100%;
+    margin-left: 0; }
+    .left-cont .featured-promotions > div {
+      padding: 0; }
+  .left-cont .recent-performance {
+    overflow: hidden;
+    width: 100%;
+    margin-left: 0; }
+    .left-cont .recent-performance > div {
+      padding: 0; } }
+@media (max-width: 480px) {
+  .right-cont h4.box-subheading {
+    padding: 8px 30px; }
+  .right-cont .bets-container .game-running {
+    margin-top: 3px;
+    font-size: .8em;
+    width: 216px; }
+  .right-cont .bets-container .text-center {
+    font-size: .8em; }
+  .right-cont .bets-container .text-right {
+    font-size: .8em; }
+  .right-cont .bets-container.prematch .bets-row > div:first-child {
+    padding-right: 10px; }
+  .right-cont .bets-container.prematch .bets-row > div:last-child {
+    padding-right: 14px; }
+
+  .left-cont .final-team-scores {
+    font-size: .7em; }
+    .left-cont .final-team-scores .final-score-vs {
+      font-size: 1.5em !important; }
+    .left-cont .final-team-scores img {
+      width: 53px;
+      height: 28px;
+      margin: 10px 4px; }
+  .left-cont .recent-performance .performance-info .game-info .past-enc {
+    display: none !important; }
+  .left-cont .recent-performance .past-encounters-graphs .home-opps {
+    width: calc(100% - 15px);
+    padding-right: 0; }
+  .left-cont .recent-performance .past-encounters-graphs .guest-opps {
+    width: calc(100% - 15px);
+    padding-left: 15px;
+    padding-right: 0; }
+  .left-cont .recent-performance .past-encounters-graphs.match-chart .graph-cont-left {
+    width: calc(100% - 9px); }
+  .left-cont .recent-performance .past-encounters-graphs.match-chart .past-score-cont {
+    width: calc(100% - 30px);
+    display: -webkit-flex;
+    position: relative;
+    margin-top: 2px;
+    display: flex;
+    left: 15px; }
+    .left-cont .recent-performance .past-encounters-graphs.match-chart .past-score-cont .past-score {
+      flex-grow: 1;
+      margin-right: 1px;
+      -webkit-flex-grow: 1; }
+      .left-cont .recent-performance .past-encounters-graphs.match-chart .past-score-cont .past-score:last-child {
+        margin-right: 0; }
+  .left-cont .recent-performance .past-encounters-graphs.match-chart .graph-cont-right {
+    width: calc(100% - 8px);
+    position: relative; } }
+
+/*# sourceMappingURL=match-responsive.css.map */

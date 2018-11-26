@@ -1,0 +1,167 @@
+<div class="match-page-container">
+    <div class="col-md-11 left-custom-grid">
+        <div class="row">
+            <div class="left-cont">
+                <h3 class="box-heading stream-hide">
+                    <span>{{match.event?.competition_name}}</span>
+                </h3>
+
+                <div class="video-info stream-hide">
+                    <div class="game-info">
+                        <div class="flag">
+                            <img *ngIf="!match.match?.opponent1country" src="assets/images/flags/flag-universal.png"
+                                 alt="flag">
+                            <img *ngIf="match.match?.opponent1country"
+                                 src="assets/images/flags/{{match.match?.opponent1country | replaceSpace: '-' | lowercase }}.png"
+                                 alt="flag">
+                        </div>
+                        <h4 class="team">{{match.event?.home_team.team_name}}</h4>
+                        <span class="vs">{{'vs' | translate}}</span>
+                        <h4 class="team rev">{{match.event?.away_team.team_name}}</h4>
+                        <div class="flag rev">
+                            <img *ngIf="!match.match?.opponent2country" src="assets/images/flags/flag-universal.png"
+                                 alt="flag">
+                            <img *ngIf="match.match?.opponent2country"
+                                 src="assets/images/flags/{{match.match?.opponent2country | replaceSpace: '-' | lowercase}}.png"
+                                 alt="flag">
+                        </div>
+                    </div>
+                    <div class="leng-cont" *ngIf="match.streams?.length">
+                      <div class="lang">
+                        <ul>
+                          <template ngFor let-stream [ngForOf]="match?.streams">
+                            <li class="lang-flag">
+                              <img *ngIf="stream?.stream.lang != null" (click)="loadStream($event.target, stream.stream.embed)" src="assets/images/flags/iso/{{stream?.stream.lang | lowercase}}.png" alt="{{stream?.stream.lang}}">
+                              <img *ngIf="stream?.stream.lang == null" (click)="loadStream($event.target, stream.stream.embed)" src="assets/images/flags/iso/unknown.png" alt="un">
+                            </li>
+                          </template>
+                        </ul>
+                      </div>
+                    </div>
+                </div>
+                <!-- Select steam-->
+                <div class="col-sm-24">
+                    <div *ngIf="match.streams" class="row video-bg stream-hide">
+                        <div [innerHTML]="stream"></div>
+                    </div>
+                    <div class="row final-team-scores">
+                        <div class="col-sm-10 left-opp">
+                            <img *ngIf="match.opponent1?.logo"
+                                 src="http://static.esportsconstruct.com/{{match.opponent1?.logo}}" alt="team">
+                            <img *ngIf="!match.opponent1?.logo" src="assets/images/team-universal.jpg" alt="team">
+                            {{match.event?.home_team.team_name}}
+                        </div>
+                        <div class="col-sm-4 final-score-vs">
+                            {{match.event?.home_score}} : {{match.event?.away_score}}
+                        </div>
+                        <div class="col-sm-10 right-opp">
+                            {{match.event?.away_team.team_name}}
+                            <img *ngIf="match.opponent2?.logo"
+                                 src="http://static.esportsconstruct.com/{{match.opponent2?.logo}}" alt="team">
+                            <img *ngIf="!match.opponent2?.logo" src="assets/images/team-universal.jpg" alt="team">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- recent performance -->
+                <div class="row featured-promotions">
+                    <div class="col-sm-24">
+                        <h3 class="box-heading">{{'FEATURED PROMOTIONS' | translate}}</h3>
+                        <img class="img-responsive" src="assets/images/promotions2.jpg" alt="promotion">
+                    </div>
+                </div>
+                <!-- promo -->
+            </div>
+        </div>
+    </div>
+      <div class="col-sm-13 right-cont right-match match-right-cont right-custom-grid">
+        <div class="bets-container prematch" *ngIf="prematchBets">
+          <div class="row">
+            <h3 class="box-heading">
+              <span>{{'PREMATCH BETS' | translate}}</span>
+              <div class="timeout">{{'Odds update in' | translate}}:
+                <span>{{counter}}</span>
+                <div class="rotate"></div>
+              </div>
+            </h3>
+            <h4 class="box-subheading">
+              <span>{{match.match?.opponent1name | uppercase }}</span>
+              <span>{{match.match?.opponent2name | uppercase }}</span>
+            </h4>
+          </div>
+          <div>
+            <div class="row bets-row" *ngIf="prematchBets.odds?.ah">
+              <div class="col-sm-8 text-right"><span>{{prematchBets.odds?.ah[1]}}</span><strong *ngIf="prematchBets?.odds?.ah && prematchBets.odds?.ah[5] != '0.00'">{{prematchBets.odds?.ah[5]}}</strong>
+                <span *ngIf="prematchBets.odds?.ah[5] == '0.00'"><img src="assets/images/lock-icon.png" alt="lock"></span></div>
+              <div class="col-sm-8 text-center"><span>{{'HANDICAP' | translate}}</span></div>
+              <div class="col-sm-8 text-right"><span>{{prematchBets.odds?.ah[3]}}</span><strong *ngIf="prematchBets.odds?.ah && prematchBets.odds?.ah[7] != '0.00'">{{prematchBets.odds?.ah[7]}}</strong>
+                <span *ngIf="prematchBets.odds?.ah[7] == '0.00'"><img src="assets/images/lock-icon.png" alt="lock"></span></div>
+            </div>
+            <!-- bets row -->
+            <div class="row bets-row" *ngIf="prematchBets.odds?.ou">
+              <div class="col-sm-8 text-right"><span>{{prematchBets.odds?.ou[1]}}</span><strong *ngIf="prematchBets?.odds?.ou && prematchBets.odds?.ou[5] != '0.00'">{{prematchBets.odds?.ou[5]}}</strong>
+                <span *ngIf="prematchBets.odds?.ou[5] == '0.00'"><img src="assets/images/lock-icon.png" alt="lock"></span></div>
+
+              <div class="col-sm-8 text-center"><span>{{'OVER/UNDER' | translate}}</span></div>
+              <div class="col-sm-8 text-right"><span>{{prematchBets.odds?.ou[3]}}</span><strong *ngIf="prematchBets?.odds?.ou && prematchBets.odds?.ou[7] != '0.00'">{{prematchBets.odds?.ou[7]}}</strong>
+                <span *ngIf="prematchBets.odds?.ou[7] == '0.00'"><img src="assets/images/lock-icon.png" alt="lock"></span></div>
+            </div>
+            <!-- bets row -->
+            <div class="row bets-row" *ngIf="prematchBets.odds?.ml">
+              <div class="col-sm-8 text-right"><strong *ngIf="prematchBets?.odds?.ml && prematchBets.odds?.ml[1] != '0.00'">{{prematchBets.odds?.ml[1]}}</strong>
+                <span *ngIf="prematchBets.odds?.ml[1] == '0.00'"><img src="assets/images/lock-icon.png" alt="lock"></span>
+              </div>
+              <div class="col-sm-8 text-center"><span>{{'MONEYLINE' | translate}}</span></div>
+              <div class="col-sm-8 text-right"><strong *ngIf="prematchBets?.odds?.ml && prematchBets.odds?.ml[3] != '0.00'">{{prematchBets.odds?.ml[3]}}</strong>
+                <span *ngIf="prematchBets.odds?.ml[3] == '0.00'"><img src="assets/images/lock-icon.png" alt="lock"></span>
+              </div>
+            </div>
+            <!-- bets row -->
+          </div>
+          <!-- loop -->
+        </div>
+        <!-- bets container -->
+        <div *ngIf="prematchBets">
+          <div class="bets-container row in-play-bets-table">
+            <div>
+              <h3 class="box-heading">
+                <span>{{'IN-PLAY BETS' | translate}}</span>
+                <!--<span class="col-lg-12 com-md-14 com-sm-14 game-running">-->
+                <!--Game running:-->
+                <!--<span>01</span>h <span>01</span>m <span>01</span>s-->
+                <i class="btn-collapse" data-toggle="collapse" data-target="#game-one-collapse"></i>
+                <!--</span>-->
+                <!-- game running -->
+              </h3>
+            </div>
+            <div class="body collapse in" id="game-one-collapse">
+              <div *ngFor="let bet of prematchBets?.new_odds">
+                <div>
+                  <h4 class="box-subheading padding-left-small">
+                    <span>{{bet.n}}</span>
+                  </h4>
+                </div>
+                <div class=" bets-row">
+                  <div class="col-sm-12 text-center display-flex">
+                    <strong>{{bet.o[0][0]}}</strong>
+                    <strong class="odd-btn" [ngClass]="{'lock': bet.o[0][2] == '0.00'}">{{bet.o[0][2]}}</strong>
+                  </div>
+                  <div class="col-sm-12 display-flex">
+                    <strong>{{bet.o[1][0]}}</strong>
+                    <strong class="odd-btn" [ngClass]="{'lock': bet.o[1][2] == '0.00'}">{{bet.o[1][2]}}</strong>
+                  </div>
+                </div>
+                <!-- bets row -->
+              </div>
+              <!-- loop -->
+            </div>
+          </div>
+        </div>
+        <!-- bets container -->
+        <div class="row featured-promotions">
+            <h3 class="box-heading">{{'FEATURED PROMOTIONS' | translate}}</h3>
+            <img class="img-responsive" src="assets/images/promotions.jpg" alt="promotion">
+        </div>
+        <!-- featured promotions -->
+    </div>
+</div>

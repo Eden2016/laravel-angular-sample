@@ -1,0 +1,16 @@
+.ec-datatable tbody tr td {
+    height: 24px;
+}
+
+#matches-table_length {
+    display: none;
+}
+
+.dataTables_paginate.paging_simple_numbers li a {
+    outline: none;
+}
+
+.dataTables_paginate.paging_simple_numbers .paginate_button.active > a {
+    color: #FFF;
+    background-color: #043149;
+}

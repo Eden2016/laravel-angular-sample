@@ -1,0 +1,29 @@
+/* bracket plugin */
+
+
+.bracket-title {
+  display: block;
+  width: 100%;
+  height: 20px;
+  background: black;
+  color: white;
+}
+
+.bracket-holder {
+  display:flex;
+  width: 500px;
+  justify-content: space-around;
+  -webkit-justify-content: space-around;
+  -moz-justify-content: space-around;
+}
+
+.round-holder {
+  float: left;
+}
+.match-holder {
+  margin-bottom: 1px;
+}
+
+.clearfix {
+  clear: both;
+}

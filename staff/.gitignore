@@ -1,0 +1,11 @@
+/.vagrant
+/vendor
+/node_modules
+/public/storage
+/public/bower_components
+Homestead.yaml
+Homestead.json
+.env
+.DS_Store
+/.idea
+public/uploads

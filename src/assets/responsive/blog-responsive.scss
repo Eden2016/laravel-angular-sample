@@ -1,0 +1,382 @@
+@media (max-width: 1750px) {
+    .main-content {
+        .content-container {
+            .blog-page-section {
+                .blog-content {
+                    padding: 80px 100px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1600px) {
+    .main-content {
+        .content-container {
+            .blog-page-section {
+                .blog-content {
+                    padding: 69px 46px;
+
+                    .blog-med {
+                        width: 100%;
+                    }
+
+                    .img-responsive {
+                        width: 100%;
+                    }
+
+                    .blog-tour-image {
+                        width: 100%;
+                    }
+
+                    .blog-tour-content {
+                        width: 100%;
+                        margin-top: 10px;
+                        & > .row {
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1400px) {
+    .main-content {
+        .content-container {
+            .blog-page-section {
+                .blog-content {
+                    .containet-embded-mathes {
+                        position: relative;
+                        display: -webkit-flex;
+                        display: flex;
+                        -webkit-justify-content: center;
+                        justify-content: center;
+                        width: 100%;
+                        height: 366px;
+                    }
+
+                    .containet-embded-game {
+                        @extend .containet-embded-mathes;
+                    }
+
+                    .embed {
+                        &.video-embed {
+                            width: 100%;
+                            iframe {
+                                width: 100%;
+                            }
+                        }
+                    }
+
+                    .embed {
+                        &.matches-embed {
+                            margin-left: 0;
+                            max-width: 572px;
+                            float: left !important;
+                        }
+                    }
+
+                    .embed  {
+                        &.game-embed {
+                            width: 517px;
+                            margin-left: 0;
+                            .avatar {
+                                img {
+                                    width: 68px;
+                                }
+                            }
+                        }
+                    }
+
+                    img {
+                        &.pull-left {
+                            padding-right: 0;
+                            width: 100%;
+                        }
+                    }
+                }
+
+                .blog-content {
+                    .embed.table-embed {
+                        width: 100%;
+                        th {
+                            width: 244px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .main-content {
+        .content-container {
+            .blog-page-section {
+                .blog-content {
+                    .container-embed-profile {
+                        width: 100%;
+                        display: -webkit-flex;
+                        display: flex;
+                        -webkit-justify-content: center;
+                        justify-content: center;
+                    }
+
+                    .containet-embded-game {
+                        height: auto;
+                    }
+
+                    .response-mathes {
+                        height: auto !important;
+                    }
+
+                    .embed {
+                        &.table-embed {
+                            td {
+                                span {
+                                    width: 100%;
+                                    display: block;
+                                    margin-top: 7px;
+                                }
+                                img {
+                                    margin-right: 0;
+                                }
+                            }
+                        }
+
+                        &.game-embed {
+                            .team-roster {
+                                .roster {
+                                    & > div {
+                                        &:last-child {
+                                            .avatar {
+                                                margin-right: 5px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        &.matches-embed {
+                            padding: 42px 0 0;
+                            width: 100%;
+                            display: -webkit-flex;
+                            display: flex;
+                            -webkit-flex-direction: column;
+                            flex-direction: column;
+                            -webkit-align-items: center;
+                            align-items: center;
+                            .single-match {
+                                display: -webkit-flex;
+                                display: flex;
+                                -webkit-flex-direction: column;
+                                flex-direction: column;
+                                .score {
+                                    margin: 13px 0;
+                                    display: -webkit-flex;
+                                    display: flex;
+                                    -webkit-justify-content: center;
+                                    justify-content: center;
+                                }
+                            }
+                        }
+                        &.upcoming-match-embed {
+                            padding: 20px 20px;
+                            width: 100% !important;
+                            .vs {
+                                width: 43px;
+                            }
+                        }
+
+                        &.scoreboard-embed {
+
+                            .scoreboard-cont {
+                                padding: 15px 5px 1px 5px;
+                            }
+
+                            table {
+
+                                td {
+                                    &.heroes-list {
+                                        &:first-child {
+                                            margin-right: 3px;
+                                        }
+                                    }
+                                }
+
+                                .stats {
+                                    padding: 0 5px;
+
+                                }
+                            }
+                        }
+                        &.tournament-embed {
+                            .blog-tour {
+
+                            }
+                        }
+                        &.game-embed {
+
+                            .avatar {
+                                img {
+                                    width: 100%;
+                                    max-width: 100%;
+                                }
+                            }
+
+                            .team-roster {
+                                .roster {
+                                    flex-wrap: wrap;
+                                    -webkit-flex-wrap: wrap;
+                                    -webkit-justify-content: center;
+                                    justify-content: center;
+                                    & > div {
+                                        width: 33.3%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1130px) {
+    .main-content {
+        .content-container {
+            .blog-page-section {
+                .blog-content {
+                    .blog-tour-content {
+                        .blog-tour-loc {
+                            width: 100%;
+                        }
+                    }
+
+                    .embed {
+                        &.tournament-embed {
+                            .tour-title {
+                                &.top {
+                                    padding: 3px 0 0 0;
+                                }
+                            }
+
+                            .tour-desc {
+                                &.left {
+                                    margin-left: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        .content-container {
+            .blog-page-section {
+
+                .blog-title {
+                    display: -webkit-flex;
+                    position: relative;
+                    -webkit-align-items: center;
+                    align-items: center;
+                    display: flex;
+                    height: 40px;
+                    top: -14px;
+                    img {
+                        top: -1px;
+                    }
+                }
+
+                width: 100%;
+                margin: 0;
+                & > div {
+                    padding: 0;
+                }
+
+                .blog-content {
+                    .embed {
+                        &.player-profile-embed {
+                            margin-left: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .main-content {
+        .content-container {
+            .blog-page-section {
+                .blog-content {
+                    padding: 40px 10px;
+                    h1 {
+                        font-size: 1.92em;
+                    }
+                    p {
+                        &.date-posted {
+                            margin-bottom: 34px;
+                        }
+                    }
+                    .embed {
+                        &.player-profile-embed {
+                            .stat-in {
+                                .heroes {
+                                    .heroes-cont {
+                                        .stat-content {
+                                            .statistic {
+                                                width: 60px;
+                                            }
+                                        }
+                                    }
+                                }
+                                .player {
+                                    img {
+                                        max-width: 100%;
+                                    }
+                                }
+                            }
+                        }
+
+                        &.upcoming-match-embed {
+                            .text-right {
+                                img {
+                                    position: relative;
+                                    right: 20px;
+                                }
+                            }
+                        }
+
+                        &.scoreboard-embed {
+                            .scoreboard-cont {
+                                display: none;
+                            }
+                        }
+
+                        &.tournament-embed {
+                            .medals-cont {
+                                &.tour-marg {
+                                    margin: 0;
+                                    width: 250px;
+                                    height: 146px;
+                                    background-size: contain;
+                                    padding: 98px 11px 0 9px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

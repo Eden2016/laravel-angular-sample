@@ -1,0 +1,176 @@
+@media (max-width: 1900px) {
+  .main-content .content-container .main-conntent .table > thead > tbody > tr > td {
+    padding: 2px 1%; }
+  .main-content .content-container .main-conntent .table > thead > tr > td {
+    padding: 2px 1%; } }
+@media (max-width: 1900px) and (min-width: 1600px) {
+  .main-content .content-container .main-conntent .right-cont .group-stage .schedule .table.tour tbody tr td:last-child {
+    padding-right: 10px; }
+  .main-content .content-container .main-conntent .right-cont .group-stage .schedule .table.tour tbody tr td:nth-child(1) {
+    padding-left: 5px; }
+  .main-content .content-container .main-conntent .right-cont .group-stage .schedule .table tbody tr td.vs {
+    padding: 2px 5px; } }
+@media (max-width: 1750px) {
+  .main-content .content-container .main-conntent .table > tbody > tr > td {
+    padding: 2px .1%;
+    letter-spacing: -.5px; } }
+@media (max-width: 1700px) {
+  .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-hand.tour .bets-first-hand.over-tour {
+    padding: 8px 0 0 12px; }
+  .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-hand.tour .bets-second-hand.over-tour {
+    padding: 12px 0 0 12px; }
+  .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-hand.tour .bets-first-hand:before {
+    left: 8px; }
+  .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-hand.tour .bets-second-hand:before {
+    left: 8px; } }
+@media (min-width: 1366px) and (max-width: 1600px) {
+  .main-content .content-container .main-conntent .tournament-change-position .right-cont .right-part .bets-cont .bets-hand .bets-first-hand {
+    -webkit-justify-content: center;
+    justify-content: center;
+    padding-right: 22px; }
+  .main-content .content-container .main-conntent .tournament-change-position .right-cont .right-part .bets-cont .bets-hand .bets-second-hand {
+    -webkit-justify-content: center;
+    justify-content: center;
+    padding-right: 22px; }
+
+  .main-content .content-container .main-conntent .table > tbody > tr > td {
+    padding: 2px 0;
+    letter-spacing: 0;
+    font-size: .6em; }
+  .main-content .content-container .main-conntent .left-cont .video-bg iframe.tour-iframe {
+    height: 440px; } }
+@media (max-width: 1600px) {
+  .main-content .content-container .main-conntent .tournament-change-position {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column; }
+    .main-content .content-container .main-conntent .tournament-change-position > div:nth-child(1) {
+      order: 2; }
+    .main-content .content-container .main-conntent .tournament-change-position > div:nth-child(2) {
+      order: 1; }
+    .main-content .content-container .main-conntent .tournament-change-position > div:nth-child(3) {
+      order: 3; }
+  .main-content .content-container .main-conntent .left-cont .statistics {
+    margin-bottom: 15px; }
+    .main-content .content-container .main-conntent .left-cont .statistics .tour-border:nth-child(1) {
+      border-right: 2px solid #222222; }
+    .main-content .content-container .main-conntent .left-cont .statistics .m-left.tour-less {
+      margin: 0; }
+  .main-content .content-container .main-conntent .left-cont .news .cont-news.tour-less {
+    margin: 0; }
+  .main-content .content-container .main-conntent .left-cont .news .cont-news.m-left.tour-less {
+    border-left: 1px solid #222222; }
+  .main-content .content-container .main-conntent .left-cont .news .cont-news.m-right.tour-less {
+    border-right: 1px solid #222222; }
+  .main-content .content-container .main-conntent .right-cont .group-stage-container.tour-less {
+    padding-left: 15px; }
+  .main-content .content-container .main-conntent .left-full-grid {
+    width: 100%; }
+  .main-content .content-container .main-conntent .right-full-grid {
+    width: 100%; }
+    .main-content .content-container .main-conntent .right-full-grid .right-cont {
+      padding-left: 0;
+      margin-top: 15px; } }
+@media (max-width: 1450px) {
+  .main-content .content-container .main-conntent .tournament .tournament-content .tour-list.tourn-page {
+    max-width: 230px; }
+  .main-content .content-container .main-conntent .tournament .tournament-content .right-desc-list.tour-position {
+    top: 78%; }
+  .main-content .content-container .main-conntent .tournament .tournament-content .tour-info .tour-position {
+    top: 100%; } }
+@media (max-width: 1366px) {
+  .main-content .content-container .main-conntent .outright .teams-container.slick-current {
+    right: 0; } }
+@media (max-width: 1250px) {
+  .main-content .content-container .main-conntent .table > tbody > tr > td {
+    padding: 2px 1%;
+    letter-spacing: -.5px; } }
+@media (max-width: 1200px) and (min-width: 768px) {
+  .main-content .content-container .main-conntent .right-cont .group-stage-container .playoffs {
+    letter-spacing: -1px; }
+  .main-content .content-container .main-conntent .right-cont .group-stage-container .playoffs img {
+    width: 13px; }
+  .main-content .content-container .main-conntent .tournament .tournament-content .right-desc-list.tour-position {
+    top: 47%; }
+  .main-content .content-container .main-conntent .tournament .tournament-content .tour-info .tour-position {
+    top: 72%; }
+  .main-content .content-container .main-conntent .right-cont .group-stage-container.tour-less .group-a {
+    width: 100%;
+    padding: 0; }
+  .main-content .content-container .main-conntent .right-cont .group-stage-container.tour-less .group-b {
+    margin-top: 10px;
+    width: 100%;
+    padding: 0; }
+  .main-content .content-container .main-conntent .right-cont .group-stage-container.tour-less .schedule-a {
+    width: 100%;
+    padding: 0; }
+  .main-content .content-container .main-conntent .right-cont .group-stage-container.tour-less .schedule-b {
+    margin-top: 10px;
+    width: 100%;
+    padding: 0; } }
+@media (max-width: 991px) {
+  .np-mobile {
+    width: 100% !important;
+    padding-right: 0 !important; }
+
+  .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-ml.tour .bets-first-ml span {
+    margin: 7px 0 0 10px; }
+  .main-content .content-container .main-conntent .right-cont .right-part .bets-cont .bets-ml.tour .bets-second-ml span {
+    margin: 13px 0 0 10px; }
+  .main-content .content-container .main-conntent .tournament .tournament-content .right-desc-list.tour-position {
+    top: 59%;
+    left: -170%;
+    width: 225px; }
+  .main-content .content-container .main-conntent .tournament .tournament-content .tour-info .tour-position {
+    top: 80%; }
+  .main-content .content-container .main-conntent .left-cont .news .cont-news.m-left.tour-less {
+    margin-top: 10px; } }
+@media (max-width: 768px) {
+  .main-content .content-container .main-conntent .left-cont .statistics .part {
+    width: 50%; } }
+@media (max-width: 480px) {
+  h3.box-heading .group {
+    font-size: .6em; }
+
+  .main-content .content-container .main-conntent .right-cont .playoffs .rounds .round {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column; }
+  .main-content .content-container .main-conntent .right-cont .playoffs .bracket-cont .bracket-round {
+    width: 60px; }
+    .main-content .content-container .main-conntent .right-cont .playoffs .bracket-cont .bracket-round .bracket-pair.final:after {
+      display: none; }
+    .main-content .content-container .main-conntent .right-cont .playoffs .bracket-cont .bracket-round .bracket-pair:nth-child(odd):after {
+      width: 20px;
+      left: calc(100% + 10px);
+      background-size: 100% 100%; }
+    .main-content .content-container .main-conntent .right-cont .playoffs .bracket-cont .bracket-round .bracket-pair:nth-child(even):after {
+      width: 20px;
+      left: calc(100% + 10px);
+      background-size: 100% 100%; }
+    .main-content .content-container .main-conntent .right-cont .playoffs .bracket-cont .bracket-round .bracket-pair .opponent {
+      padding: 0 1px 0 1px; }
+  .main-content .content-container .main-conntent .table > tbody > tr > td {
+    padding: 2px 6px !important; }
+  .main-content .content-container .main-conntent .topics .game .top-cont.game-date {
+    font-size: .5em; }
+  .main-content .content-container .main-conntent .topics .game .top-cont.game-status {
+    margin: 13px 0 0 0;
+    font-size: .6em; }
+  .main-content .content-container .main-conntent .topics .game .top-cont.game-desc {
+    font-size: .7em; }
+  .main-content .content-container .main-conntent .left-cont .statistics .tour-border:nth-child(1) {
+    border-right: none; }
+  .main-content .content-container .main-conntent .left-cont .statistics .m-left.tour-less {
+    margin-top: 10px; }
+  .main-content .content-container .main-conntent .left-cont .statistics .part {
+    width: 100%; }
+  .main-content .content-container .main-conntent .participans .participans-slider .partic-row {
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap; }
+    .main-content .content-container .main-conntent .participans .participans-slider .partic-row .participan {
+      width: 50%; }
+      .main-content .content-container .main-conntent .participans .participans-slider .partic-row .participan:nth-child(2) {
+        border-right: none; } }

@@ -1,0 +1,3243 @@
+//  px to em Fonts
+@function emy($pxsize) {
+    @return ($pxsize/16)+em;
+}
+
+@font-face {
+  font-family: 'Arial';
+  src: url('fonts/arial.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Arial-Bold';
+  src: url('fonts/arial_bold.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+    font-size: 100%;
+    font-family: 'Arial-Bold', sans-serif;
+    font-weight: bold;
+}
+
+.main-content {
+    padding: 0 0 104px 0;
+    background: $gray-dark-bg;
+
+//  Header
+    .header {
+        -webkit-transition: .3s ease;
+        -moz-transition: .3s ease;
+        -ms-transition: .3s ease;
+        transition: .3s ease;
+        position: fixed;
+        width: 100%;
+        z-index: 5;
+        top: 0;
+        .hide {
+            -webkit-transform: translateY(-70px);
+            -moz-transform: translateY(-70px);
+            -ms-transform: translateY(-70px);
+            transform: translateY(-70px);
+        }
+        #top-navbar {
+            background: $gray-dark-header;
+            color: #fff !important;
+            border: none;
+            border-bottom: 1px solid $yellow;
+            border-radius: 0px;
+            height: 71px;
+            margin: 0;
+        }
+        #logo-188bet {
+            padding: 0;
+            width: 66px;
+            height: 44px;
+            margin: 13px 17px 13px 0;
+            background-image: url(../assets/images/logos-icons.svg);
+        }
+
+        .navbar-nav {
+            li {
+                a {
+                    font-family: 'Arial', sans-serif;
+                    padding: 25px 9px;
+                    font-size: 11px;
+                    color: #b4b4b4;
+                    &:hover {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+
+        .wrapper-header {
+            -webkit-justify-content: space-between;
+            justify-content: space-between;
+            display: -webkit-flex;
+            padding-left: 22px;
+            margin: 0 auto;
+            display: flex;
+            width: 76%;
+
+            .menu-products {
+                text-transform: uppercase;
+            }
+
+            .nav-login {
+                display: -webkit-flex;
+                display: flex;
+                -webkit-flex-direction: column;
+                flex-direction: column;
+                -webkit-align-items: flex-end;
+                align-items: flex-end;
+                width: 500px;
+                .lang-cont {
+                    padding: 10px 0 7px 0px;
+                    display: -webkit-flex;
+                    font-size: 12px;
+                    color: #b4b4b4;
+                    display: flex;
+                    height: 34px;
+                    .nav-time {
+
+                    }
+                    .lang-website {
+                        button {
+                        	background: transparent;
+    						border: none;
+                        }
+
+                        img {
+                        	height:16px;
+                        	margin-left:5px;
+                        }
+
+                        .dropdown-menu {
+                        	min-width:60px;
+
+                        	a {
+                        		display:flex;
+                        		display:-webkit-flex;
+                        		display:-moz-flex;
+                        		justify-content: space-between;
+                        		-webkit-justify-content: space-between;
+                        		-moz-justify-content: space-between;
+                        		padding: 3px 5px;
+                        		cursor: pointer;
+                        	}
+                        }
+                    }
+                }
+
+                form {
+                    display: -webkit-flex;
+                    display: flex;
+                    .question {
+                        border: 1.5px solid #fff;
+                        background: #525252;
+                        display: inline-block;
+                        border-radius: 3px;
+                        text-align: center;
+                        line-height: 24px;
+                        font-weight: bold;
+                        font-family: 'Arial-Bold', sans-serif;
+                        cursor: pointer;
+                        font-size: 16px;
+                        font-size: 13px;
+                        color: #b4b4b4;
+                        height: 28px;
+                        width: 26px;
+                        padding: 0;
+                        left: -2px;
+                        z-index: 3;
+                    }
+                    .username-content {
+                        width: 147px;
+                        font-family: 'Arial', sans-serif;
+                        input {
+                            letter-spacing: -.5px;
+                            box-shadow: none;
+                            padding: 3px 14px;
+                            height: 28px;
+                            outline: none;
+                            border: none;
+
+                            &::-webkit-input-placeholder {
+                                text-transform: uppercase;
+                                font-size: 12px;
+                            }
+                            &::-moz-placeholder {
+                                text-transform: uppercase;
+                                font-size: 12px;
+                            }
+                            &:-ms-input-placeholder {
+                                text-transform: uppercase;
+                                font-size: 12px;
+                            }
+                            &:-moz-placeholder {
+                                text-transform: uppercase;
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                    .password-content {
+                        width: 147px;
+                        font-family: 'Arial', sans-serif;
+                        margin-left: 7px;
+                        input {
+                            letter-spacing: -.5px;
+                            box-shadow: none;
+                            padding: 3px 14px;
+                            height: 28px;
+                            outline: none;
+                            border: none;
+                            &::-webkit-input-placeholder {
+                                text-transform: uppercase;
+                                font-size: 12px;
+                            }
+                            &::-moz-placeholder {
+                                text-transform: uppercase;
+                                font-size: 12px;
+                            }
+                            &:-ms-input-placeholder {
+                                text-transform: uppercase;
+                                font-size: 12px;
+                            }
+                            &:-moz-placeholder {
+                                text-transform: uppercase;
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                    button[type=submit] {
+                        text-transform: uppercase;
+                        background: #b4b4b4;
+                        color: $gray-dark-header;
+                        font-size: emy(16);
+                        padding: 6px 22px;
+                        width: auto;
+                        font-family: 'Arial', sans-serif;
+                        margin-left: 7px;
+                    }
+                }
+
+                .sign-up {
+                    text-transform: uppercase;
+                    background: $yellow;
+                    color: #fff;
+                    font-size: emy(16);
+                    padding: 6px 23px;
+                    width: auto;
+                    font-family: 'Arial', sans-serif;
+                    margin-left: 7px;
+                    margin-right: 6px;
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+
+    //    Container content
+    .content-container {
+        display: -webkit-flex;
+        padding-top: 91px;
+        display: flex;
+        width: 100%;
+
+        .burger {
+            visibility: hidden;
+            border-radius: 2px 2px 2px 2px;
+            position: absolute;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-direction: column;
+            flex-direction: column;
+            -webkit-align-items: center;
+            align-items: center;
+            -webkit-justify-content: space-around;
+            justify-content: space-around;
+            background: #b3b3b3;
+            cursor: pointer;
+            padding: 3px 0;
+            height: 30px;
+            width: 37px;
+            left: 10px;
+            z-index: 3;
+            top: 73px;
+            span {
+                display: -webkit-flex;
+                display: flex;
+                -webkit-flex-direction: column;
+                flex-direction: column;
+                background: #000;
+                height: 3px;
+                width: 70%;
+            }
+            &.active {
+                display: block;
+                span {
+                    &:nth-child(1) {
+                        -webkit-transform: rotate(45deg);
+                        -moz-transform: rotate(45deg);
+                        transform: rotate(45deg);
+                        position: relative;
+                        margin: 0 auto;
+                        width: 26px;
+                        top: 10px;
+                    }
+                    &:nth-child(2) {
+                        display: none;
+                    }
+                    &:nth-child(3) {
+                        -webkit-transform: rotate(-45deg);
+                        -moz-transform: rotate(-45deg);
+                        transform: rotate(-45deg);
+                        position: relative;
+                        margin: 0 auto;
+                        width: 26px;
+                        top: 7.5px;
+                    }
+                }
+            }
+        }
+
+        //    Right sidebar
+        .sidebar-menu {
+            width: 253px;
+            position: relative;
+            padding: 0 15px 0 20px;
+
+            //    Menu
+            .menu {
+                padding: 0;
+                color: #fff;
+                list-style: none;
+
+                .panel  {
+                    margin-bottom: 0;
+                    background-color: transparent;
+                    border: none;
+                    border-radius: 0;
+                    -webkit-box-shadow: none;
+                    box-shadow: none;
+                }
+
+
+                .main-menu {
+                    border-top: 1px solid #555555;
+                    border-bottom: 1px solid $gray-dark-header;
+                    background: $gray-header;
+                    font-size: 16px;
+                    a {
+                        width: 100%;
+                        color: #808080;
+                        display: block;
+                        text-decoration: none;
+                        font-size: emy(13);
+                        text-transform: uppercase;
+                        padding: 9px 0 5px;
+                        position: relative;
+                        .arrow-top {
+                            position: absolute;
+                            right: 5px;
+                            top: 14px;
+                            span {
+                                width: 16px;
+                                height: 10px;
+                                display: block;
+                                background-image: url(../assets/images/arrow-menu.png);
+                                background-position: -19px 0;
+                            }
+                        }
+
+                        &.active {
+                            color: #fff;
+                            .arrow-top {
+                                span {
+                                    background-position: 0 0;
+                                }
+                            }
+                        }
+
+                        &:hover {
+                            @extend .active;
+                        }
+
+
+                    }
+                }
+
+                .sub-menu {
+                    padding: 0;
+                    list-style: none;
+                    &:after {
+                        content: '';
+                        width: 100%;
+                        height: 11px;
+                        display: block;
+                        background: $gray-dark-header;
+                    }
+                    &.active {
+                        height: auto;
+                        background: $gray-dark-header;
+                    }
+                    & > li {
+                        border-top: 1px solid #555555;
+                        border-bottom: 1px solid $gray-dark-header;
+
+                        &.active {
+                            a {
+                                color: #fff;
+                                background: #787878;
+                            }
+                        }
+
+                        &:hover {
+                            @extend .active;
+                        }
+
+                        a {
+                            display: block;
+                            color: #d6d6d6;
+                            font-size: 12px;
+                            background: $gray-header;
+                            padding: 10.5px 11px;
+                            text-decoration: none;
+                        }
+                        &.title {
+                            color: #d6d6d6;
+                            font-size: 13px;
+                            background: $gray-dark-header;
+                            padding: 10px 11px;
+                            border-top: 1px solid $gray-dark-header;
+                            border-bottom: 1px solid $gray-dark-header;
+                        }
+                    }
+                }
+
+                img {
+                    width: 25px;
+                    height: 24px;
+                    margin-left: 7px;
+                }
+                span {
+                    margin-left: 10px;
+                }
+            }
+
+            //    Banner
+
+            .banner {
+                margin-top: 15px;
+                img {
+                    width: 100%;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        //    Main content
+        .main-conntent {
+            width: calc(100% - 579px);
+            font-size: 16px;
+
+            .mobile-part {
+                display: none;
+                padding-right: 9px;
+                background: #363636;
+
+                & > div {
+                    display: -webkit-flex;
+                    display: flex;
+                    -webkit-align-items: center;
+                    align-items: center;
+                    -webkit-justify-content: flex-end;
+                    justify-content: flex-end;
+                    text-align: right;
+                    color: #fff;
+                    font-weight: 100;
+                    font-size: 9px;
+                    text-transform: uppercase;
+                    opacity: .5;
+                }
+
+                .m-game {
+                    height: 58px;
+                }
+                .m-match {
+                    height: 63px;
+                }
+                .m-handicap, .m-moneyline, .m-over, .m-morebets  {
+                    height: 31px;
+                }
+            }
+
+            //    Topics
+            .topics {
+                font-size: 16px;
+                .game {
+                    background: #fff;
+                    margin-bottom: 1px;
+                    cursor: pointer;
+                    height: 40px;
+                    &:hover {
+                        background: #EAEAEA;
+                    }
+                    &.grey {
+                        background: $gray-light;
+                        &:hover {
+                            background: #fff;
+                            .arrow-gray {
+                                background-position: -38px 0 !important;
+                            }
+
+                        }
+                    }
+                    .top-cont {
+                        display: -webkit-flex;
+                        display: flex;
+
+                        &.game-date {
+                            font-size: emy(13);
+                            font-weight: 700;
+                            font-family: 'Arial-Bold', sans-serif;
+                            height: 40px;
+                            color: #000;
+                            display: -webkit-flex;
+                            display: flex;
+                            -webkit-align-items: center;
+                            align-items: center;
+                            padding-top: 3px;
+
+                            img {
+                                margin: 0 13px 0 12px;
+                                position: relative;
+                                height: 20px;
+                                width: 20px;
+                            }
+                        }
+
+                        &.game-status {
+                            color: #4d4d4d;
+                            font-size: emy(13);
+                            font-weight: 700;
+                            font-family: 'Arial-Bold', sans-serif;
+                            margin: 13px 0 0 6px;
+                        }
+
+                        &.game-desc {
+                            font-size: emy(13);
+                            margin: 10px 0 0 12px;
+                            letter-spacing: -0.3px;
+                            position: relative;
+                            padding-right: 10px;
+                            height: 40px;
+                            display: block;
+                            padding-top: 3px;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            color: #333;
+                            .arrow-top {
+                                background-image: url(../assets/images/arrow-menu.png);
+                                background-position: -38px 0;
+                                position: absolute;
+                                height: 11px;
+                                width: 14px;
+                                right: 14px;
+                                top: 15px;
+                                &.arrow-gray {
+                                    background-image: url(../assets/images/arrow-menu.png);
+                                    background-position: -20px 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .left-cont {
+                padding-right: 18px;
+
+                &.tour-in-left {
+                    //margin-top: 10px !important;
+                }
+
+                //    All title
+                .main-title-logo {
+                    text-transform: uppercase;
+                    background: $gray-header;
+                    font-size: emy(12);
+                    font-weight: 700;
+                    font-family: 'Arial-Bold', sans-serif;
+                    color: #d5d5d5;
+                    padding: 8px 0;
+                    margin: 0;
+                    img {
+                        width: 24px;
+                        margin: 0px 11px 0 8px;
+                    }
+                }
+
+                .main-title {
+                    @extend .main-title-logo;
+
+                    &.only-text {
+                        padding: 13px 16px;
+                    }
+
+                    &.m-top {
+                        margin-top: 16px;
+                    }
+
+                    &.fixed-height {
+                        height: 40px;
+                        display: -webkit-flex;
+                        display: flex;
+                        -webkit-align-items: center;
+                        align-items: center;
+                        -webkit-justify-content: space-between;
+                        justify-content: space-between;
+                        padding-left: 16px;
+                        font-weight: 700;
+                        font-family: 'Arial-Bold', sans-serif;
+                    }
+
+                    &.reverce {
+                        display: -webkit-flex;
+                        display: flex;
+                        -webkit-justify-content: space-between;
+                        justify-content: space-between;
+                        span {
+                            display: -webkit-flex;
+                            display: flex;
+                            -webkit-align-items: center;
+                            align-items: center;
+                        }
+                    }
+                }
+
+                //    Played teams
+                .video-info {
+                    display: -webkit-flex;
+                    display: flex;
+                    -webkit-align-items: center;
+                    align-items: center;
+                    -webkit-justify-content: space-between;
+                    justify-content: space-between;
+                    background: $gray-dark-header;
+                    height: 30px;
+                    margin-top: 4px;
+                    position: relative;
+
+                    .game-info {
+                        display: -webkit-flex;
+                        display: flex;
+                        -webkit-align-items: baseline;
+                        align-items: baseline;
+                        .flag {
+                            width: 22px;
+                            height: 22px;
+                            margin-left: 9px;
+                        &.rev {
+                            margin-left: 11px;
+                        }
+                    }
+
+                    .team {
+                        font-size: emy(12);
+                        font-family: 'Arial', sans-serif;
+                        color: #fff;
+                        margin-left: 7px;
+
+                        &.rev {
+                            margin-left: 7px;
+                        }
+                    }
+                    .vs {
+                            font-size: emy(12);
+                            font-family: 'Arial', sans-serif;
+                            color: #999999;
+                            margin-left: 6px;
+                        }
+                    }
+
+                    .leng-cont {
+                        margin-right: 35px;
+                        .lang {
+                            display: -webkit-flex;
+                            display: flex;
+                            -webkit-align-items: center;
+                            align-items: center;
+                            font-family: 'Arial', sans-serif;
+                            font-size: emy(10);
+                            .lent-title {
+                                color: #b3b3b3;
+                            }
+                            .language {
+                                margin-left: 3px;
+                                color: #fff;
+                            }
+                            .lang-flag {
+                                margin-left: 5px;
+                                margin-right: 5px;
+                                img {
+                                    width: 23px;
+                                }
+                            }
+
+                          .left-cont .video-info .leng-cont .lang .lang-flag {
+                            margin-right: 5px;
+                          }
+
+                          .left-cont .video-info .leng-cont {
+                            margin-right: 35px;
+                          }
+
+                          ul {
+                            padding: 0;
+                            margin: 0;
+                            position: absolute;
+                            right: 0px;
+                            top: 4px;
+                            z-index: 2;
+                            background:#363636;
+                            list-style: none;
+
+                            li {
+                              display: none;
+                              &.active {
+                                display: list-item !important;
+                              }
+                            }
+                            &.open li {
+                              display: list-item !important;
+                            }
+                          }
+                        }
+                    }
+                }
+
+                // Video
+
+                .video-bg {
+                   background: #000000;
+                   span{
+                     padding: 10px;
+                     color: #fff;
+                     display:block;
+                    }
+                    iframe {
+                      width: 100%;
+                      border: none;
+                      height: 343px;
+                      overflow: hidden;
+                      margin-top: 21px;
+                    }
+                }
+
+                .game-slide {
+                    position: relative;
+                    svg {
+                        width: 30px;
+                        height: 30px;
+                    }
+                    .next {
+                        position: absolute;
+                        right: -11px;
+                        top: 29px;
+                        fill: #fff;
+                        cursor: pointer;
+                    }
+                    .prev {
+                        transform: rotate(180deg);
+                        position: absolute;
+                        top: 30px;
+                        fill: #fff;
+                        z-index: 1;
+                        left: -12px;
+                    }
+
+                    .slick-slide {
+                        margin-right: 3px;
+                        margin-left: 3px;
+                        cursor: pointer;
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+
+                //    News
+              .stream-box {
+                margin-bottom: 15px;
+              }
+                .news {
+                    position: relative;
+
+                    &.big {
+                        margin-top: 15px;
+                    }
+
+                    .cont-news {
+                        background: #fff;
+                        &.grey {
+                            background: $gray-light;
+                        }
+                        &.m-right {
+                            margin-right: 4px;
+                        }
+                        &.m-left {
+                            margin-left: 4px;
+                        }
+                        .date {
+                            right: 18px;
+                            color: #cccccc;
+                            margin-top: 7px;
+                            position: absolute;
+                            text-transform: capitalize;
+                        }
+
+                        .post {
+                            padding: 10px 11px 31px 11px;
+                            position: relative;
+                            min-height: 145px;
+                            font-size: 16px;
+                            img {
+                                width: 100%;
+                            }
+                            &.big {
+                                padding: 10px 11px 11px 11px;
+                            }
+                            .post-title {
+                                font-size: emy(16);
+                                margin: 15px 0 0px 5px;
+                                font-weight: 700;
+                                font-family: 'Arial-Bold', sans-serif;
+                                line-height: 19px;
+                            }
+                            .post-desc {
+                                font-size: emy(12);
+                                margin: 8px 0px 0 4px;
+                                line-height: 14px;
+                            }
+
+                            .big-news {
+                                position: absolute;
+                                bottom: 12px;
+                                color: #fff;
+                                .post-title {
+                                    color: $yellow;
+                                    font-size: emy(20);
+                                    max-width: 317px;
+                                    margin: 0px 0 12px 27px;
+                                    line-height: 23px;
+                                }
+                                .post-desc {
+                                    max-width: 352px;
+                                    margin: 0px 0 29px 27px;
+                                    letter-spacing: 0.2px;
+                                    line-height: 15px;
+                                }
+
+                            }
+
+                            .read-more {
+                                background-image: url(../assets/images/shadow-grey.png);
+                                background-repeat: no-repeat;
+                                background-position: bottom;
+                                background-size: 100% 100%;
+                                display: -webkit-flex;
+                                display: flex;
+                                -webkit-align-items: flex-end;
+                                align-items: flex-end;
+                                position: absolute;
+                                height: 78px;
+                                width: 100%;
+                                bottom: 0;
+                                left: 0;
+                                &.big {
+                                    background-image: url(../assets/images/shadow-dark.png);
+                                    width: calc(100% - 22px);
+                                    height: 62px;
+                                    margin: 0px 0px 12px 11px;
+                                    a {
+                                        color: #fff;
+                                    }
+                                }
+                                a {
+                                    text-decoration: none;
+                                    color: #000;
+                                    font-size: emy(10);
+                                    position: relative;
+                                    bottom: 11px;
+                                    left: 17px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                //    Statistics
+
+                .statistics {
+                    margin-top: 14px;
+                    font-size: 16px;
+
+                    .m-right {
+                        margin-right: 4px;
+                    }
+
+                    .m-left {
+                        margin-left: 4px;
+                    }
+
+                    .stat-title {
+                        letter-spacing: 0.1px;
+                        margin: 1px 0 0 15px;
+                        font-weight: 700;
+                        font-family: 'Arial-Bold', sans-serif;
+                        color: #d5d5d5;
+                        &.p-left {
+                            margin-left: 15px;
+                        }
+                    }
+                    .stat-game {
+                        text-transform: capitalize;
+                        color: #999999;
+                    }
+
+                    .stat-blocks {
+                        .stat-container {
+                            .stat-in {
+                                background: #e6e6e6;
+                                padding-bottom: 8px;
+                                .stat-desc {
+                                    .double {
+                                        margin-top: 12px;
+                                        .nickname {
+                                            font-size: emy(16);
+                                            font-weight: 700;
+                                            font-family: 'Arial-Bold', sans-serif;
+                                            padding-left: 7px;
+                                            overflow: hidden;
+                                            text-overflow:ellipsis;
+                                        }
+
+                                        .flag-content {
+                                            display: -webkit-flex;
+                                            display: flex;
+                                            -webkit-justify-content: flex-end;
+                                            justify-content: flex-end;
+                                            padding-right: 9px;
+
+                                            img {
+                                                width: 30px;
+                                                height: 30px;
+                                            }
+                                        }
+                                        &.fix-h {
+                                            min-height: 42px;
+                                        }
+                                    }
+                                    .name {
+                                        font-size: emy(12);
+                                        padding-left: 8px;
+                                        font-weight: 700;
+                                        font-family: 'Arial-Bold', sans-serif;
+                                        line-height: 10px;
+                                        white-space: nowrap;
+                                        text-overflow: ellipsis;
+                                        overflow: hidden;
+                                        padding-right: 10px;
+                                    }
+                                    .teams {
+                                        font-size: emy(12);
+                                        padding-left: 7px;
+                                        font-weight: 700;
+                                        font-family: 'Arial-Bold', sans-serif;
+                                        margin-top: 5px;
+                                        white-space: nowrap;
+                                        overflow: hidden;
+                                        text-overflow: ellipsis;
+                                        span {
+                                            font-family: 'Arial', sans-serif;
+                                            font-weight:400;
+                                        }
+                                    }
+                                    .wins {
+                                        font-size: emy(12);
+                                        padding-left: 8px;
+                                        font-weight: 700;
+                                        font-family: 'Arial-Bold', sans-serif;
+                                        span {
+                                          font-family: 'Arial', sans-serif;
+                                          font-weight:400;
+                                        }
+                                    }
+                                }
+
+                                .player {
+                                    padding: 14px 0 0 10px;
+                                    img {
+                                        max-width: 100%;
+                                        display: block;
+                                        margin: 0 auto;
+                                    }
+                                }
+
+                                .heroes {
+                                    .heroes-cont {
+                                        letter-spacing: -.1px;
+                                        padding: 0 0 11px 14px;
+                                        margin-top: 22px;
+                                        .heroes-title {
+                                            font-size: emy(12);
+                                            margin: 0 0 5px 0;
+                                        }
+
+                                        .hero-text {
+                                            font-size: emy(12);
+                                            font-weight: 700;
+                                            font-family: 'Arial-Bold', sans-serif;
+                                            line-height: 13px;
+                                        }
+
+                                        .stat-content {
+                                          display: inline-block;
+                                          width: 100%;
+                                          background: #fff;
+                                          background-clip: content-box;
+                                          padding-right: 10px;
+                                          padding-top: 10px;
+
+                                          &.top {
+                                            margin-top: 5px;
+                                          }
+
+                                          .graph {
+                                            float: left;
+                                            width: 100%;
+                                            display: block;
+                                            margin-top: 10px;
+
+                                            &.team-chart {
+                                              margin-top: 10px;
+                                            }
+
+                                            & > * {
+                                              display: block;
+                                              position: relative;
+                                            }
+
+                                            .highcharts-axis-labels {
+                                              text {
+                                                font-weight: 700;
+                                                font-family: 'Arial-Bold', sans-serif;
+                                              }
+                                            }
+                                          }
+
+                                          .statistic {
+                                            padding-left: 6px;
+                                            font-weight: 700;
+                                            font-family: 'Arial-Bold', sans-serif;
+                                            display: block;
+                                            height: 120px;
+                                            width: 65px;
+                                            float: left;
+                                            .year {
+                                              font-size: emy(9);
+                                              margin-top: 27px;
+                                              color: #000;
+                                            }
+                                            .wins {
+                                              font-size: emy(12);
+                                              font-family: 'Arial-Bold', sans-serif;
+                                              font-weight: 400;
+                                              margin-top: 45px;
+                                              color: #000;
+                                              .name {
+                                                width: 22px;
+                                                float: left;
+                                                display: block;
+                                              }
+                                              .value {
+                                                color: $yellow;
+                                                font-weight: 700;
+                                                font-family: 'Arial-Bold', sans-serif;
+                                              }
+                                            }
+                                            .lost {
+                                              @extend .wins;
+                                              margin-top: 2px;
+                                              .value {
+                                                color: $gray-header;
+                                              }
+                                            }
+                                            .percent {
+                                              @extend .wins;
+                                              margin-top: 3px;
+                                              .value {
+                                                color: #000;
+                                              }
+                                            }
+                                          }
+                                        }
+                                      .hero-img {
+                                        padding-right: 10px;
+                                        display: -webkit-flex;
+                                        display: flex;
+                                        -moz-justify-content: space-between;
+                                        -webkit-justify-content: space-between;
+                                        justify-content: space-between;
+
+                                      }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            //    Right content block
+            .right-cont {
+
+                &.tour-out-right {
+                    margin-top: 0 !important;
+                }
+
+                .main-title-logo {
+                    text-transform: uppercase;
+                    background: $gray-header;
+                    font-size: emy(12);
+                    font-weight: 700;
+                    font-family: 'Arial-Bold', sans-serif;
+                    padding: 8px 0;
+                    color: #d5d5d5;
+                    margin: 0;
+                    img {
+                        width: 24px;
+                        margin: 0px 11px 0 8px;
+                    }
+                }
+
+                .main-title {
+                    @extend .main-title-logo;
+
+                    &.only-text {
+                        padding: 5px 7px 5px 18px;
+                        font-weight: 700;
+                        font-family: 'Arial-Bold', sans-serif;
+                        letter-spacing: 0.1px;
+                        display: -webkit-flex;
+                        display: flex;
+                        -webkit-justify-content: space-between;
+                        justify-content: space-between;
+                        -webkit-align-items: center;
+                        align-items: center;
+                        .timeout {
+                            width: 30px;
+                            height: 30px;
+                            position: relative;
+                            display: -webkit-flex;
+                            display: flex;
+                            -webkit-justify-content: center;
+                            justify-content: center;
+                            -webkit-align-items: center;
+                            align-items: center;
+                            font-size: 11px;
+                            font-family: 'Arial', sans-serif;
+                            .rotate {
+                                background-image: url(../assets/images/rotate.png);
+                                position: absolute;
+                                height: 100%;
+                                width: 100%;
+                                left: 0;
+                                top: 0;
+                                -webkit-animation:spin 4s linear infinite;
+                                -moz-animation:spin 4s linear infinite;
+                                animation:spin 4s linear infinite;
+                            }
+                        }
+
+                        @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+                        @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+                        @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+                    }
+
+
+                    &.fixed-height {
+                        height: 40px;
+                        display: -webkit-flex;
+                        display: flex;
+                        -webkit-align-items: center;
+                        align-items: center;
+                        -webkit-justify-content: space-between;
+                        justify-content: space-between;
+                        padding-left: 16px;
+                        font-weight: 700;
+                        font-family: 'Arial-Bold', sans-serif;
+                    }
+
+                    &.top {
+                        margin-top: 17px;
+                    }
+
+                    &.m-top {
+                        margin-top: 16px;
+                    }
+
+                    &.reverce {
+                        display: -webkit-flex;
+                        display: flex;
+                        -webkit-justify-content: space-between;
+                        justify-content: space-between;
+                        span {
+                            display: -webkit-flex;
+                            display: flex;
+                            -webkit-align-items: center;
+                            align-items: center;
+                        }
+                    }
+                }
+
+                .pre-title {
+                    height: 30px;
+                    margin-top: 4px;
+                }
+
+                .bets-math {
+                    margin-top: 4px;
+                    height: 60px;
+                }
+
+                //    Watch blocks
+                .left-part {
+                    float: left;
+                    width: 84px;
+                    display: block;
+                    min-height: 1px;
+                    &.desc {
+                        display: -webkit-flex;
+                        display: flex;
+                        -webkit-justify-content: center;
+                        justify-content: center;
+                        -webkit-align-items: center;
+                        align-items: center;
+                        font-size: emy(10);
+                        color: #d5d5d5;
+                        margin-top: 10px;
+                        letter-spacing: -.3px;
+                        padding-right: 7px;
+                        text-transform: uppercase;
+                    }
+
+                    &.match {
+
+                        .play {
+                            position:relative;
+                            border: 1px solid $gray-header;
+                            width: 55px;
+                            height: 55px;
+                            display: -webkit-flex;
+                            display: flex;
+                            -webkit-align-items: center;
+                            align-items: center;
+                            -webkit-justify-content: center;
+                            justify-content: center;
+                            -webkit-flex-direction: column;
+                            flex-direction: column;
+                            margin: 3px 0 0 11px;
+                            color: #fff;
+
+                            &:hover {
+                                border-color: #fff;
+                            }
+
+                            .time {
+
+                                font-size: emy(9);
+                                &.orange {
+                                    color: $yellow;
+                                }
+
+                              display: -webkit-flex;
+                              display: flex;
+                              -webkit-flex-direction: column;
+                              flex-direction: column;
+                              -webkit-align-items: center;
+                              -moz-align-items: center;
+                              align-items: center;
+                            }
+                            .watch {
+                                font-size: emy(10);
+                            }
+
+                              .orange {
+                                color: $yellow;
+                              }
+
+                              img {
+                                margin-top:3px;
+                              }
+
+                        }
+                    }
+                }
+
+                //    Match list
+                .right-part {
+                    float: left;
+                    display: block;
+                    width: calc(100% - 84px);
+                    min-height: 1px;
+                    &.desc {
+                        color: #d5d5d5;
+                        font-size: 10px;
+                        text-transform: uppercase;
+                        background: $gray-dark-header;
+                        padding: 0 0 6px 0;
+                        .title-cont {
+                            margin-top: 10px;
+                        }
+
+                        .game {
+                            .title-cont {
+                                margin-left: 16px;
+                            }
+                        }
+                        .tour {
+                            .title-cont {
+                                margin-left: 15px;
+                            }
+                        }
+                        .match {
+                            .title-cont {
+                                margin-left: 56px;
+                            }
+                        }
+                        .money {
+                            .title-cont {
+                                margin-left: 15px;
+                            }
+                        }
+                        .hand {
+                            .title-cont {
+                                margin-left: 23px;
+                            }
+                        }
+                        .over {
+                            .title-cont {
+                                margin-left: 11px;
+                            }
+                        }
+                        .bets {
+                            .title-cont {
+                                margin-left: 15px;
+                            }
+                        }
+                    }
+
+                    &.match {
+                        background: #fff;
+                        min-height: 60px;
+                    }
+
+                    .bets-cont {
+                        display: -webkit-flex;
+                        display: flex;
+                        font-size: 16px;
+
+
+                        .bets-hand {
+                            &.over-under {
+                                padding-left: 0;
+                            }
+                        }
+
+
+                        .bets-text {
+                            margin: 16px 0 0 11px;
+                        }
+
+                        .bets-match {
+                            & > div {
+                                display: -webkit-flex;
+                                display: flex;
+                            }
+
+                            img {
+                                height: 22px;
+                                margin: 3px 0 0 16px;
+                            }
+
+                            span {
+                                font-size: emy(11);
+                                font-weight: 400;
+                                color: #231f20;
+                                padding-top: 8px;
+                                padding-left: 9px;
+                            }
+
+                            .bets-match-first {
+                                position: relative;
+                                &:before {
+                                    left: 2px;
+                                    width: 1px;
+                                    content: '';
+                                    height: 36px;
+                                    margin-top: 5px;
+                                    position: absolute;
+                                    background-color: $gray-light;
+                                }
+
+                                &.white {
+                                    &:before {
+                                        background-color: #fff;
+                                    }
+                                }
+                            }
+
+                            .bets-match-second {
+                                position: relative;
+                                &:before {
+                                    left: 2px;
+                                    width: 1px;
+                                    content: '';
+                                    height: 30px;
+                                    position: absolute;
+                                    background-color: $gray-light;
+                                }
+
+                                &.white {
+                                    &:before {
+                                        background-color: #fff;
+                                    }
+                                }
+
+                                img {
+                                    margin: 9px 0 0 16px;
+                                }
+
+                                span {
+                                    margin: 4px 0 0 0;
+                                }
+                            }
+                        }
+
+                        .bets-ml {
+                            font-size: emy(12);
+                            color: #181818;
+                            .bets-first-ml {
+                                &:before {
+                                    left: 9px;
+                                    width: 1px;
+                                    height: 30px;
+                                    margin-top: -2px;
+                                    content: '';
+                                    position: absolute;
+                                    background-color: $gray-light;
+                                }
+                                &.white {
+                                    &:before {
+                                        background-color: #fff;
+                                    }
+                                }
+                                span {
+                                    border-radius: 2px 2px 2px 2px;
+                                    background-color: #c6c8ca;
+                                    margin: 7px 0 0 23px;
+                                    padding: 1px 9px;
+                                    display: block;
+                                    &.dev-span {
+                                        background: transparent;
+                                        height: 14px;
+                                    }
+                                }
+                            }
+                            .bets-second-ml {
+                                &:before {
+                                    left: 9px;
+                                    width: 1px;
+                                    height: 21px;
+                                    margin-top: 0px;
+                                    content: '';
+                                    position: absolute;
+                                    background-color: $gray-light;
+                                }
+                                &.white {
+                                    &:before {
+                                        background-color: #fff;
+                                    }
+                                }
+                                span {
+                                    border-radius: 2px 2px 2px 2px;
+                                    background-color: #c6c8ca;
+                                    margin: 13px 0 0 23px;
+                                    padding: 0px 9px;
+                                    display: block;
+
+                                    &.dev-span {
+                                        background: transparent;
+                                        height: 14px;
+                                    }
+                                }
+                            }
+                        }
+
+                        .bets-hand {
+                            .bets-first-hand {
+                                padding: 8px 0 0px 10px;
+                                display: -webkit-flex;
+                                display: flex;
+                                font-weight: 700;
+                                font-family: 'Arial-Bold', sans-serif;
+                                height: 24px;
+                                &:before {
+                                    left: -2px;
+                                    width: 1px;
+                                    height: 30px;
+                                    margin-top: -3px;
+                                    content: '';
+                                    position: absolute;
+                                    background-color: $gray-light;
+                                }
+                                &.white {
+                                    &:before, &:after {
+                                        background-color: #fff !important;
+                                    }
+                                }
+                                &.over {
+                                    padding: 8px 0 0px 6px;
+                                    &:before {
+                                        left: -8px;
+                                    }
+
+                                    &:after {
+                                        right: -12px;
+                                        width: 1px;
+                                        height: 30px;
+                                        margin-top: -3px;
+                                        content: '';
+                                        position: absolute;
+                                        background-color: $gray-light;
+                                    }
+                                }
+
+                            }
+                            .bets-second-hand {
+                                padding: 12px 0 0px 10px;
+                                display: -webkit-flex;
+                                display: flex;
+                                font-weight: 700;
+                                font-family: 'Arial-Bold', sans-serif;
+
+                                &:before {
+                                    left: -2px;
+                                    width: 1px;
+                                    height: 21px;
+                                    margin-top: -3px;
+                                    content: '';
+                                    position: absolute;
+                                    background-color: $gray-light;
+                                }
+                                &.white {
+                                    &:before, &:after {
+                                        background-color: #fff !important;
+                                    }
+                                }
+                                &.over {
+                                    padding: 11px 0 0px 6px;
+                                    &:before {
+                                        left: -8px;
+                                    }
+                                    &:after {
+                                        right: -12px;
+                                        width: 1px;
+                                        height: 21px;
+                                        margin-top: -3px;
+                                        content: '';
+                                        position: absolute;
+                                        background-color: $gray-light;
+                                    }
+                                }
+                            }
+
+                            span {
+                                color: #414141;
+                                font-size: emy(12);
+                                font-weight: 400;
+
+                                &.selected {
+                                    border-radius: 2px 2px 2px 2px;
+                                    background-color: #c6c8ca;
+                                    position: relative;
+                                    font-weight: 700;
+                                    font-family: 'Arial-Bold', sans-serif;
+                                    margin-left: 0px;
+                                    display: block;
+                                    color: #181818;
+                                    padding: 0 9px;
+                                    height: 15px;
+                                    left: 19px;
+                                }
+
+                                &.no-select {
+                                    width: 20px;
+                                    margin-left: 6px;
+                                }
+                            }
+                        }
+
+                        .more {
+                            display: -webkit-flex;
+                            display: flex;
+                            -webkit-justify-content: center;
+                            justify-content: center;
+                            -webkit-align-items: center;
+                            align-items: center;
+                            font-size: emy(12);
+                            font-weight: 700;
+                            font-family: 'Arial-Bold', sans-serif;
+                            height: 60px;
+                            width: 100%;
+                            padding-left: 10px;
+
+                            a {
+                                text-decoration: none;
+                                color: #181818;
+                                border-radius: 2px 2px 2px 2px;
+                                background-color: #c6c8ca;
+                                padding: 0px 9px;
+                                display: block;
+                            }
+
+                        }
+
+                        .bets-label {
+                            height: 42px;
+                            width: 29px;
+                            margin: 9px 0px 0px 17px;
+                        }
+
+                        h4 {
+                            margin: 0;
+                            font-size: emy(11);
+                            color: #333333;
+                            line-height: 14px;
+                        }
+                        span.lock {
+                          position: relative;
+                          color: #c6c8ca !important;
+
+                          &:after {
+                            content: '';
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            width: 100%;
+                            height: 100%;
+                            background-image: url(images/lock-icon.png);
+                            background-position: center center;
+                            background-repeat: no-repeat;
+                            background-size:auto 76%;
+                          }
+
+                        }
+                    }
+                }
+            }
+
+            //    Toutnament block
+            .tournament {
+                padding-left: 11px;
+                .main-title-logo {
+                    text-transform: uppercase;
+                    background: $gray-header;
+                    font-size: emy(12);
+                    font-weight: 700;
+                    font-family: 'Arial-Bold', sans-serif;
+                    color: #d5d5d5;
+                    padding: 8px 0;
+                    margin: 0;
+                    img {
+                        width: 24px;
+                        margin: 0px 11px 0 8px;
+                    }
+                }
+
+                .main-title {
+                    @extend .main-title-logo;
+
+                    &.only-text {
+                        padding: 13px 16px;
+                    }
+
+                    &.m-top {
+                        margin-top: 16px;
+                    }
+
+                    &.reverce {
+                        display: -webkit-flex;
+                        display: flex;
+                        -webkit-justify-content: space-between;
+                        justify-content: space-between;
+                        span {
+                            display: -webkit-flex;
+                            display: flex;
+                            -webkit-align-items: center;
+                            align-items: center;
+                        }
+                    }
+                }
+            }
+
+            .tournament-content {
+                background: #fff;
+
+                .medals {
+                    &.mh {
+                        min-height: 200px;
+                    }
+                }
+
+                .tour-right-desc {
+                    position: relative;
+                    padding-left: 40px;
+                    padding-bottom: 20px;
+                }
+
+                .tour-title {
+                    font-family: 'Arial', sans-serif;
+                    font-size: emy(12);
+                    margin-top: 20px;
+                    letter-spacing: -.5px;
+
+                    &.top {
+                        margin-top: 10px;
+                        margin-top: 31px;
+                        padding: 0 0 0 13px;
+                    }
+                }
+
+                .tour-desc {
+                    font-family: 'Arial-Bold', sans-serif;
+                    font-size: emy(16);
+                    font-weight: 700;
+                    line-height: 18px;
+                    margin-top: 0px;
+                    margin-bottom: 25px;
+
+                    &.left {
+                        padding-top: 5px;
+                        text-align: center;
+                        font-family: 'Arial-Bold', sans-serif;
+                        font-size: 16px;
+                        font-weight: bold;
+                        color: #555555;
+                        margin-bottom: 25px !important;
+                    }
+                }
+
+                .tour-m-title {
+                    font-family: 'Arial', sans-serif;
+                    font-size: emy(12);
+                    letter-spacing: -.2px;
+                    margin: 0 0 0 -1px;
+                }
+
+                .tour-list {
+                    list-style: none;
+                    font-size: emy(14);
+                    font-family: 'Arial', sans-serif;
+                    font-weight: 400;
+                    padding-left: 8px;
+                    margin-top: 5px;
+                    span {
+                        font-weight: 700;
+                        font-family: 'Arial-Bold', sans-serif;
+                    }
+                    li {
+                        position: relative;
+                        line-height: 18px;
+                        letter-spacing: -.2px;
+                    }
+                    li:before {
+                        content: '';
+                        width: 3px;
+                        height: 3px;
+                        border-radius: 50%;
+                        position: absolute;
+                        background: #000;
+                        left: -9px;
+                        top: 9px;
+                    }
+                }
+
+                .tour-image {
+                    &.tour-page {
+                      padding-bottom: 22px;
+                    }
+                    img {
+                        width: 100%;
+                        max-width: 100%;
+                        display: inline-block;
+                    }
+                }
+
+                .tour-info {
+                    padding: 0;
+                }
+
+                .medals-cont {
+                    font-size: 0;
+
+                    width: calc(50% - 30px);
+                    position: absolute;
+                    right: 15px;
+                    bottom: -7px;
+
+                    & > div {
+                      font-family: 'Arial-Bold',sans-serif;
+                      font-size: 14px;
+                      font-weight: bold;
+                      text-align: center;
+                      color: #000000;
+                      display: inline-block;
+                      width: 30%;
+                      background:#F4F4F4;
+                      padding-top:12px;
+                      border-bottom:14px solid #fff;
+                      vertical-align: bottom;
+
+                      span:last-child {
+                        display: block;
+                        margin-top: 13px;
+                        font-family: 'Arial-Bold',sans-serif;
+                        font-size: 24px;
+                        font-weight: bold;
+                        color: #000000;
+                        margin-bottom: 7px;
+                      }
+
+                      &.first-prize {
+                        padding-top:21px;
+                        width: 40%;
+                        background: #FFFFFF;
+
+                        span:last-child {
+                          margin-top: 20px;
+                          font-size: 36px;
+                          color: #F5A623;
+                          margin-bottom: 12px;
+                          font-family: 'Arial-Bold',sans-serif;
+                          font-weight: bold;
+                        }
+
+                      }
+                    }
+                }
+            }
+        }
+
+        //    Right sidebar
+        .sidebar-bet {
+            width: 326px;
+            font-size: 16px;
+            padding: 0 15px 0 21px;
+            margin-top: 27px;
+
+            .multiple-bets {
+				background-color: $yellow;
+				color: #fff;
+				text-transform: uppercase;
+				padding-top:13px;
+				padding-bottom:13px;
+				font-size: 16px;
+				font-weight: bold;
+				display: -webkit-flex;
+                display: flex;
+                -webkit-justify-content: space-between;
+                justify-content: space-between;
+                font-family: 'Arial-Bold', sans-serif;
+
+                img {
+                	margin-left:5px;
+                }
+            }
+
+            .control-btn {
+                padding-top: 10px;
+                display: -webkit-flex;
+                display: flex;
+                -webkit-justify-content: space-between;
+                justify-content: space-between;
+                   a, input {
+                    padding: 0;
+                    width: 72px;
+                    height: 27px;
+                    font-size: emy(14);
+                    border-radius: 4px;
+                    display: -webkit-flex;
+                    display: flex;
+                    -webkit-align-items: center;
+                    align-items: center;
+                   	outline: none;
+                   	width:96px;
+                   	color: #323232;
+                   	padding-left: 8px;
+					text-transform: capitalize;
+
+	                &.stake {
+	                  	background: #fff;
+	                   	border: 1px solid #D9D9D9;
+	                }
+
+                    &.win {
+                        background-color: #D7ECBC;
+                        border: 1px solid #BFDD9E;
+                	}
+            	}
+            }
+
+			.orange {
+				color: $yellow;
+			}
+
+            .main-tab-1 {
+                display: none;
+                &.active {
+                    display: block;
+                }
+            }
+
+            .main-tab-2 {
+                display: none;
+                &.active {
+                    display: block;
+                }
+            }
+
+            .bet-title {
+                padding: 13.5px 16px;
+                background: $yellow;
+                font-size: emy(16);
+                color: #fff;
+                margin: 0;
+                text-align:center;
+                text-transform:uppercase;
+                font-weight:700;
+            }
+
+            .bet-tabs {
+
+                & > .row {
+                    & > div {
+                        cursor: pointer;
+                    }
+                }
+
+                .curent-bet {
+                    font-size: emy(10);
+                    background: $gray-header;
+                    padding: 10px 0 6px 0px;
+                    text-transform: uppercase;
+                    text-align: center;
+                    color: #b3b3b3;
+                    &.active {
+                        background: #fff;
+                        color: $yellow;
+                    }
+                }
+
+                .history-bet {
+                	color:#fff;
+                    @extend .curent-bet;
+                }
+            }
+
+            .toggle-tab {
+                display: none;
+                &[data-tab='1'] {
+                    display: block;
+                }
+
+                .multy-bet {
+                    background: #eaeaea;
+                    h4 {
+                        margin-bottom: 15px;
+                        font-size: emy(13);
+                        padding-right: 11px;
+                        font-weight: 700;
+                        font-family: 'Arial-Bold', sans-serif;
+                        margin-top: 20px;
+                        color: #000;
+                    }
+                }
+
+                .radio-bet {
+                    label {
+                        font-size: emy(12);
+                        font-weight: 400;
+                        font-family: 'Arial', sans-serif;
+                        padding-left: 0;
+                        color: #000;
+                    }
+
+                    .radio {
+                        margin-bottom: 3px;
+                    }
+
+                    input {
+                        height: 1px;
+                        width: 1px;
+                        overflow: hidden;
+                        opacity: 0;
+                        + span {
+                            position: relative;
+                            display: inline-block;
+                            padding: 2px 0 2px 25px;
+
+                            &::before {
+                                -webkit-transform: translateY(-50%);
+                                -moz-transform: translateY(-50%);
+                                transform: translateY(-50%);
+                                border: 1px solid #000;
+                                top: calc(50% - 2px);
+                                border-radius: 20px;
+                                position: absolute;
+                                background: #fff;
+                                display: block;
+                                height: 14px;
+                                width: 14px;
+                                content: '';
+                                left: 0;
+
+                            }
+                        }
+
+                        &:checked {
+                            + span {
+                                &::after {
+                                    -webkit-transform: translateY(-50%);
+                                    -moz-transform: translateY(-50%);
+                                    transform: translateY(-50%);
+                                    top: calc(50% - 2px);
+                                    border-radius: 20px;
+                                    position: absolute;
+                                    background: #000;
+                                    display: block;
+                                    margin: 0 3px;
+                                    height: 8px;
+                                    content: '';
+                                    width: 8px;
+                                    left: 0;
+
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+
+            .bet-change-tabs {
+                margin-bottom: 4px;
+
+                .tab {
+                    text-transform: uppercase;
+                    padding: 10px 0 6px 0;
+                    background: #b3b3b3;
+                    text-align: center;
+                    font-size: emy(10);
+                    cursor: pointer;
+                    color: #fff;
+                    &:hover {
+                        background: #8a8a8a;
+                    }
+                    &.light {
+                        background: #cccccc;
+                        &:hover {
+                            background: #8a8a8a;
+                        }
+                    }
+                    &.active {
+                        background: #fff;
+                        color: #ff9201;
+                        &:hover {
+                            background: #fff;
+                        }
+                    }
+                }
+            }
+
+            .bets {
+                background: #eaeaea;
+
+                h4 {
+                    color: #231f20;
+                    font-size: emy(12);
+                    margin: 22px 0 8px 0;
+                    letter-spacing: 0;
+                    position: relative;
+                    font-weight: 700;
+                    font-family: 'Arial-Bold', sans-serif;
+                    .info {
+                        background-image: url(../assets/images/i.png);
+                        position: relative;
+                        margin-right: 10px;
+                        display: block;
+                        height: 14px;
+                        width: 14px;
+                        float: left;
+                        top: -2px;
+                        left: 1px;
+                    }
+                    .cutom-btn {
+                        position: absolute;
+                        right: -3px;
+                        top: -1px;
+                    }
+                }
+
+                .wings {
+                    color: $gray-header;
+                    font-size: emy(13);
+                    font-weight: 400;
+                    padding-top: 11px;
+                    span {
+                        color: $yellow;
+                    }
+                }
+
+                .wings-gaming {
+                    color: $gray-header;
+                    font-family: 'Arial', sans-serif;
+                    font-weight: 400;
+                    font-size: emy(13);
+                    padding-bottom: 10px;
+                    letter-spacing: -.5px;
+                }
+            }
+
+            .control {
+                background: #d7d7d7;
+                .rate-control {
+                    margin-top: 7px;
+                }
+
+                &.singles {
+                	padding-top: 15px;
+                	padding-bottom: 15px;
+                	font-weight: 400;
+
+                	p {
+						font-size: 13px;
+						color: #606060;
+						margin-bottom:0;
+                	}
+
+                	.control-btn {
+                		padding-top:5px;
+
+                		span {
+							font-size: 14px;
+							color: #323232;
+                		}
+
+                		input.stake {
+                			display:inline-block;
+                			text-align: left;
+                		}
+                	}
+                }
+
+                .rate {
+                    border: none !important;
+                    padding-right: 0;
+                    .first-row {
+                        display: -webkit-flex;
+                        display: flex;
+                        a {
+                            width: 100%;
+						    color: $yellow;
+						    font-weight: 400;
+						    margin-right: 4px;
+						    font-size: 14px;
+						    background: #fff;
+						    border: none;
+						    border-radius: 2px;
+
+						    &:last-child {
+						    	margin-right:0;
+						    }
+                        }
+                    }
+                    .second-row {
+                        @extend .first-row;
+                        a {
+                            margin-top: 4px;
+                        }
+                    }
+                }
+
+                .sum-control {
+                    font-size: emy(12);
+                    padding: 9px 0px 8px 0px;
+
+                    a {
+                        color: #000;
+                        text-decoration: none;
+                    }
+                }
+            }
+
+			.error-msg {
+				background-color: #AC4746;
+				padding: 18px;
+
+				p {
+					color: #fff;
+					font-size: 12px;
+					margin-bottom: 0;
+					font-weight:400;
+				}
+			}
+
+			.login-sign-up {
+				padding-top:20px;
+				clear: both;
+    			background-color: #eaeaea;
+				padding-bottom: 12px;
+
+				a {
+					font-size: 13px;
+					color: #606060;
+					margin-bottom:8px;
+					display: block;
+					text-align: center;
+					text-decoration: none;
+
+					&:last-child {
+						color:#000;
+						margin-bottom: 0;
+					}
+
+					&#sign-up-link {
+						height: 35px;
+					    background-color: #FF9201;
+					    border-radius: 2px;
+					    font-weight: bold;
+					    color: #FFFFFF;
+					    padding-top: 9px;
+					    margin-left: 18px;
+					    margin-right: 18px;
+					    font-family: 'Arial-Bold', sans-serif;
+					}
+				}
+			}
+
+            .total {
+                background: $gray-light;
+                padding: 19px 32px 18px 32px;
+                .total-bets {
+                    display: -webkit-flex;
+                    display: flex;
+                    -webkit-justify-content: space-between;
+                    justify-content: space-between;
+                    font-size: emy(13);
+                    color: #000;
+
+                    span {
+                        color: $yellow;
+                    }
+                }
+                .winning {
+                    @extend .total-bets;
+                    margin-top: 6px;
+
+                    div:last-of-type {
+	                    color: #579D0A;
+	                    font-weight: bold;
+	                    font-family: 'Arial-Bold', sans-serif;
+                    }
+
+                }
+            }
+
+            .confirm {
+                background: $yellow;
+                display: -webkit-flex;
+                display: flex;
+                -webkit-justify-content: space-between;
+                justify-content: space-between;
+                padding: 10px 16px;
+                a {
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    font-size: emy(12);
+                    font-weight: 700;
+                    font-family: 'Arial-Bold', sans-serif;
+                    height: 27px;
+                    width: 112px;
+                    display: -webkit-flex;
+                    display: flex;
+                    -webkit-justify-content: center;
+                    justify-content: center;
+                    -webkit-align-items: center;
+                    align-items: center;
+                    color: #fff;
+                    border-radius: 3px 3px 3px 3px;
+                    &.remove {
+                        background: #cc7402;
+                    }
+                    &.place {
+                        background: #181818;
+                    }
+                }
+            }
+
+            //  Bet history
+
+            .his-tabs {
+                color: #4B4B4B;
+                padding: 0 16px;
+                font-size: emy(12);
+                font-family: Arial;
+                background-color: #EAEAEA;
+                padding-top: 18px;
+
+                a {
+                    color: #4B4B4B;
+                    text-decoration: none;
+                    position: relative;
+                    &.active {
+                        color: #FF9201;
+                        &:before {
+                            background: #FF9201;
+                            position: absolute;
+                            content: '';
+                            width: 100%;
+                            height: 2px;
+                            bottom: -6px;
+                            z-index: 1;
+
+                        }
+                    }
+                }
+
+                .refresh {
+                    position: absolute;
+                    cursor: pointer;
+                    right: 3px;
+                }
+                &:before {
+                    content: '';
+                    width: calc(100% - 33px);
+                    position: absolute;
+                    margin-left: 17px;
+                    height: 1px;
+                    left: 0px;
+                    background: #B3B3B3;
+                    bottom: -4px;
+                    z-index: 1;
+                }
+            }
+
+            .his-inputs {
+                background-color: #EAEAEA;
+                padding: 28px 16px 0;
+
+                .form-group {
+                    margin-bottom: 0;
+                }
+
+                .select-inputs {
+
+                }
+
+                .date-inputs {
+                    margin-top: 16px;
+                    margin-bottom: 22px;
+                }
+
+                input {
+                    box-shadow: none !important;
+                    border: 1px solid #4B4B4B;
+                    background: #EAEAEA;
+                    border-radius: 2px;
+                    outline: none;
+                    height: 30px;
+                    background-image: url('images/ico-calendar.png');
+                    background-repeat: no-repeat;
+                    background-position: 92% 50%;
+                    font-family: Arial;
+                    color: #4B4B4B;
+                    font-size: emy(10);
+
+                    &:focus {
+                        background-image: url('images/ico-calendar-active.png');
+                        border: 1px solid #FF9201;
+                        color: #FF9201;
+                    }
+
+                    &.start {
+                        width: calc(100% - 8px);
+                    }
+
+                    &.final {
+                        width: calc(100% - 8px);
+                        margin-left: 8px;
+                    }
+                }
+
+                select {
+                    box-shadow: none !important;
+                    border: 1px solid #4B4B4B;
+                    background: #EAEAEA;
+                    border-radius: 2px;
+                    font-size: emy(12);
+                    color: #4B4B4B;
+                    outline: none;
+                    height: 30px;
+                }
+            }
+
+            .his-bet {
+                padding: 0 16px;
+                padding-top: 18px;
+                padding-bottom: 22px;
+                background-color: #D7D7D7;
+
+                &.los {
+                    .description {
+                        .his-desc-win {
+                            span {
+                                color: #d0172d;
+                            }
+                        }
+                        .his-desc-los {
+                            span {
+                                color: #d0172d;
+                            }
+                        }
+                    }
+                }
+
+                .his-btn {
+                    width: 24px;
+                    height: 24px;
+                    border-radius: 2px;
+                    background-color: #B3B3B3;
+                    display: -webkit-flex;
+                    display: flex;
+                    -webkit-justify-content: center;
+                    justify-content: center;
+                    -webkit-align-items: center;
+                    align-items: center;
+                    color: #4B4B4B;
+                    text-decoration: none;
+                    float: right;
+                }
+
+                .his-title {
+                    font-family: Arial;
+                    font-size: emy(14);
+                    font-weight: bold;
+                    font-family: 'Arial-Bold', sans-serif;
+                    color: #4B4B4B;
+                    line-height: 16px;
+                    letter-spacing: -.1px;
+                }
+
+                .description {
+                    .his-desc {
+                        opacity: 0.9;
+                        font-family: Arial;
+                        font-size: 11px;
+                        line-height: 15px;
+                        color: #4B4B4B;
+                        padding-top: 5px;
+                        letter-spacing: -.35px;
+                    }
+
+                    .his-desc-win {
+                        opacity: 0.9;
+                        font-family: Arial;
+                        font-size: 11px;
+                        line-height: 15px;
+                        color: #4B4B4B;
+                        span {
+                            color: #63A21E;
+                        }
+                    }
+
+                    .his-desc-los {
+                        opacity: 0.9;
+                        font-family: Arial;
+                        font-size: 11px;
+                        line-height: 15px;
+                        color: #4B4B4B;
+                        span {
+                            color: #63A21E;
+                        }
+                    }
+                }
+
+                .description {
+                    .los {
+                        span {
+                            color: #63A21E;
+                        }
+                    }
+                }
+            }
+
+            .his-list {
+                & > div {
+                    & > div:nth-last-child(n + 2) {
+                        .his-bet {
+                            &:after {
+                                content: '';
+                                width: 100%;
+                                height: 1px;
+                                opacity: .1;
+                                bottom: -16px;
+                                position: relative;
+                                background-color: #4B4B4B;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .his-total-bets {
+                padding: 17px 16px 16px;
+                background-color: #EAEAEA;
+
+                .top {
+                    margin-top: 9px;
+                }
+
+                .desc {
+                    font-family: 'Arial', sans-serif;
+                    font-size: 13px;
+                    line-height: 15px;
+                    color: #4B4B4B;
+                }
+
+                .price {
+                    font-size: 13px;
+                    text-align: right;
+                    line-height: 15px;
+                    color: #000000;
+                    &.green {
+                        color: #579D0A;
+                    }
+                }
+            }
+        }
+
+    } // End content-container
+} // End content
+
+.footer {
+    position: relative;
+    .pre-footer {
+        background: $gray-dark-header;
+        font-size: 16px;
+        padding: 17px 0 29px 0;
+
+        .pre-footer-cont {
+            padding: 0 47px;
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 8px 0 0 9px;
+                letter-spacing: -0.4px;
+                line-height: 16px;
+                a {
+                    font-size: emy(12);
+                    color: #6e6e6e;
+                    text-decoration: none;
+                    -webkit-transition: .2s ease;
+                    -moz-transition: .2s ease;
+                    -ms-transition: .2s ease;
+                    transition: .2s ease;
+                    &:hover {
+                        color: #9b9b9b;
+                    }
+                }
+
+                &.pre-menu-two {
+                    margin-left: 23px;
+                }
+                &.pre-menu-three {
+                    margin-left: 38px;
+                    img {
+                        width: 20px;
+                        height: 14px;
+                        margin-left: 3px;
+                    }
+                }
+                &.pre-menu-four {
+                    margin-left: 45px;
+                }
+            }
+        }
+
+        .pre-footer-tts {
+            color: #b4b4b4;
+            padding: 0 37px;
+            h4 {
+                font-size: 11px;
+                letter-spacing: 0.1px;
+                margin: 10px 0 0 4px;
+                &.pre-title-four {
+                    margin-left: 46px;
+                }
+            }
+        }
+    }
+
+    .post-footer {
+        background: #262626;
+        padding-bottom: 29px;
+        .bg {
+            padding: 40px 0 0 0;
+        }
+
+        .post-desc {
+            color: #fff;
+            font-size: 11px;
+            text-align: center;
+            text-transform: uppercase;
+            margin: 13px 0 19px;
+            letter-spacing: .5px;
+            color: #b4b4b4;
+            font-weight: 700;
+            font-family: 'Arial-Bold', sans-serif;
+        }
+
+        .footer-logo {
+            width: 118px;
+            height: 139px;
+            background: #181818;
+            border-radius: 4px 4px 4px 4px;
+            display: block;
+            margin: 0 auto;
+            .footer-image {
+                background-image: url(../assets/images/raster-logos-1x.png);
+                background-position: 0 -149px;
+                height: 100%;
+                width: 100%;
+            }
+        }
+
+        .post-footer-content {
+            color: #fff;
+            padding: 0 67px;
+            font-size: 11px;
+            font-family: 'Arial';
+
+            h5 {
+                margin: 0;
+                color: #b4b4b4;
+                font-size: 12px;
+                text-transform: uppercase;
+                font-weight: 700;
+                font-family: 'Arial-Bold', sans-serif;
+            }
+
+            h4 {
+                font-size: 11px;
+                letter-spacing: .3px;
+                text-transform: uppercase;
+                color: #b4b4b4;
+                font-weight: 700;
+                font-family: 'Arial-Bold', sans-serif;
+                &.social-title {
+                    margin: 0;
+                    margin: 14px 0 12px 12px;
+                }
+            }
+
+            .logos {
+                margin-top: 5px;
+            }
+
+            .logos-top {
+                margin-top: 10px;
+            }
+
+            .circle-logo {
+                width: 47px;
+                height: 50px;
+                float: left;
+                display: block;
+                margin-right: 2px;
+            }
+
+            .pay-logo {
+                background-image: url(../assets/images/raster-logos-1x.png);
+                background-position: -424px -56px;
+            }
+
+            .lbt-logo {
+                background-image: url(../assets/images/raster-logos-1x.png);
+                background-position: -473px -56px;
+            }
+
+            .s1-logo {
+                background-image: url(../assets/images/raster-logos-1x.png);
+                background-position: 0 -56px;
+            }
+
+            .s2-logo {
+                background-image: url(../assets/images/raster-logos-1x.png);
+                background-position: -328px -56px;
+            }
+
+            .s3-logo {
+                background-image: url(../assets/images/raster-logos-1x.png);
+                background-position: -93px -56px;
+            }
+
+            .r1-logo {
+                background-image: url(../assets/images/raster-logos-1x.png);
+                background-position: -140px -56px;
+            }
+
+            .r2-logo {
+                background-image: url(../assets/images/raster-logos-1x.png);
+                background-position: -188px -56px;
+            }
+
+            .r3-logo {
+                background-image: url(../assets/images/raster-logos-1x.png);
+                background-position: -234px -56px;
+            }
+
+            .footer-title {
+                &.first {
+                    margin-left: 15px;
+                }
+                &.second {
+
+                }
+                &.third {
+
+                }
+            }
+
+            .square {
+                width: 28px;
+                height: 28px;
+                border-radius: 3px 3px 3px 3px;
+                background: #171717;
+                display: block;
+                float: left;
+                margin-right: 6px;
+                position: relative;
+                &:before {
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    content: '';
+                    background-image: url(../assets/images/raster-logos-1x.png);
+                    position: absolute;
+                }
+            }
+
+            .first-social {
+                margin-left: 8px;
+                &:before {
+                    background-position: -237px -112px;
+                }
+            }
+            .second-social:before {
+                background-position: -265px -112px;
+            }
+            .third-social:before {
+                background-position: -353px -112px;
+            }
+            .fourth-social {
+                &:before {
+                    background-position: -207px -112px;
+                }
+            }
+
+            .foo-desc {
+                line-height: 17px;
+                font-weight: 400;
+                color: #818181;
+                &.first {
+                    padding: 8px 0 0 15px;
+                    letter-spacing: -.12px;
+                    max-width: 400px;
+                }
+                &.second {
+
+                }
+                &.third {
+                    padding: 9px 0 0 45px;
+                    span {
+                        font-size: 14px;
+                        margin-top: 5px;
+                        display: block;
+                        letter-spacing: -.3px;
+                    }
+                }
+            }
+
+            .location {
+                -webkit-display: flex;
+                display: flex;
+                padding: 5px 0 0 8px;
+                .loc-title {
+                    width: 46px;
+                    height: 44px;
+                    background: #181818;
+                    border-radius: 3px 3px 3px 3px;
+                    display: -webkit-flex;
+                    display: flex;
+                    -webkit-justify-content: center;
+                    justify-content: center;
+                    -webkit-align-items: center;
+                    align-items: center;
+                    padding: 0 0 5px 0;
+                }
+
+                .loc-container {
+                    letter-spacing: -.4px;
+                    font-size: 14px;
+                    .phone {
+                        margin: 3px 0px 0 5px;
+                    }
+                    .fax {
+                        margin: 3px 0px 0 5px;
+                    }
+                }
+            }
+        }
+    }
+
+    .copyright {
+        background: #202020;
+        text-align: center;
+        font-size: 1.12em;
+        color: #818181;
+        margin-top: 29px;
+        line-height: 18px;
+        padding: 10px 0px 9px 0;
+        letter-spacing: -.1px;
+        font-family: 'Arial-Bold', sans-serif;
+        font-weight: 700;
+    }
+}
+
+.bracket-plugin-row .svg-connectors-container {
+	   pointer-events:none;
+       z-index: 1;
+       position:absolute;
+       opacity: 1;
+    }
+
+.bracket-plugin {
+
+	&.upper-bracket-only .bracket-holder .round-holder .match-holder .opponent-holder:before {
+		background-image:none !important;
+	}
+
+    .bracket-title {
+        background: #363636;
+        height: 30px;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-align-items: center;
+        align-items: center;
+        padding-left: 18px;
+        font-size: 0.625em;
+        text-transform: uppercase;
+        box-sizing: border-box;
+    }
+
+    #upper-bracket, #lower-bracket {
+
+        .bracket-holder {
+
+        	.third-place-decider:after {
+			   content: 'Third place decider';
+			   position: absolute;
+			   left: 0;
+			   top: -23px;
+			   color: #fff;
+			   font-size: 11px;
+			   text-shadow: 1px 1px 5px #000;
+			   white-space: nowrap;
+			   font-weight:400;
+			}
+
+            background: #363636;
+            width: 100%;
+            background-image: url('../assets/images/bracket-bg.jpg');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: 0 30px;
+            padding-bottom: 40px;
+            min-width:650px;
+
+            .round-holder {
+                width: 100px;
+
+                .matches-holder {
+                	position:relative;
+                    display: flex;
+                    display: -webkit-flex;
+                    display: -moz-flex;
+				    flex-direction: column;
+				    -webkit-flex-direction: column;
+				    -moz-flex-direction: column;
+				    justify-content: space-around;
+				    -webkit-justify-content: space-around;
+				    -moz-justify-content: space-around;
+				    height: 100%;
+                }
+
+                .match-holder {
+
+                	&.third-place-decider {
+                		position:absolute;
+                		bottom:10px;
+                		width:100%;
+                	}
+
+                    .opponent-holder {
+                        &.active {
+                            background: #EAEAEA;
+                            &:before {
+                                content: '';
+                                top: 14px;
+                                left: -11px;
+                                width: 15px;
+                                height: 11px;
+                                position: absolute;
+                                background-image: url('../assets/images/loser-arrow.png');
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    .bracket-holder {
+
+        .round-upper-final .match-holder {
+		    position: absolute;
+		    bottom: -75px;
+		    left: 0;
+		    width: 100%;
+		}
+
+        .round-name {
+            background: #4B4B4B;
+            font-size: 0.625em;
+            height: 30px;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-align-items: center;
+            align-items: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            color: #bcbec0;
+        }
+
+        .match-holder {
+
+            position: relative;
+            &:before {
+                z-index: 2;
+                color: #fff;
+                content: 'vs';
+                padding: 0 2px;
+                font-size: 0.52em;
+                position: absolute;
+                background: #666666;
+                top: calc(50% - 5px);
+                left: calc(50% - 7px);
+            }
+            .opponent-holder {
+                height: 35px;
+                background: #fff;
+                font-size: 0.625em;
+                position: relative;
+                display: -webkit-flex;
+                display: flex;
+                -webkit-align-items: center;
+                align-items: center;
+
+
+                &:nth-child(1) {
+                    border-bottom: 1px solid #cccccc;
+                }
+
+                span {
+                    &:nth-child(1) {
+                        padding-left: 3px;
+                        width: 30%;
+                        img {
+                            max-width: 30px;
+                            width: 100%;
+                            padding-right:3px;
+                        }
+                    }
+                    &:nth-child(2) {
+                           width: 60%;
+						    padding-right: 0px;
+						    line-height: 8px;
+						    overflow: hidden;
+						    text-overflow: ellipsis;
+                    }
+                    &:nth-child(3) {
+                        width: 10%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.group-tooltip {
+    .group-hover-container {
+        display: none;
+        &:after {
+            left: 10px;
+            content: '';
+            bottom: -16px;
+            position: absolute;
+            border: 8px solid transparent;
+            border-top: 8px solid rgba(0, 0, 0, .8);
+        }
+    }
+}
+
+.group-tooltip {
+    &.group-hover {
+        .group-hover-container {
+            z-index: 5;
+            width: 100%;
+            display: block;
+            padding: 2px 5px;
+            position: absolute;
+            background: rgba(0, 0, 0, .8);
+            border-radius: 2px 2px 2px 2px;
+        }
+    }
+}
+
+	.bracket-plugin #lower-bracket .bracket-holder .round-holder .match-holder .opponent-holder.active:before,
+	.bracket-plugin #lower-bracket .bracket-holder .round-holder .match-holder .main-content .content-container .sidebar-menu .menu .main-menu a.opponent-holder:hover:before,
+	.main-content .content-container .sidebar-menu .menu .main-menu .bracket-plugin #lower-bracket .bracket-holder .round-holder .match-holder a.opponent-holder:hover:before,
+	.bracket-plugin #lower-bracket .bracket-holder .round-holder .match-holder .main-content .content-container .sidebar-menu .menu .sub-menu > li.opponent-holder:hover:before,
+	.main-content .content-container .sidebar-menu .menu .bracket-plugin #lower-bracket .bracket-holder .round-holder .match-holder .sub-menu > li.opponent-holder:hover:before  {
+		background-image:none;
+	}
+
+
+	// styling menu for odds
+
+    app-match-table select-dropdown > div,
+    app-match-table select-dropdown .selected {
+      border:none;
+      background:#4B4B4B;
+    }
+
+    app-match-table select-dropdown .selected {
+      color: $yellow !important;
+    }
+
+    app-match-table select-dropdown > div .options ul li {
+      cursor: default;
+    }
+
+    app-match-table ng-select > div > div.single > div.placeholder {
+      color:#fff;
+    }
+
+    app-match-table ng-select > div > div.single > div.toggle {
+      display:none;
+    }
+
+    app-match-table ng-select > div {
+      border:none;
+      position:relative;
+      cursor:default;
+    }
+
+    app-match-table ng-select > div:after {
+    	content:'';
+    	background-image:url(images/arrow-top-gray.png);
+    	width:16px;
+    	height:10px;
+    	background-size: contain;
+    	position:absolute;
+    	right:10px;
+    	top:15px;
+    	transition-duration:.3s;
+    }
+
+    app-match-table ng-select > div.open:after {
+    	transform: rotate(180deg);
+    	-webkit-transform: rotate(180deg);
+    	-moz-transform: rotate(180deg);
+    }
+
+    app-match-table ng-select > div > div.single {
+      height: 42px;
+      align-items: center;
+      -webkit-align-items: center;
+      -moz-align-items: center;
+    }
+
+/* swiss format */
+
+.swiss-format-holder {
+    background: #363636;
+    width: 100%;
+    background-image: url(../assets/images/bracket-bg.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: 0 48px;
+    padding-left: 11px;
+    padding-right: 0;
+    background-clip: content-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: space-around;
+    -webkit-justify-content: space-around;
+    -moz-justify-content: space-around;
+    margin-top: 10px;
+
+    @media(max-width:425px) {
+    	-webkit-flex-direction: column;
+    	-webkit-justify-content: center;
+    	-webkit-align-items: center;
+    	flex-direction: column;
+    	justify-content: center;
+    	align-items: center;
+    	-moz-flex-direction: column;
+    	-moz-justify-content: center;
+    	-moz-align-items: center;
+
+    }
+
+    .matches-holder {
+    	margin-bottom: 20px;
+    }
+
+    .round-holder {
+    	margin-top:18px;
+
+    	.round-name {
+		    background: #4B4B4B;
+		    font-size: 0.625em;
+		    height: 30px;
+		    display: -webkit-flex;
+		    display: flex;
+		    -webkit-align-items: center;
+		    align-items: center;
+		    -webkit-justify-content: center;
+		    justify-content: center;
+		    color: #bcbec0;
+		    width: 150px;
+		    margin: 0 auto;
+		}
+
+		.match-holder {
+            margin-top: 24px;
+            position: relative;
+            width: 200px;
+
+            @media(max-width:1024px) {
+            	max-width: 200px;
+    			width: auto;
+            }
+
+            &:before {
+                z-index: 2;
+                color: #fff;
+                content: 'vs';
+                padding: 0 2px;
+                font-size: 0.52em;
+                position: absolute;
+                background: #666666;
+                top: calc(50% - 5px);
+                right: 28px;
+            }
+
+            .opponent-holder {
+
+            	&.winner {
+				    background: #eaeaea;
+				    font-family: Arial;
+				    font-size: 10px;
+	            }
+
+	            span.winner {
+			    	color: #7ed321;
+			    }
+
+			    span.loser {
+			    	color: #fd1431;
+			    }
+
+                height: 35px;
+                background: #fff;
+                font-size: 0.625em;
+                position: relative;
+                display: -webkit-flex;
+                display: flex;
+                -webkit-align-items: center;
+                align-items: center;
+                justify-content: space-between;
+				-webkit-justify-content: space-between;
+				-moz-justify-content: space-between;
+
+                &:nth-child(1) {
+                    border-bottom: 1px solid #cccccc;
+                }
+
+                span {
+
+                	font-weight:400;
+
+                    &:nth-child(1) {
+                        padding-left: 3px;
+                        img {
+                            max-width: 30px;
+						    width: 100%;
+						    padding-right: 3px;
+						    margin-right: 5px;
+                        }
+                    }
+                    &:nth-child(2) {
+                         padding-right: 10px;
+						 line-height: 8px;
+						 overflow: hidden;
+						 text-overflow: ellipsis;
+                    }
+                }
+            }
+        }
+    }
+}

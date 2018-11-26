@@ -1,0 +1,103 @@
+<div class="row">
+	<h3 class="main-title">
+		<img *ngIf="tournament.game?.subreddit != null"
+			src="assets/images/menu/{{tournament.game?.subreddit}}.png"
+			alt="{{tournament.game?.name}}">{{'TOURNAMENT SPOTLIGHT' |
+		translate}}
+	</h3>
+	<div
+		class="col-lg-24 col-md-24 col-sm-24 tournament-content tourn-page">
+		<div class="row">
+			<div class="col-lg-24 tour-cont">
+				<div class="row">
+					<div class="tour-image tour-page">
+						<img *ngIf="tournament.toutou_logo"
+							src="http://static.esportsconstruct.com/{{tournament.toutou_logo}}"
+							alt="banner"> <img *ngIf="!tournament.toutou_logo"
+							src="assets/images/default-poster.jpg" alt="banner">
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-24 tour-cont">
+				<div class="row">
+					<div class="col-md-12 col-xs-24">
+						<div class="tour-info">
+							<div class="col-md-24 col-sm-24  tour-order">
+								<div class="row">
+									<div class="tour-desc event-name">{{tournament.name}}</div>
+								</div>
+							</div>
+
+							<div class="col-md-24 col-sm-24 tour-order">
+								<div class="row">
+									<div class="tour-desc extra">
+										<span class="tour-start-date" *ngIf="tournament.start"><img
+											src="assets/images/ico-calendar2.png" alt="calendar">
+											{{tournament.start | date : 'MMM d'}} - {{tournament.end |
+											date : 'MMM d, y'}}</span> <span class="tour-location"
+											*ngIf="!tournament.event?.location && tournament.location"><img
+											src="assets/images/ico-location.png" alt="location">{{tournament.location}}</span>
+										<span class="tour-location"
+											*ngIf="!tournament.location && tournament.event?.location"><img
+											src="assets/images/ico-location.png" alt="location">{{tournament.event?.location}}</span>
+										<span class="tour-location"
+											*ngIf="tournament.location && tournament.event?.location"><img
+											src="assets/images/ico-location.png" alt="location">{{tournament.location}}</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-24 col-sm-24 tour-order">
+								<div class="row">
+									<div class="tour-desc extra"
+										*ngIf="!tournament.description && tournament.event?.description ">
+										{{tournament.event?.description}}</div>
+									<div class="tour-desc extra"
+										*ngIf="!tournament.event?.description && tournament.description">
+										{{tournament.description}}</div>
+									<div class="tour-desc extra"
+										*ngIf="tournament.event?.description && tournament.description">
+										{{tournament.description}}</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-12 col-xs-24">
+						<div class="row">
+							<div class="col-lg-24 col-md-24 col-sm-24 medals"
+								[ngClass]="{'mh': tournament?.prize_distribution}">
+								<div *ngIf="tournament.prize">
+									<div class="tour-title top tourn-page">{{'Prize pool' |
+										translate}}:</div>
+									<div class="tour-desc extra left tourn-page">
+										{{tournament.prize | currency: 'USD' : true : '1.0-0' }}</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div *ngIf="tournament?.prize_distribution">
+						<div class="medals-cont tour-marg">
+							<div class="prize-place"
+								*ngIf="tournament?.prize_distribution[2]">
+								<span>{{tournament.prize_distribution[2] | currency:
+									'USD' : true : '1.0-0' }}</span> <span>2</span>
+							</div>
+							<div class="prize-place first-prize"
+								*ngIf="tournament?.prize_distribution[1]">
+								<span>{{tournament.prize_distribution[1] | currency:
+									'USD' : true : '1.0-0' }}</span> <span>1</span>
+							</div>
+							<div class="prize-place"
+								*ngIf="tournament?.prize_distribution[3]">
+								<span>{{tournament.prize_distribution[3] | currency:
+									'USD' : true : '1.0-0' }}</span> <span>3</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

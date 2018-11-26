@@ -1,0 +1,595 @@
+.main-content .content-container .sidebar-menu .menu .blog-panel .sub-menu {
+  max-height: 550px;
+  overflow: auto; }
+  .main-content .content-container .sidebar-menu .menu .blog-panel .sub-menu li a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    min-height: 75px;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: space-between;
+    justify-content: space-between; }
+    .main-content .content-container .sidebar-menu .menu .blog-panel .sub-menu li a h3 {
+      font-size: 1em;
+      color: #999999;
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 5px; }
+    .main-content .content-container .sidebar-menu .menu .blog-panel .sub-menu li a p {
+      color: #ffffff;
+      font-size: 0.833em;
+      margin-bottom: 0; }
+      .main-content .content-container .sidebar-menu .menu .blog-panel .sub-menu li a p img {
+        margin-left: 0;
+        margin-right: 5px;
+        width: 15px;
+        height: 15px; }
+    .main-content .content-container .sidebar-menu .menu .blog-panel .sub-menu li a:hover h3 {
+      color: #ffffff; }
+.main-content .content-container .blog-page-section .box-heading img {
+  width: 23px;
+  height: 23px;
+  position: relative;
+  top: -6px;
+  display: inline-block;
+  vertical-align: text-top;
+  margin-right: 5px; }
+.main-content .content-container .blog-page-section .tournament-poster {
+  margin-top: 10px; }
+.main-content .content-container .blog-page-section .blog-content {
+  background: #fff;
+  padding: 120px 190px; }
+  .main-content .content-container .blog-page-section .blog-content h1 {
+    text-align: center;
+    font-size: 2.92em;
+    font-weight: 400;
+    margin-top: 0; }
+  .main-content .content-container .blog-page-section .blog-content p.date-posted {
+    text-align: center;
+    font-size: 0.9375em;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #808080;
+    margin-bottom: 70px; }
+  .main-content .content-container .blog-page-section .blog-content h3 {
+    color: #000;
+    font-size: 1.5625em;
+    font-weight: 400;
+    margin-bottom: 35px;
+    text-align: center; }
+  .main-content .content-container .blog-page-section .blog-content p {
+    color: #000;
+    font-size: 1em;
+    font-weight: 400;
+    text-align: justify; }
+    .main-content .content-container .blog-page-section .blog-content p a {
+      color: #ff9200; }
+  .main-content .content-container .blog-page-section .blog-content .embed.table-embed {
+    padding: 10px;
+    display: inline-block;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+    border: 1px solid #d9d9d9; }
+    .main-content .content-container .blog-page-section .blog-content .embed.table-embed th {
+      border: 1px solid #fff;
+      background: #4b4b4b;
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.875em;
+      height: 43px;
+      width: 180px;
+      text-align: center; }
+    .main-content .content-container .blog-page-section .blog-content .embed.table-embed td {
+      border: 1px solid #fff;
+      text-align: center;
+      background-color: #e6e6e6;
+      padding: 10px 0; }
+      .main-content .content-container .blog-page-section .blog-content .embed.table-embed td span {
+        font-size: 0.75em; }
+      .main-content .content-container .blog-page-section .blog-content .embed.table-embed td img {
+        margin-right: 10px; }
+    .main-content .content-container .blog-page-section .blog-content .embed.table-embed .embed-table-heading td {
+      background: #fff;
+      border: none; }
+      .main-content .content-container .blog-page-section .blog-content .embed.table-embed .embed-table-heading td h4 {
+        font-size: 0.875em;
+        font-weight: 700; }
+  .main-content .content-container .blog-page-section .blog-content .embed.matches-embed {
+    background-image: url(images/matches-embed.jpg);
+    background-size: cover;
+    padding: 24px 30px 0 30px;
+    margin-bottom: 25px;
+    margin-left: 25px;
+    position: relative; }
+    .main-content .content-container .blog-page-section .blog-content .embed.matches-embed .match-team-details {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex; }
+      .main-content .content-container .blog-page-section .blog-content .embed.matches-embed .match-team-details > div {
+        width: 50%;
+        margin-bottom: 20px;
+        color: #fff;
+        font-weight: 700;
+        font-size: 0.75em; }
+        .main-content .content-container .blog-page-section .blog-content .embed.matches-embed .match-team-details > div.last-child {
+          padding-left: 35px; }
+        .main-content .content-container .blog-page-section .blog-content .embed.matches-embed .match-team-details > div img {
+          width: 25px;
+          margin-right: 10px; }
+    .main-content .content-container .blog-page-section .blog-content .embed.matches-embed .single-match {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-justify-content: center;
+      justify-content: center; }
+      .main-content .content-container .blog-page-section .blog-content .embed.matches-embed .single-match .heroes-list {
+        position: relative; }
+        .main-content .content-container .blog-page-section .blog-content .embed.matches-embed .single-match .heroes-list > div {
+          background: #808080;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: -webkit-flex;
+          display: flex;
+          margin-bottom: 15px; }
+          .main-content .content-container .blog-page-section .blog-content .embed.matches-embed .single-match .heroes-list > div:last-child {
+            margin-bottom: 0; }
+        .main-content .content-container .blog-page-section .blog-content .embed.matches-embed .single-match .heroes-list .orange {
+          background: #ff9200; }
+          .main-content .content-container .blog-page-section .blog-content .embed.matches-embed .single-match .heroes-list .orange img {
+            -webkit-filter: saturate(1);
+            filter: saturate(1); }
+        .main-content .content-container .blog-page-section .blog-content .embed.matches-embed .single-match .heroes-list img {
+          -webkit-filter: saturate(0);
+          filter: saturate(0);
+          margin-left: 3px;
+          margin-top: 3px;
+          margin-bottom: 3px; }
+          .main-content .content-container .blog-page-section .blog-content .embed.matches-embed .single-match .heroes-list img:last-child {
+            margin-right: 3px; }
+      .main-content .content-container .blog-page-section .blog-content .embed.matches-embed .single-match .score {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-align-items: center;
+        align-items: center;
+        color: #fff;
+        font-weight: 700;
+        font-size: 0.75em;
+        padding: 0 19px; }
+    .main-content .content-container .blog-page-section .blog-content .embed.matches-embed .match-details {
+      background-color: transparent;
+      -webkit-justify-content: flex-end;
+      justify-content: flex-end;
+      padding-top: 10px;
+      padding-bottom: 35px;
+      text-align: right; }
+      .main-content .content-container .blog-page-section .blog-content .embed.matches-embed .match-details a {
+        font-weight: 700;
+        color: #fff;
+        font-size: 0.625em;
+        padding: 5px 7px;
+        background: transparent;
+        border: 1px solid #fff;
+        text-decoration: none; }
+    .main-content .content-container .blog-page-section .blog-content .embed.matches-embed .match-time-start {
+      position: absolute;
+      font-weight: 700;
+      font-size: 0.625em;
+      top: 15px;
+      right: 12px; }
+  .main-content .content-container .blog-page-section .blog-content .embed.quote-embed {
+    margin-right: 35px;
+    margin-bottom: 35px; }
+    .main-content .content-container .blog-page-section .blog-content .embed.quote-embed q {
+      font-style: italic;
+      font-size: 1.875em;
+      color: #808080;
+      font-weight: 400; }
+    .main-content .content-container .blog-page-section .blog-content .embed.quote-embed p {
+      text-align: right;
+      font-weight: 0.9375em;
+      font-weight: 400;
+      color: #808080; }
+  .main-content .content-container .blog-page-section .blog-content .embed.video-embed {
+    margin-left: 20px;
+    margin-bottom: 20px; }
+  .main-content .content-container .blog-page-section .blog-content .embed.player-profile-embed {
+    width: 310px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #b3b3b3; }
+    .main-content .content-container .blog-page-section .blog-content .embed.player-profile-embed .stat-container h3.box-heading {
+      margin-bottom: 0; }
+    .main-content .content-container .blog-page-section .blog-content .embed.player-profile-embed h3.box-heading {
+      color: #d5d5d5;
+      font-weight: 700;
+      font-size: 0.75em;
+      background: #4b4b4b;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      justify-content: space-between;
+      height: 40px;
+      margin: 0 0 4px 0;
+      padding: 14px 14px 14px 18px; }
+    .main-content .content-container .blog-page-section .blog-content .embed.player-profile-embed .stat-in {
+      background: #fff;
+      padding-bottom: 8px; }
+      .main-content .content-container .blog-page-section .blog-content .embed.player-profile-embed .stat-in .stat-desc .double {
+        margin-top: 17px; }
+        .main-content .content-container .blog-page-section .blog-content .embed.player-profile-embed .stat-in .stat-desc .double .nickname {
+          font-size: 1em;
+          font-weight: 700;
+          padding-left: 7px; }
+        .main-content .content-container .blog-page-section .blog-content .embed.player-profile-embed .stat-in .stat-desc .double .flag-content {
+          display: -webkit-flex;
+          display: flex;
+          -webkit-justify-content: flex-end;
+          justify-content: flex-end; }
+          .main-content .content-container .blog-page-section .blog-content .embed.player-profile-embed .stat-in .stat-desc .double .flag-content img {
+            height: 20px; }
+        .main-content .content-container .blog-page-section .blog-content .embed.player-profile-embed .stat-in .stat-desc .double.fix-h {
+          height: 42px; }
+      .main-content .content-container .blog-page-section .blog-content .embed.player-profile-embed .stat-in .stat-desc .name {
+        font-size: 0.75em;
+        padding-left: 8px;
+        font-weight: 700; }
+      .main-content .content-container .blog-page-section .blog-content .embed.player-profile-embed .stat-in .stat-desc .teams {
+        font-size: 0.75em;
+        padding-left: 8px;
+        font-weight: 700;
+        margin-top: 5px; }
+        .main-content .content-container .blog-page-section .blog-content .embed.player-profile-embed .stat-in .stat-desc .teams span {
+          font-weight: 500; }
+      .main-content .content-container .blog-page-section .blog-content .embed.player-profile-embed .stat-in .stat-desc .wins, .main-content .content-container .blog-page-section .blog-content .embed.player-profile-embed .stat-in .stat-desc .heroes .heroes-cont .stat-content .statistic .lost, .main-content .content-container .blog-page-section .blog-content .embed.player-profile-embed .stat-in .heroes .heroes-cont .stat-content .statistic .stat-desc .lost, .main-content .content-container .blog-page-section .blog-content .embed.player-profile-embed .stat-in .stat-desc .heroes .heroes-cont .stat-content .statistic .percent, .main-content .content-container .blog-page-section .blog-content .embed.player-profile-embed .stat-in .heroes .heroes-cont .stat-content .statistic .stat-desc .percent {
+        font-size: 0.75em;
+        padding-left: 8px;
+        font-weight: 700; }
+        .main-content .content-container .blog-page-section .blog-content .embed.player-profile-embed .stat-in .stat-desc .wins span, .main-content .content-container .blog-page-section .blog-content .embed.player-profile-embed .stat-in .stat-desc .heroes .heroes-cont .stat-content .statistic .lost span, .main-content .content-container .blog-page-section .blog-content .embed.player-profile-embed .stat-in .heroes .heroes-cont .stat-content .statistic .stat-desc .lost span, .main-content .content-container .blog-page-section .blog-content .embed.player-profile-embed .stat-in .stat-desc .heroes .heroes-cont .stat-content .statistic .percent span, .main-content .content-container .blog-page-section .blog-content .embed.player-profile-embed .stat-in .heroes .heroes-cont .stat-content .statistic .stat-desc .percent span {
+          font-weight: 500; }
+      .main-content .content-container .blog-page-section .blog-content .embed.player-profile-embed .stat-in .player {
+        padding: 14px 0 0 10px;
+        height: 114px; }
+        .main-content .content-container .blog-page-section .blog-content .embed.player-profile-embed .stat-in .player img {
+          display: block;
+          margin: 0 auto; }
+      .main-content .content-container .blog-page-section .blog-content .embed.player-profile-embed .stat-in .heroes .heroes-cont {
+        letter-spacing: -.1px;
+        padding: 0 0 20px 14px;
+        margin-top: 22px; }
+        .main-content .content-container .blog-page-section .blog-content .embed.player-profile-embed .stat-in .heroes .heroes-cont .heroes-title {
+          font-size: 0.75em;
+          margin: 0 0 5px 0; }
+        .main-content .content-container .blog-page-section .blog-content .embed.player-profile-embed .stat-in .heroes .heroes-cont .hero-text {
+          font-size: 0.75em;
+          font-weight: 700;
+          line-height: 13px; }
+        .main-content .content-container .blog-page-section .blog-content .embed.player-profile-embed .stat-in .heroes .heroes-cont .stat-content {
+          display: inline-block; }
+          .main-content .content-container .blog-page-section .blog-content .embed.player-profile-embed .stat-in .heroes .heroes-cont .stat-content.top {
+            margin-top: 17px; }
+          .main-content .content-container .blog-page-section .blog-content .embed.player-profile-embed .stat-in .heroes .heroes-cont .stat-content .graph {
+            float: left;
+            width: 186px;
+            display: block;
+            margin-top: 15px; }
+            .main-content .content-container .blog-page-section .blog-content .embed.player-profile-embed .stat-in .heroes .heroes-cont .stat-content .graph .highcharts-axis-labels text {
+              font-weight: 700; }
+          .main-content .content-container .blog-page-section .blog-content .embed.player-profile-embed .stat-in .heroes .heroes-cont .stat-content .statistic {
+            padding-left: 6px;
+            font-weight: 700;
+            display: block;
+            height: 120px;
+            width: 73px;
+            float: left; }
+            .main-content .content-container .blog-page-section .blog-content .embed.player-profile-embed .stat-in .heroes .heroes-cont .stat-content .statistic .year {
+              font-size: 0.5625em;
+              margin-top: 27px;
+              color: #000; }
+            .main-content .content-container .blog-page-section .blog-content .embed.player-profile-embed .stat-in .heroes .heroes-cont .stat-content .statistic .wins, .main-content .content-container .blog-page-section .blog-content .embed.player-profile-embed .stat-in .heroes .heroes-cont .stat-content .statistic .lost, .main-content .content-container .blog-page-section .blog-content .embed.player-profile-embed .stat-in .heroes .heroes-cont .stat-content .statistic .percent {
+              font-size: 0.75em;
+              font-weight: 500;
+              margin-top: 13px;
+              color: #000; }
+              .main-content .content-container .blog-page-section .blog-content .embed.player-profile-embed .stat-in .heroes .heroes-cont .stat-content .statistic .wins .name, .main-content .content-container .blog-page-section .blog-content .embed.player-profile-embed .stat-in .heroes .heroes-cont .stat-content .statistic .lost .name, .main-content .content-container .blog-page-section .blog-content .embed.player-profile-embed .stat-in .heroes .heroes-cont .stat-content .statistic .percent .name {
+                width: 22px;
+                float: left;
+                display: block; }
+              .main-content .content-container .blog-page-section .blog-content .embed.player-profile-embed .stat-in .heroes .heroes-cont .stat-content .statistic .wins .value, .main-content .content-container .blog-page-section .blog-content .embed.player-profile-embed .stat-in .heroes .heroes-cont .stat-content .statistic .lost .value, .main-content .content-container .blog-page-section .blog-content .embed.player-profile-embed .stat-in .heroes .heroes-cont .stat-content .statistic .percent .value {
+                color: #ff9200;
+                font-weight: 700; }
+            .main-content .content-container .blog-page-section .blog-content .embed.player-profile-embed .stat-in .heroes .heroes-cont .stat-content .statistic .lost {
+              margin-top: 2px; }
+              .main-content .content-container .blog-page-section .blog-content .embed.player-profile-embed .stat-in .heroes .heroes-cont .stat-content .statistic .lost .value {
+                color: #4b4b4b; }
+            .main-content .content-container .blog-page-section .blog-content .embed.player-profile-embed .stat-in .heroes .heroes-cont .stat-content .statistic .percent {
+              margin-top: 3px; }
+              .main-content .content-container .blog-page-section .blog-content .embed.player-profile-embed .stat-in .heroes .heroes-cont .stat-content .statistic .percent .value {
+                color: #000; }
+  .main-content .content-container .blog-page-section .blog-content .embed.upcoming-match-embed {
+    width: 570px;
+    padding: 30px 50px;
+    background-image: url(images/upcoming-matches-embed.jpg);
+    background-size: cover;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    position: relative; }
+    .main-content .content-container .blog-page-section .blog-content .embed.upcoming-match-embed .vs {
+      position: absolute;
+      margin: auto;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: -170px; }
+    .main-content .content-container .blog-page-section .blog-content .embed.upcoming-match-embed h3 {
+      color: #fff;
+      margin: 0;
+      font-weight: 700;
+      font-size: 1.5em; }
+    .main-content .content-container .blog-page-section .blog-content .embed.upcoming-match-embed h4 {
+      color: #fff;
+      margin: 0;
+      font-size: 1.25em;
+      font-weight: 700; }
+    .main-content .content-container .blog-page-section .blog-content .embed.upcoming-match-embed .team-logo-cont p {
+      color: #fff;
+      margin: 0;
+      font-size: 1.25em;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 10px; }
+      .main-content .content-container .blog-page-section .blog-content .embed.upcoming-match-embed .team-logo-cont p.text-align-right {
+        text-align: right; }
+      .main-content .content-container .blog-page-section .blog-content .embed.upcoming-match-embed .team-logo-cont p.text-align-left {
+        text-align: left; }
+    .main-content .content-container .blog-page-section .blog-content .embed.upcoming-match-embed .team-roster {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 0;
+      margin-top: 30px; }
+      .main-content .content-container .blog-page-section .blog-content .embed.upcoming-match-embed .team-roster li {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-align-items: flex-end;
+        align-items: flex-end; }
+        .main-content .content-container .blog-page-section .blog-content .embed.upcoming-match-embed .team-roster li.right-align {
+          -webkit-justify-content: flex-end;
+          justify-content: flex-end; }
+          .main-content .content-container .blog-page-section .blog-content .embed.upcoming-match-embed .team-roster li.right-align img {
+            margin-right: 0;
+            margin-left: 20px; }
+          .main-content .content-container .blog-page-section .blog-content .embed.upcoming-match-embed .team-roster li.right-align p {
+            text-align: right; }
+        .main-content .content-container .blog-page-section .blog-content .embed.upcoming-match-embed .team-roster li img {
+          margin-bottom: 7px;
+          width: 37px;
+          height: 37px;
+          margin-right: 20px; }
+        .main-content .content-container .blog-page-section .blog-content .embed.upcoming-match-embed .team-roster li span {
+          display: block;
+          font-size: 0.83em;
+          font-weight: 400; }
+        .main-content .content-container .blog-page-section .blog-content .embed.upcoming-match-embed .team-roster li p {
+          font-size: 0.75em;
+          color: #fff;
+          font-weight: 700;
+          margin-bottom: 7px; }
+  .main-content .content-container .blog-page-section .blog-content .embed.scoreboard-embed {
+    text-align: center;
+    margin-bottom: 20px; }
+    .main-content .content-container .blog-page-section .blog-content .embed.scoreboard-embed .scoreboard-cont {
+      background-image: url(images/scoreboard-embed.jpg);
+      background-size: cover;
+      padding: 15px 25px 1px 25px;
+      display: inline-block; }
+    .main-content .content-container .blog-page-section .blog-content .embed.scoreboard-embed table {
+      border-collapse: collapse;
+      margin-bottom: 20px; }
+      .main-content .content-container .blog-page-section .blog-content .embed.scoreboard-embed table tr {
+        height: 27px; }
+        .main-content .content-container .blog-page-section .blog-content .embed.scoreboard-embed table tr:last-child td {
+          border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
+      .main-content .content-container .blog-page-section .blog-content .embed.scoreboard-embed table th {
+        font-size: 0.625em;
+        font-weight: 700;
+        color: #000; }
+        .main-content .content-container .blog-page-section .blog-content .embed.scoreboard-embed table th .bans {
+          color: #fff; }
+      .main-content .content-container .blog-page-section .blog-content .embed.scoreboard-embed table td {
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+        color: #fff;
+        font-weight: 700;
+        font-size: 0.75em; }
+        .main-content .content-container .blog-page-section .blog-content .embed.scoreboard-embed table td .heroes-list {
+          float: left;
+          background: #808080;
+          -webkit-filter: saturate(0);
+          filter: saturate(0); }
+          .main-content .content-container .blog-page-section .blog-content .embed.scoreboard-embed table td .heroes-list:first-child {
+            margin-right: 10px; }
+          .main-content .content-container .blog-page-section .blog-content .embed.scoreboard-embed table td .heroes-list.active {
+            background: #ff9200;
+            -webkit-filter: saturate(1);
+            filter: saturate(1); }
+          .main-content .content-container .blog-page-section .blog-content .embed.scoreboard-embed table td .heroes-list img {
+            margin: 3px; }
+        .main-content .content-container .blog-page-section .blog-content .embed.scoreboard-embed table td .nick {
+          font-size: 0.75em;
+          font-weight: 400; }
+      .main-content .content-container .blog-page-section .blog-content .embed.scoreboard-embed table .stats {
+        padding: 0 15px;
+        text-align: center; }
+      .main-content .content-container .blog-page-section .blog-content .embed.scoreboard-embed table .name-td {
+        width: 70px; }
+      .main-content .content-container .blog-page-section .blog-content .embed.scoreboard-embed table .nick-td {
+        width: 140px; }
+      .main-content .content-container .blog-page-section .blog-content .embed.scoreboard-embed table .heroes-td {
+        border: none !important;
+        padding-right: 4px; }
+      .main-content .content-container .blog-page-section .blog-content .embed.scoreboard-embed table .item-td img {
+        margin: 2px 0; }
+    .main-content .content-container .blog-page-section .blog-content .embed.scoreboard-embed .team-name {
+      color: #fff;
+      font-size: 0.75em;
+      font-weight: 700; }
+      .main-content .content-container .blog-page-section .blog-content .embed.scoreboard-embed .team-name img {
+        margin-right: 10px; }
+      .main-content .content-container .blog-page-section .blog-content .embed.scoreboard-embed .team-name span {
+        color: #000;
+        margin-left: 25px; }
+  .main-content .content-container .blog-page-section .blog-content .embed.tournament-embed {
+    border: 1px solid #b3b3b3;
+    padding: 10px;
+    margin-bottom: 20px; }
+    .main-content .content-container .blog-page-section .blog-content .embed.tournament-embed .tour-title {
+      font-family: 'Arial', sans-serif;
+      font-size: 0.75em;
+      letter-spacing: -.5px; }
+      .main-content .content-container .blog-page-section .blog-content .embed.tournament-embed .tour-title.top {
+        padding: 0px 0 0 13px; }
+    .main-content .content-container .blog-page-section .blog-content .embed.tournament-embed .tour-desc {
+      font-family: 'Arial-Bold', sans-serif;
+      font-size: 1em;
+      font-weight: 700;
+      line-height: 18px;
+      margin-top: 2px; }
+      .main-content .content-container .blog-page-section .blog-content .embed.tournament-embed .tour-desc.left {
+        margin-left: 14px; }
+    .main-content .content-container .blog-page-section .blog-content .embed.tournament-embed .tour-m-title {
+      font-family: 'Arial', sans-serif;
+      font-size: 0.75em;
+      letter-spacing: -.2px;
+      margin: 39px 0 0 -1px; }
+    .main-content .content-container .blog-page-section .blog-content .embed.tournament-embed .medals-cont {
+      width: 318px;
+      height: 184px;
+      background-image: url(../assets/images/medals.png);
+      display: -webkit-flex;
+      display: flex;
+      -webkit-justify-content: space-between;
+      justify-content: space-between;
+      padding: 124px 11px 0px 9px; }
+      .main-content .content-container .blog-page-section .blog-content .embed.tournament-embed .medals-cont.tour-marg {
+        margin: 3px 0 0 13px; }
+      .main-content .content-container .blog-page-section .blog-content .embed.tournament-embed .medals-cont > div {
+        width: 94px;
+        height: 19px;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-align-items: center;
+        align-items: center;
+        font-family: 'Arial', sans-serif;
+        font-size: 1em;
+        color: #fff; }
+        .main-content .content-container .blog-page-section .blog-content .embed.tournament-embed .medals-cont > div:nth-child(1) {
+          background: #788283; }
+        .main-content .content-container .blog-page-section .blog-content .embed.tournament-embed .medals-cont > div:nth-child(2) {
+          background: #cc742a; }
+        .main-content .content-container .blog-page-section .blog-content .embed.tournament-embed .medals-cont > div:nth-child(3) {
+          background: #a86133; }
+  .main-content .content-container .blog-page-section .blog-content .embed.game-embed {
+    margin-left: 20px;
+    margin-bottom: 20px;
+    background-image: url(images/matches-embed.jpg);
+    background-size: cover;
+    padding: 10px 23px;
+    width: 570px; }
+    .main-content .content-container .blog-page-section .blog-content .embed.game-embed > div {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex; }
+    .main-content .content-container .blog-page-section .blog-content .embed.game-embed .hero-bans {
+      width: 48px;
+      padding: 0; }
+      .main-content .content-container .blog-page-section .blog-content .embed.game-embed .hero-bans > div {
+        background-color: #808080; }
+      .main-content .content-container .blog-page-section .blog-content .embed.game-embed .hero-bans p {
+        font-size: 0.75em;
+        font-weight: 700;
+        color: #fff;
+        text-align: center;
+        margin-bottom: 9px; }
+        .main-content .content-container .blog-page-section .blog-content .embed.game-embed .hero-bans p.margin-top {
+          margin-top: 13px;
+          margin-bottom: 0; }
+      .main-content .content-container .blog-page-section .blog-content .embed.game-embed .hero-bans img {
+        width: 43px;
+        height: 23px;
+        margin: 3px 3px 0 3px;
+        -webkit-filter: saturate(0);
+        filter: saturate(0); }
+        .main-content .content-container .blog-page-section .blog-content .embed.game-embed .hero-bans img:last-child {
+          margin-bottom: 3px; }
+    .main-content .content-container .blog-page-section .blog-content .embed.game-embed .team-roster {
+      padding-left: 20px; }
+      .main-content .content-container .blog-page-section .blog-content .embed.game-embed .team-roster .head-line {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+        -webkit-align-items: center;
+        align-items: center; }
+        .main-content .content-container .blog-page-section .blog-content .embed.game-embed .team-roster .head-line span {
+          white-space: nowrap; }
+        .main-content .content-container .blog-page-section .blog-content .embed.game-embed .team-roster .head-line .line {
+          margin-right: 15px;
+          height: 1px;
+          background: #fff;
+          width: 100%; }
+      .main-content .content-container .blog-page-section .blog-content .embed.game-embed .team-roster p {
+        text-align: right;
+        color: #fff;
+        font-size: 0.75em;
+        font-weight: 700;
+        margin-bottom: 5px; }
+        .main-content .content-container .blog-page-section .blog-content .embed.game-embed .team-roster p img {
+          margin-left: 10px;
+          width: 20px; }
+      .main-content .content-container .blog-page-section .blog-content .embed.game-embed .team-roster .roster {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex; }
+        .main-content .content-container .blog-page-section .blog-content .embed.game-embed .team-roster .roster > div:last-child .avatar {
+          margin-right: 0; }
+        .main-content .content-container .blog-page-section .blog-content .embed.game-embed .team-roster .roster .avatar {
+          margin-right: 5px;
+          padding: 4px;
+          background: #ff9200;
+          background: -webkit-linear-gradient(#ff9200, transparent);
+          background: -o-linear-gradient(#ff9200, transparent);
+          background: -moz-linear-gradient(#ff9200, transparent);
+          background: linear-gradient(#ff9200, transparent); }
+        .main-content .content-container .blog-page-section .blog-content .embed.game-embed .team-roster .roster .desc {
+          margin-bottom: 4px;
+          text-align: center;
+          color: #fff;
+          font-weight: 400;
+          font-size: 0.5625em; }
+        .main-content .content-container .blog-page-section .blog-content .embed.game-embed .team-roster .roster .name {
+          text-align: center;
+          color: #fff;
+          font-weight: 700;
+          font-size: 0.75em;
+          margin-top: 5px; }
+  .main-content .content-container .blog-page-section .blog-content img.pull-left {
+    margin-right: 40px;
+    margin-bottom: 30px; }
+  .main-content .content-container .blog-page-section .blog-content img.pull-right {
+    margin-left: 40px;
+    margin-bottom: 30px; }

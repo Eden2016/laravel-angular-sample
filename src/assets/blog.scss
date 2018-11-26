@@ -1,0 +1,893 @@
+$yellow: #ff9200;
+$gray-header: #4b4b4b;
+$gray-dark-header: #363636;
+$gray-dark-bg: #222222;
+$gray-light: #eaeaea;
+
+//  px to em Fonts
+@function emy($pxsize) {
+    @return ($pxsize/16)+em;
+}
+
+@mixin display-flex{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+@mixin linear-background($a, $b) {
+    background: $a;
+    background: -webkit-linear-gradient($a, $b);
+    background: -o-linear-gradient($a, $b);
+    background: -moz-linear-gradient($a, $b);
+    background: linear-gradient($a, $b);
+}
+
+.main-content {
+    .content-container {
+        .sidebar-menu {
+            .menu {
+                .blog-panel {
+                    .sub-menu {
+                        max-height: 550px;
+                        overflow: auto;
+
+                        li {
+                            a {
+                                @include display-flex;
+                                min-height: 75px;
+                                -webkit-flex-direction: column;
+                                flex-direction: column;
+                                -webkit-justify-content: space-between;
+                                justify-content: space-between;
+
+                                h3 {
+                                    font-size: 1em;
+                                    color: #999999;
+                                    font-weight: 700;
+                                    margin-top: 0;
+                                    margin-bottom: 5px;
+                                }
+
+                                p {
+                                    color: #ffffff;
+                                    font-size: 0.833em;
+                                    margin-bottom: 0;
+
+                                    img {
+                                        margin-left: 0;
+                                        margin-right: 5px;
+                                        width: 15px;
+                                        height: 15px;
+                                    }
+                                }
+
+                                &:hover h3{
+                                    color: #ffffff;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .blog-page-section {
+
+            .box-heading {
+
+                img {
+                    width: 23px;
+                    height: 23px;
+                    position: relative;
+                    top: -6px;
+                    display: inline-block;
+                    vertical-align: text-top;
+                    margin-right: 5px;
+                }
+            }
+
+            .tournament-poster {
+                margin-top: 10px;
+            }
+
+            .blog-content {
+                background:#fff;
+                padding: 120px 190px;
+
+                h1 {
+                    text-align: center;
+                    font-size: emy(46.72);
+                    font-weight: 400;
+                    margin-top: 0;
+                }
+
+                p.date-posted {
+                    text-align: center;
+                    font-size: emy(15);
+                    font-weight: 400;
+                    text-transform: uppercase;
+                    color: #808080;
+                    margin-bottom: 70px;
+                }
+
+                h3 {
+                    color: #000;
+                    font-size: emy(25);
+                    font-weight: 400;
+                    margin-bottom: 35px;
+                    text-align: center;
+                }
+
+                p {
+                    color: #000;
+                    font-size: emy(16);
+                    font-weight: 400;
+                    text-align: justify;
+
+                    a {
+                        color: $yellow;
+                    }
+                }
+
+                .embed {
+
+                    &.table-embed {
+                        padding: 10px;
+                        display: inline-block;
+                        margin-left: 20px;
+                        margin-bottom: 20px;
+                        border-collapse: collapse;
+                        border: 1px solid #d9d9d9;
+
+                        th {
+                            border: 1px solid #fff;
+                            background:#4b4b4b;
+                            color: #fff;
+                            font-weight: 700;
+                            font-size: 0.875em;
+                            height: 43px;
+                            width: 180px;
+                            text-align: center;
+                        }
+
+                        td {
+                            border: 1px solid #fff;
+                            text-align: center;
+                            background-color: #e6e6e6;
+                            padding:10px 0;
+
+                            span {
+                                font-size: emy(12);
+                            }
+
+                            img {
+                                margin-right: 10px;
+                            }
+                        }
+
+                        .embed-table-heading {
+                            td {
+                                background:#fff;
+                                border: none;
+
+                                h4 {
+                                    font-size: emy(14);
+                                    font-weight: 700;
+                                }
+                            }
+                        }
+                    }
+
+                    &.matches-embed {
+                        background-image: url(images/matches-embed.jpg);
+                        background-size: cover;
+                        padding: 24px 30px 0 30px;
+                        margin-bottom: 25px;
+                        margin-left: 25px;
+                        position: relative;
+
+                        .match-team-details {
+                            @include display-flex;
+
+                            &>div {
+                                width: 50%;
+                                margin-bottom: 20px;
+                                color: #fff;
+                                font-weight: 700;
+                                font-size: emy(12);
+
+                                &.last-child {
+                                    padding-left: 35px;
+                                }
+
+                                img {
+                                    width: 25px;
+                                    margin-right: 10px;
+                                }
+                            }
+                        }
+
+                        .single-match {
+                            @include display-flex;
+                            -webkit-justify-content: center;
+                            justify-content: center;
+
+                            .heroes-list {
+                                position: relative;
+
+                                &> div {
+                                    background:#808080;
+                                    @include display-flex;
+                                    margin-bottom: 15px;
+
+                                    &:last-child {
+                                        margin-bottom: 0;
+                                    }
+                                }
+
+                               .orange {
+                                    background: $yellow;
+
+                                    img {
+                                        -webkit-filter: saturate(1);
+                                        filter: saturate(1);
+                                    }
+                                }
+
+                                img {
+                                    -webkit-filter: saturate(0);
+                                    filter: saturate(0);
+                                    margin-left: 3px;
+                                    margin-top: 3px;
+                                    margin-bottom: 3px;
+
+                                    &:last-child {
+                                        margin-right: 3px;
+                                    }
+                                }
+                            }
+
+
+                            .score {
+                                @include display-flex;
+                                -webkit-align-items: center;
+                                align-items: center;
+                                color: #fff;
+                                font-weight: 700;
+                                font-size: emy(12);
+                                padding: 0 19px;
+                            }
+                        }
+
+                        .match-details {
+                          background-color: transparent;
+                          -webkit-justify-content: flex-end;
+                          justify-content: flex-end;
+                          padding-top: 10px;
+                          padding-bottom: 35px;
+                          text-align: right;
+
+                          a {
+                              font-weight: 700;
+                              color: #fff;
+                              font-size: emy(10);
+                              padding:5px 7px;
+                              background:transparent;
+                              border: 1px solid #fff;
+                              text-decoration: none;
+                            }
+                        }
+
+                        .match-time-start {
+                            position: absolute;
+                            font-weight: 700;
+                            font-size: emy(10);
+                            top: 15px;
+                            right: 12px;
+                        }
+                    }
+
+                    &.quote-embed {
+                        margin-right: 35px;
+                        margin-bottom: 35px;
+                        q {
+                            font-style: italic;
+                            font-size: emy(30);
+                            color: #808080;
+                            font-weight: 400;
+                        }
+
+                        p {
+                            text-align: right;
+                            font-weight: emy(15);
+                            font-weight: 400;
+                            color: #808080;
+                        }
+                    }
+
+                    &.video-embed {
+                        margin-left: 20px;
+                        margin-bottom: 20px;
+                    }
+
+                    &.player-profile-embed {
+                        width: 310px;
+                        margin-left: 20px;
+                        margin-bottom: 20px;
+                        padding: 20px;
+                        border: 1px solid #b3b3b3;
+
+                        .stat-container {
+                            h3.box-heading {
+                             margin-bottom: 0;
+                            }
+                        }
+
+                        h3.box-heading {
+                            color: #d5d5d5;
+                            font-weight: 700;
+                            font-size: emy(12);
+                            background: $gray-header;
+                            @include display-flex;
+                            justify-content: space-between;
+                            height: 40px;
+                            margin: 0 0 4px 0;
+                            padding: 14px 14px 14px 18px;
+                        }
+
+                        .stat-in {
+                            background: #fff;
+                            padding-bottom: 8px;
+                            .stat-desc {
+                                .double {
+                                    margin-top: 17px;
+                                    .nickname {
+                                        font-size: emy(16);
+                                        font-weight: 700;
+                                        padding-left: 7px;
+                                    }
+
+                                    .flag-content {
+                                        display: -webkit-flex;
+                                        display: flex;
+                                        -webkit-justify-content: flex-end;
+                                        justify-content: flex-end;
+
+                                        img {
+                                            height: 20px;
+                                        }
+                                    }
+                                    &.fix-h {
+                                        height: 42px;
+                                    }
+                                }
+                                .name {
+                                    font-size: emy(12);
+                                    padding-left: 8px;
+                                    font-weight: 700;
+                                }
+                                .teams {
+                                    font-size: emy(12);
+                                    padding-left: 8px;
+                                    font-weight: 700;
+                                    margin-top: 5px;
+                                    span {
+                                        font-weight: 500;
+                                    }
+                                }
+                                .wins {
+                                    font-size: emy(12);
+                                    padding-left: 8px;
+                                    font-weight: 700;
+                                    span {
+                                        font-weight: 500;
+                                    }
+                                }
+                            }
+
+                            .player {
+                                padding: 14px 0 0 10px;
+                                height: 114px;
+                                img {
+                                    display: block;
+                                    margin: 0 auto;
+                                }
+                            }
+
+                            .heroes {
+                                .heroes-cont {
+                                    letter-spacing: -.1px;
+                                    padding: 0 0 20px 14px;
+                                    margin-top: 22px;
+                                    .heroes-title {
+                                        font-size: emy(12);
+                                        margin: 0 0 5px 0;
+                                    }
+
+                                    .hero-text {
+                                        font-size: emy(12);
+                                        font-weight: 700;
+                                        line-height: 13px;
+                                    }
+
+                                    .stat-content {
+                                        display: inline-block;
+                                        &.top {
+                                            margin-top: 17px;
+                                        }
+                                        .graph {
+                                            float: left;
+                                            width: 186px;
+                                            display: block;
+                                            margin-top: 15px;
+
+                                            .highcharts-axis-labels {
+                                                text {
+                                                    font-weight: 700;
+                                                }
+                                            }
+                                        }
+
+                                        .statistic {
+                                            padding-left: 6px;
+                                            font-weight: 700;
+                                            display: block;
+                                            height: 120px;
+                                            width: 73px;
+                                            float: left;
+                                            .year {
+                                                font-size: emy(9);
+                                                margin-top: 27px;
+                                                color: #000;
+                                            }
+                                            .wins {
+                                                font-size: emy(12);
+                                                font-weight: 500;
+                                                margin-top: 13px;
+                                                color: #000;
+                                                .name {
+                                                    width: 22px;
+                                                    float: left;
+                                                    display: block;
+                                                }
+                                                .value {
+                                                    color: $yellow;
+                                                    font-weight: 700;
+                                                }
+                                            }
+                                            .lost {
+                                                @extend .wins;
+                                                margin-top: 2px;
+                                                .value {
+                                                    color: $gray-header;
+                                                }
+                                            }
+                                            .percent {
+                                                @extend .wins;
+                                                margin-top: 3px;
+                                                .value {
+                                                    color: #000;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.upcoming-match-embed {
+                        width: 570px;
+                        padding: 30px 50px;
+                        background-image: url(images/upcoming-matches-embed.jpg);
+                        background-size: cover;
+                        margin-left: 20px;
+                        margin-bottom: 20px;
+                        position: relative;
+
+                        .vs {
+                            position: absolute;
+                            margin: auto;
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                            bottom: -170px;
+                        }
+
+                        h3 {
+                            color: #fff;
+                            margin:0;
+                            font-weight: 700;
+                            font-size: 1.5em;
+                        }
+
+                        h4 {
+                            color: #fff;
+                            margin: 0;
+                            font-size: 1.25em;
+                            font-weight: 700;
+                        }
+
+                        .team-logo-cont {
+                            p {
+                                color: #fff;
+                                margin: 0;
+                                font-size: 1.25em;
+                                font-weight: 700;
+                                text-align: center;
+                                margin-bottom: 10px;
+
+                                &.text-align-right {
+                                    text-align: right;
+                                }
+
+                                &.text-align-left {
+                                    text-align: left;
+                                }
+                            }
+                        }
+
+                        .team-roster {
+                            list-style: none;
+                            padding-left: 0;
+                            margin-bottom: 0;
+                            margin-top: 30px;
+
+                            li {
+                                @include display-flex;
+                                -webkit-align-items: flex-end;
+                                align-items: flex-end;
+
+                                &.right-align {
+                                    -webkit-justify-content: flex-end;
+                                    justify-content: flex-end;
+
+                                    img {
+                                        margin-right: 0;
+                                        margin-left: 20px;
+                                    }
+
+                                    p {
+                                        text-align: right;
+                                    }
+                                }
+
+                                img {
+                                    margin-bottom: 7px;
+                                    width: 37px;
+                                    height: 37px;
+                                    margin-right: 20px;
+                                }
+
+                                span {
+                                    display: block;
+                                    font-size: 0.83em;
+                                    font-weight: 400;
+                                }
+
+                                p {
+                                    font-size: emy(12);
+                                    color: #fff;
+                                    font-weight: 700;
+                                    margin-bottom: 7px;
+                                }
+                            }
+                        }
+                    }
+
+                    &.scoreboard-embed {
+                        text-align: center;
+                        margin-bottom: 20px;
+
+                        .scoreboard-cont {
+                            background-image: url(images/scoreboard-embed.jpg);
+                            background-size: cover;
+                            padding: 15px 25px 1px 25px;
+                            display: inline-block;
+                        }
+
+                        table {
+                            border-collapse: collapse;
+                            margin-bottom: 20px;
+
+                            tr {
+                                height: 27px;
+
+                                &:last-child {
+                                    td {
+                                        border-bottom:1px solid rgba(255,255,255, 0.3);
+                                    }
+                                }
+                            }
+
+                            th {
+                                font-size: emy(10);
+                                font-weight: 700;
+                                color: #000;
+
+                                .bans {
+                                    color: #fff;
+                                }
+                            }
+
+                            td {
+                                border-top:1px solid rgba(255,255,255, 0.3);
+                                color: #fff;
+                                font-weight: 700;
+                                font-size: emy(12);
+
+                                .heroes-list {
+                                    float: left;
+                                    background: #808080;
+                                    -webkit-filter:saturate(0);
+                                    filter:saturate(0);
+
+                                    &:first-child {
+                                        margin-right: 10px;
+                                    }
+
+                                    &.active {
+                                        background:$yellow;
+                                        -webkit-filter:saturate(1);
+                                        filter:saturate(1);
+                                    }
+
+                                    img {
+                                        margin: 3px;
+                                    }
+                                }
+
+                                .nick {
+                                    font-size: 0.75em;
+                                    font-weight: 400;
+                                }
+                            }
+
+                            .stats {
+                                padding: 0 15px;
+                                text-align: center;
+                            }
+
+                            .name-td {
+                                width: 70px;
+                            }
+
+                            .nick-td {
+                                width: 140px;
+                            }
+
+                            .heroes-td {
+                                border: none !important;
+                                padding-right: 4px;
+                            }
+
+                            .item-td {
+                                img {
+                                    margin:2px 0;
+                                }
+                            }
+                        }
+
+                        .team-name {
+                            color: #fff;
+                            font-size: emy(12);
+                            font-weight: 700;
+
+                            img {
+                                margin-right: 10px;
+                            }
+
+                            span {
+                                color: #000;
+                                margin-left: 25px;
+                            }
+                        }
+                    }
+
+                    &.tournament-embed {
+                        border: 1px solid #b3b3b3;
+                        padding: 10px;
+                        margin-bottom: 20px;
+
+                        .tour-title {
+                            font-family: 'Arial', sans-serif;
+                            font-size: emy(12);
+                            letter-spacing: -.5px;
+
+                            &.top {
+                                padding: 0px 0 0 13px;
+                            }
+                        }
+
+                        .tour-desc {
+                            font-family: 'Arial-Bold', sans-serif;
+                            font-size: emy(16);
+                            font-weight: 700;
+                            line-height: 18px;
+                            margin-top: 2px;
+
+                            &.left {
+                                margin-left: 14px;
+                            }
+                        }
+
+                        .tour-m-title {
+                            font-family: 'Arial', sans-serif;
+                            font-size: emy(12);
+                            letter-spacing: -.2px;
+                            margin: 39px 0 0 -1px;
+                        }
+
+                        .medals-cont {
+                            width: 318px;
+                            height: 184px;
+                            background-image: url(../assets/images/medals.png);
+                            display: -webkit-flex;
+                            display: flex;
+                            -webkit-justify-content: space-between;
+                            justify-content: space-between;
+                            padding: 124px 11px 0px 9px;
+                            &.tour-marg {
+                                margin: 3px 0 0 13px;
+                            }
+                            & > div {
+                                width: 94px;
+                                height: 19px;
+                                display: -webkit-flex;
+                                display: flex;
+                                -webkit-justify-content: center;
+                                justify-content: center;
+                                -webkit-align-items: center;
+                                align-items: center;
+                                font-family: 'Arial', sans-serif;
+                                font-size: emy(16);
+                                color: #fff;
+                                &:nth-child(1) {
+                                    background: #788283;
+                                }
+
+                                &:nth-child(2) {
+                                    background: #cc742a;
+                                }
+
+                                &:nth-child(3) {
+                                    background: #a86133;
+                                }
+                            }
+                        }
+
+                    }
+
+                    &.game-embed {
+
+                        margin-left: 20px;
+                        margin-bottom: 20px;
+                        background-image: url(images/matches-embed.jpg);
+                        background-size: cover;
+                        padding:10px 23px;
+                        width: 570px;
+
+                        &>div {
+                            @include display-flex;
+                        }
+
+                        .hero-bans {
+                            width: 48px;
+                            padding: 0;
+
+                            &> div {
+                                background-color: #808080;
+                            }
+
+                            p {
+                                font-size: emy(12);
+                                font-weight: 700;
+                                color: #fff;
+                                text-align: center;
+                                margin-bottom: 9px;
+
+                                &.margin-top {
+                                    margin-top:13px;
+                                    margin-bottom: 0;
+                                }
+                            }
+
+                            img {
+                                width: 43px;
+                                height: 23px;
+                                margin: 3px 3px 0 3px;
+                                -webkit-filter: saturate(0);
+                                filter: saturate(0);
+
+                                &:last-child {
+                                    margin-bottom: 3px;
+                                }
+                            }
+                        }
+
+                        .team-roster {
+                            padding-left: 20px;
+
+                            .head-line {
+                                @include display-flex;
+                                -webkit-justify-content: space-between;
+                                justify-content: space-between;
+                                -webkit-align-items: center;
+                                align-items: center;
+
+                                span {
+                                    white-space: nowrap;
+                                }
+
+                                .line {
+                                    margin-right: 15px;
+                                    height: 1px;
+                                    background: #fff;
+                                    width: 100%;
+                                }
+                            }
+
+                            p {
+                                text-align: right;
+                                color: #fff;
+                                font-size: emy(12);
+                                font-weight: 700;
+                                margin-bottom: 5px;
+
+                                img {
+                                    margin-left: 10px;
+                                    width: 20px;
+                                }
+                            }
+
+                            .roster {
+                                @include display-flex;
+
+                                &>div:last-child .avatar{
+                                    margin-right: 0;
+                                }
+
+                                .avatar {
+                                    margin-right: 5px;
+                                    padding:4px;
+                                    @include linear-background($yellow, transparent);
+
+                                }
+
+                                .desc {
+                                    margin-bottom: 4px;
+                                    text-align: center;
+                                    color: #fff;
+                                    font-weight: 400;
+                                    font-size: emy(9);
+                                }
+
+                                .name {
+                                    text-align: center;
+                                    color: #fff;
+                                    font-weight: 700;
+                                    font-size: emy(12);
+                                    margin-top:5px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                img.pull-left {
+                    margin-right: 40px;
+                    margin-bottom: 30px;
+                }
+
+                img.pull-right {
+                    margin-left: 40px;
+                    margin-bottom: 30px;
+                }
+
+
+            }
+        }
+    }
+}

@@ -1,0 +1,858 @@
+<div class="tournament-change-position">
+	<div class="col-lg-11 col-md-11 col-sm-11 left-full-grid">
+		<div class="row">
+			<div class="left-cont tour-in-left">
+				<div class="stream-box" *ngIf="matchStream?.dummy_match">
+					<h3 class="main-title">
+						<img *ngIf="matchStream?.dummy_match.game.slug"
+							src="assets/images/menu/{{matchStream?.dummy_match.game.slug}}.png"
+							alt="game-logo"> <img
+							*ngIf="!matchStream?.dummy_match.game.slug"
+							src="assets/images/label/game-universal.png" alt="game-logo">
+						{{matchStream?.events[0].competition_name}}
+					</h3>
+					<div class="video-info">
+						<div class="game-info">
+							<div class="flag">
+								<img
+									src="assets/images/flags/{{matchStream?.dummy_match.opponent1_details.country.countryName | replaceSpace: '-' | lowercase}}.png"
+									alt="flag">
+							</div>
+							<h4 class="team">{{matchStream?.dummy_match.opponent1_details.name}}</h4>
+							<span class="vs">{{'vs' | translate}}</span>
+							<h4 class="team rev">{{matchStream?.dummy_match.opponent2_details.name}}</h4>
+							<div class="flag rev">
+								<img
+									src="assets/images/flags/{{matchStream?.dummy_match.opponent2_details.country.countryName | replaceSpace: '-' | lowercase}}.png"
+									alt="flag">
+							</div>
+						</div>
+						<div class="leng-cont">
+							<div class="lang">
+								<ul>
+									<template ngFor let-stream
+										[ngForOf]="matchStream?.dummy_match.streams">
+									<li class="lang-flag"><img *ngIf="stream?.lang != null"
+										(click)="loadStream($event.target, stream.embed)"
+										src="assets/images/flags/iso/{{stream?.lang | lowercase }}.png"
+										alt="{{stream?.lang}}"> <img
+										*ngIf="stream?.lang == null"
+										(click)="loadStream($event.target, stream.embed)"
+										src="assets/images/flags/iso/unknown.png" alt="un"></li>
+									</template>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!-- Select steam-->
+					<div class="col-lg-24 col-md-24 col-sm-24" *ngIf="stream">
+						<div class="row video-bg">
+							<div [innerHTML]="stream"></div>
+						</div>
+					</div>
+					<div class="col-lg-24 col-md-24 col-sm-24" *ngIf="!stream">
+						<div class="row video-bg">
+							<span>{{ 'No live stream' | translate}}</span>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="stream-box"
+					*ngIf="matchStream?.events && (!matchStream?.dummy_match)">
+					<h3 class="main-title">
+						<img src="assets/images/label/game-universal.png" alt="game-logo">
+						{{matchStream?.events[0].competition_name}}
+					</h3>
+					<div class="video-info">
+						<div class="game-info">
+							<h4 class="team">{{matchStream?.events[0].home_team.team_name}}</h4>
+							<span class="vs">{{'vs' | translate}}</span>
+							<h4 class="team rev">{{matchStream?.events[0].away_team.team_name}}</h4>
+						</div>
+						<div class="leng-cont">
+							<div class="lang">
+								<ul>
+									<template ngFor let-stream
+										[ngForOf]="matchStream?.events[0].streams">
+									<li class="lang-flag"><img *ngIf="stream?.lang != null"
+										(click)="loadStream($event.target, stream.embed)"
+										src="assets/images/flags/iso/{{stream?.lang | lowercase }}.png"
+										alt="{{stream?.lang}}"> <img
+										*ngIf="stream?.lang == null"
+										(click)="loadStream($event.target, stream.embed)"
+										src="assets/images/flags/iso/unknown.png" alt="un"></li>
+									</template>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!-- Select steam-->
+					<div class="col-lg-24 col-md-24 col-sm-24" *ngIf="stream">
+						<div class="row video-bg">
+							<div [innerHTML]="stream"></div>
+						</div>
+					</div>
+					<div class="col-lg-24 col-md-24 col-sm-24" *ngIf="!stream">
+						<div class="row video-bg">
+							<span>{{ 'No live stream' | translate}}</span>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+
+				<!--     Tournament     -->
+
+				<div class="col-lg-24 col-md-24 col-sm-24 tournament">
+					<div class="row">
+						<h3 class="main-title fixed-height">{{ 'Tournament details' | translate}}</h3>
+						<div
+							class="col-lg-24 col-md-24 col-sm-24 tournament-content tourn-page">
+							<div class="row">
+								<div class="col-lg-24 tour-cont">
+									<div class="row">
+										<div class="tour-image tour-page">
+											<img *ngIf="tournament.toutou_logo"
+												src="http://static.esportsconstruct.com/{{tournament.toutou_logo}}"
+												alt="banner"> <img *ngIf="!tournament.toutou_logo"
+												src="assets/images/default-poster.jpg" alt="banner">
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-24 tour-cont">
+									<div class="row">
+										<div class="col-md-12 col-xs-24">
+											<div class="tour-info">
+												<div class="col-md-24 col-sm-24  tour-order">
+													<div class="row">
+														<div class="tour-desc event-name">
+															{{tournament.name}}</div>
+													</div>
+												</div>
+
+												<div class="col-md-24 col-sm-24 tour-order">
+													<div class="row">
+														<div class="tour-desc extra">
+															<span class="tour-start-date" *ngIf="tournament.start"><img
+																src="assets/images/ico-calendar2.png" alt="calendar">
+																{{tournament.start | date : 'MMM d'}} - {{tournament.end
+																| date : 'MMM d, y'}}</span> <span class="tour-location"
+																*ngIf="!tournament.event?.location && tournament.location"><img
+																src="assets/images/ico-location.png" alt="location">{{tournament.location}}</span>
+															<span class="tour-location"
+																*ngIf="!tournament.location && tournament.event?.location"><img
+																src="assets/images/ico-location.png" alt="location">{{tournament.event?.location}}</span>
+															<span class="tour-location"
+																*ngIf="tournament.location && tournament.event?.location"><img
+																src="assets/images/ico-location.png" alt="location">{{tournament.location}}</span>
+														</div>
+													</div>
+												</div>
+
+												<div class="col-md-24 col-sm-24 tour-order">
+													<div class="row">
+														<div class="tour-desc extra"
+															*ngIf="!tournament.description && tournament.event?.description ">
+															{{tournament.event?.description}}</div>
+														<div class="tour-desc extra"
+															*ngIf="!tournament.event?.description && tournament.description">
+															{{tournament.description}}</div>
+														<div class="tour-desc extra"
+															*ngIf="tournament.event?.description && tournament.description">
+															{{tournament.description}}</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+
+										<div class="col-md-12 col-xs-24">
+											<div class="row">
+												<div class="col-lg-24 col-md-24 col-sm-24 medals"
+													[ngClass]="{'mh': tournament?.prize_distribution}">
+													<div *ngIf="tournament.prize">
+														<div class="tour-title top tourn-page">{{ 'Prize pool' | translate}}:</div>
+														<div class="tour-desc extra left tourn-page">
+															{{tournament.prize | currency: 'USD' : true : '1.0-0' }}
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+
+										<div *ngIf="tournament?.prize_distribution">
+											<div class="medals-cont tour-marg">
+												<div class="prize-place"
+													*ngIf="tournament?.prize_distribution[2]">
+													<span>{{tournament.prize_distribution[2] | currency:
+														'USD' : true : '1.0-0' }}</span> <span>2</span>
+												</div>
+												<div class="prize-place first-prize"
+													*ngIf="tournament?.prize_distribution[1]">
+													<span>{{tournament.prize_distribution[1] | currency:
+														'USD' : true : '1.0-0' }}</span> <span>1</span>
+												</div>
+												<div class="prize-place"
+													*ngIf="tournament?.prize_distribution[3]">
+													<span>{{tournament.prize_distribution[3] | currency:
+														'USD' : true : '1.0-0' }}</span> <span>3</span>
+												</div>
+											</div>
+										</div>
+
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<!--     Outright Markets     -->
+
+				<!--<div class="col-lg-24 col-md-24 col-sm-24 outright">-->
+				<!--<div class="row">-->
+				<!--<h3 class="main-title fixed-height m-top">-->
+				<!--<span>OUTRIGHT MARKETS</span>-->
+				<!--<span class="slid-direction">-->
+				<!--<i class="left-arr"></i>-->
+				<!--<i class="right-arr"></i>-->
+				<!--</span>-->
+				<!--</h3>-->
+				<!--<div class="col-lg-24 col-md-24 col-sm-24">-->
+				<!--<div class="row outright-slider">-->
+				<!--&lt;!&ndash;     slide 1     &ndash;&gt;-->
+				<!--<div class="teams-container">-->
+				<!--<div class="team">-->
+				<!--<div class="logos-cont">-->
+				<!--<span class="team-flag"><img src="assets/images/flags/china.png" alt="flag"></span>-->
+				<!--<span class="team-logo"><img src="assets/images/team-logo4.png" alt="logo"></span>-->
+				<!--<span class="team-title">Digital Chaos</span>-->
+				<!--</div>-->
+				<!--<span class="team-date">3.16</span>-->
+				<!--</div>-->
+				<!--<div class="team">-->
+				<!--<div class="logos-cont">-->
+				<!--<span class="team-flag"><img src="assets/images/flags/china.png" alt="flag"></span>-->
+				<!--<span class="team-logo"><img src="assets/images/team-logo4.png" alt="logo"></span>-->
+				<!--<span class="team-title">Wings Gaming</span>-->
+				<!--</div>-->
+				<!--<span class="team-date">3.16</span>-->
+				<!--</div>-->
+				<!--<div class="team">-->
+				<!--<div class="logos-cont">-->
+				<!--<span class="team-flag"><img src="assets/images/flags/china.png" alt="flag"></span>-->
+				<!--<span class="team-logo"><img src="assets/images/team-logo4.png" alt="logo"></span>-->
+				<!--<span class="team-title">Evil Geniuses Dota2</span>-->
+				<!--</div>-->
+				<!--<span class="team-date">3.16</span>-->
+				<!--</div>-->
+				<!--<div class="team">-->
+				<!--<div class="logos-cont">-->
+				<!--<span class="team-flag"><img src="assets/images/flags/china.png" alt="flag"></span>-->
+				<!--<span class="team-logo"><img src="assets/images/team-logo4.png" alt="logo"></span>-->
+				<!--<span class="team-title">OG</span>-->
+				<!--</div>-->
+				<!--<span class="team-date">3.16</span>-->
+				<!--</div>-->
+				<!--<div class="team">-->
+				<!--<div class="logos-cont">-->
+				<!--<span class="team-flag"><img src="assets/images/flags/china.png" alt="flag"></span>-->
+				<!--<span class="team-logo"><img src="assets/images/team-logo4.png" alt="logo"></span>-->
+				<!--<span class="team-title">Newbee</span>-->
+				<!--</div>-->
+				<!--<span class="team-date">3.16</span>-->
+				<!--</div>-->
+				<!--</div>-->
+				<!--&lt;!&ndash;     slide 2     &ndash;&gt;-->
+				<!--<div class="teams-container">-->
+				<!--<div class="team">-->
+				<!--<div class="logos-cont">-->
+				<!--<span class="team-flag"><img src="assets/images/flags/china.png" alt="flag"></span>-->
+				<!--<span class="team-logo"><img src="assets/images/team-logo4.png" alt="logo"></span>-->
+				<!--<span class="team-title">Fnatic.Dota2</span>-->
+				<!--</div>-->
+				<!--<span class="team-date">3.16</span>-->
+				<!--</div>-->
+				<!--<div class="team">-->
+				<!--<div class="logos-cont">-->
+				<!--<span class="team-flag"><img src="assets/images/flags/china.png" alt="flag"></span>-->
+				<!--<span class="team-logo"><img src="assets/images/team-logo4.png" alt="logo"></span>-->
+				<!--<span class="team-title">EHOME</span>-->
+				<!--</div>-->
+				<!--<span class="team-date">3.16</span>-->
+				<!--</div>-->
+				<!--<div class="team">-->
+				<!--<div class="logos-cont">-->
+				<!--<span class="team-flag"><img src="assets/images/flags/china.png" alt="flag"></span>-->
+				<!--<span class="team-logo"><img src="assets/images/team-logo4.png" alt="logo"></span>-->
+				<!--<span class="team-title">LGD</span>-->
+				<!--</div>-->
+				<!--<span class="team-date">3.16</span>-->
+				<!--</div>-->
+				<!--<div class="team">-->
+				<!--<div class="logos-cont">-->
+				<!--<span class="team-flag"><img src="assets/images/flags/china.png" alt="flag"></span>-->
+				<!--<span class="team-logo"><img src="assets/images/team-logo4.png" alt="logo"></span>-->
+				<!--<span class="team-title">Team Liquid</span>-->
+				<!--</div>-->
+				<!--<span class="team-date">3.16</span>-->
+				<!--</div>-->
+				<!--<div class="team">-->
+				<!--<div class="logos-cont">-->
+				<!--<span class="team-flag"><img src="assets/images/flags/china.png" alt="flag"></span>-->
+				<!--<span class="team-logo"><img src="assets/images/team-logo4.png" alt="logo"></span>-->
+				<!--<span class="team-title">Team Secret</span>-->
+				<!--</div>-->
+				<!--<span class="team-date">3.16</span>-->
+				<!--</div>-->
+				<!--</div>-->
+				<!--&lt;!&ndash;     slide 3     &ndash;&gt;-->
+				<!--<div class="teams-container">-->
+				<!--<div class="team">-->
+				<!--<div class="logos-cont">-->
+				<!--<span class="team-flag"><img src="assets/images/flags/china.png" alt="flag"></span>-->
+				<!--<span class="team-logo"><img src="assets/images/team-logo4.png" alt="logo"></span>-->
+				<!--<span class="team-title">Digital Chaos</span>-->
+				<!--</div>-->
+				<!--<span class="team-date">3.16</span>-->
+				<!--</div>-->
+				<!--<div class="team">-->
+				<!--<div class="logos-cont">-->
+				<!--<span class="team-flag"><img src="assets/images/flags/china.png" alt="flag"></span>-->
+				<!--<span class="team-logo"><img src="assets/images/team-logo4.png" alt="logo"></span>-->
+				<!--<span class="team-title">Digital Chaos</span>-->
+				<!--</div>-->
+				<!--<span class="team-date">3.16</span>-->
+				<!--</div>-->
+				<!--<div class="team">-->
+				<!--<div class="logos-cont">-->
+				<!--<span class="team-flag"><img src="assets/images/flags/china.png" alt="flag"></span>-->
+				<!--<span class="team-logo"><img src="assets/images/team-logo4.png" alt="logo"></span>-->
+				<!--<span class="team-title">Digital Chaos</span>-->
+				<!--</div>-->
+				<!--<span class="team-date">3.16</span>-->
+				<!--</div>-->
+				<!--<div class="team">-->
+				<!--<div class="logos-cont">-->
+				<!--<span class="team-flag"><img src="assets/images/flags/china.png" alt="flag"></span>-->
+				<!--<span class="team-logo"><img src="assets/images/team-logo4.png" alt="logo"></span>-->
+				<!--<span class="team-title">Digital Chaos</span>-->
+				<!--</div>-->
+				<!--<span class="team-date">3.16</span>-->
+				<!--</div>-->
+				<!--<div class="team">-->
+				<!--<div class="logos-cont">-->
+				<!--<span class="team-flag"><img src="assets/images/flags/china.png" alt="flag"></span>-->
+				<!--<span class="team-logo"><img src="assets/images/team-logo4.png" alt="logo"></span>-->
+				<!--<span class="team-title">Digital Chaos</span>-->
+				<!--</div>-->
+				<!--<span class="team-date">3.16</span>-->
+				<!--</div>-->
+				<!--</div>-->
+				<!--</div>-->
+				<!--</div>-->
+				<!--</div>-->
+				<!--</div>-->
+
+				<!--     Statistics     -->
+
+				<div class="col-lg-24 col-md-24 col-sm-24 statistics">
+					<div class="row stat-blocks">
+						<div *ngIf="teamsId[0]"
+							class="col-lg-12 col-md-12 col-sm-12 part tour-border">
+							<app-team-spotlight class="margin-right" [teamId]="teamsId[0]"></app-team-spotlight>
+						</div>
+
+						<!--                                ------------------                                      -->
+
+						<div *ngIf="teamsId[1]"
+							class="col-lg-12 col-md-12 col-sm-12 part tour-border">
+							<app-team-spotlight [teamId]="teamsId[1]"></app-team-spotlight>
+						</div>
+					</div>
+				</div>
+
+
+				<div *ngIf="tournament.team_accounts != ''"
+					class="col-lg-24 col-md-24 col-sm-24 participans">
+					<div class="row">
+						<h3 class="main-title fixed-height">
+							<span>{{ 'The list of participants' | translate}}</span>
+						</h3>
+						<div class="col-lg-24 col-md-24 col-sm-24">
+							<div class="row participans-slider">
+								<div *ngFor="let team of tournament.team_accounts"
+									class="participan">
+									<span *ngIf="team?.website"> <a
+										href="{{team?.website}}/?utm_source=188BET" target="_blank">
+											<img *ngIf="team.logo"
+											src="http://static.esportsconstruct.com/{{team.logo}}"
+											alt="{{team.name}}">
+									</a> <span class="team-name" *ngIf="!team.logo">{{team.name}}></span>
+									</span> <span *ngIf="!team?.website"> <img *ngIf="team.logo"
+										src="http://static.esportsconstruct.com/{{team.logo}}"
+										alt="{{team.name}}"> <span class="team-name"
+										*ngIf="!team.logo">{{team.name}}</span>
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!--     News     -->
+
+				<div class="col-lg-24 col-md-24 col-sm-24 news">
+					<div class="row news-blocks">
+						<div class="col-lg-12 col-md-12 col-sm-24">
+							<div class="row">
+								<div class="cont-news m-right grey tour-less">
+									<h3 class="main-title fixed-height m-top">
+										<span>{{ 'Dota 2' | translate}}</span><span class="date remove-top">10.Oct.2016</span>
+									</h3>
+									<div class="post">
+										<img src="assets/images/news.png" alt="news">
+										<h3 class="post-title">Evil Geniuses, OG, Team Secret
+											decline invites to DreamLeague</h3>
+										<h3 class="post-desc">Evil Geniuses, Team Secret and OG
+											have decided against competing in DreamLeague Season 6 due to
+											the proximity in time to The Boston Major</h3>
+										<div class="read-more grey">
+											<a href="#">...{{ 'Read more' | translate}}</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-12 col-md-12 col-sm-24">
+							<div class="row">
+								<div class="cont-news m-left grey tour-less">
+									<h3 class="main-title fixed-height m-top">
+										<span>{{ 'CS:GO' | translate}}</span><span class="date remove-top">10.Oct.2016</span>
+									</h3>
+									<div class="post">
+										<img src="assets/images/news.png" alt="news">
+										<h3 class="post-title">Evil Geniuses, OG, Team Secret
+											decline invites to DreamLeague</h3>
+										<h3 class="post-desc">Evil Geniuses, Team Secret and OG
+											have decided against competing in DreamLeague Season 6 due to
+											the proximity in time to The Boston Major</h3>
+										<div class="read-more grey">
+											<a href="#">...{{ 'Read more' | translate}}</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!--     Topics     -->
+
+				<div class="col-lg-24 col-md-24 col-sm-24 topics">
+					<div class="row">
+						<h3 class="main-title only-text m-top">{{ 'TOPICS' | translate}}</h3>
+
+						<div class="col-lg-24 col-md-24 col-sm-24 game grey">
+							<div class="row">
+								<div class="col-lg-6 col-md-6 col-sm-6">
+									<div class="row">
+										<div class="top-cont game-date">
+											<img src="assets/images/menu/dota.png" alt="game-logo">
+											<div class="top-date">9. Oct. 2016.</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-3">
+									<div class="row">
+										<div class="top-cont game-status">{{ 'RECAP' | translate}}</div>
+									</div>
+								</div>
+								<div class="col-lg-15 col-md-15 col-sm-15">
+									<div class="row">
+										<div class="top-cont game-desc">Northern Arena BEAT
+											Invitational rounds up ...</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-24 col-md-24 col-sm-24 game grey">
+							<div class="row">
+								<div class="col-lg-6 col-md-6 col-sm-6">
+									<div class="row">
+										<div class="top-cont game-date">
+											<img src="assets/images/menu/dota.png" alt="game-logo">
+											<div class="top-date">9. Oct. 2016.</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-3">
+									<div class="row">
+										<div class="top-cont game-status">{{ 'Dota 2' | translate}}...</div>
+									</div>
+								</div>
+								<div class="col-lg-15 col-md-15 col-sm-15">
+									<div class="row">
+										<div class="top-cont game-desc">The Fall Battle Pass has
+											been released</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-24 col-md-24 col-sm-24 game grey">
+							<div class="row">
+								<div class="col-lg-6 col-md-6 col-sm-6">
+									<div class="row">
+										<div class="top-cont game-date">
+											<img src="assets/images/menu/dota.png" alt="game-logo">
+											<div class="top-date">8. Oct. 2016.</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-3">
+									<div class="row">
+										<div class="top-cont game-status">{{ 'RECAP' | translate}}</div>
+									</div>
+								</div>
+								<div class="col-lg-15 col-md-15 col-sm-15">
+									<div class="row">
+										<div class="top-cont game-desc">Evil Geniuses, Team
+											Secret and OG withdraw ...</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-24 col-md-24 col-sm-24 game grey">
+							<div class="row">
+								<div class="col-lg-6 col-md-6 col-sm-6">
+									<div class="row">
+										<div class="top-cont game-date">
+											<img src="assets/images/menu/dota.png" alt="game-logo">
+											<div class="top-date">7. Oct. 2016.</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-3">
+									<div class="row">
+										<div class="top-cont game-status">{{ 'PREVIEW' | translate}}</div>
+									</div>
+								</div>
+								<div class="col-lg-15 col-md-15 col-sm-15">
+									<div class="row">
+										<div class="top-cont game-desc">Newbee is the winner of
+											Shanghai Dota2 Open #2</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-24 col-md-24 col-sm-24 game grey">
+							<div class="row">
+								<div class="col-lg-6 col-md-6 col-sm-6">
+									<div class="row">
+										<div class="top-cont game-date">
+											<img src="assets/images/menu/dota.png" alt="game-logo">
+											<div class="top-date">6. Oct. 2016.</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-3">
+									<div class="row">
+										<div class="top-cont game-status">{{ 'PREVIEW' | translate}}</div>
+									</div>
+								</div>
+								<div class="col-lg-15 col-md-15 col-sm-15">
+									<div class="row">
+										<div class="top-cont game-desc">Team EnVyUs set to sign
+											SIXER</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-24 col-md-24 col-sm-24 game grey">
+							<div class="row">
+								<div class="col-lg-6 col-md-6 col-sm-6">
+									<div class="row">
+										<div class="top-cont game-date">
+											<img src="assets/images/menu/dota.png" alt="game-logo">
+											<div class="top-date">5. Oct. 2016.</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-3">
+									<div class="row">
+										<div class="top-cont game-status">{{ 'RECAP' | translate}}</div>
+									</div>
+								</div>
+								<div class="col-lg-15 col-md-15 col-sm-15">
+									<div class="row">
+										<div class="top-cont game-desc">Maikelele to extend his
+											stay with Ninjas in Pyjamas</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-24 col-md-24 col-sm-24 game grey">
+							<div class="row">
+								<div class="col-lg-6 col-md-6 col-sm-6">
+									<div class="row">
+										<div class="top-cont game-date">
+											<img src="assets/images/menu/dota.png" alt="game-logo">
+											<div class="top-date">5. Oct. 2016.</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-3">
+									<div class="row">
+										<div class="top-cont game-status">{{ 'RECAP' | translate}}</div>
+									</div>
+								</div>
+								<div class="col-lg-15 col-md-15 col-sm-15">
+									<div class="row">
+										<div class="top-cont game-desc">New Game Update adds
+											Graffiti boxes</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-lg-13 col-md-13 col-sm-13 right-full-grid">
+		<div class="right-cont tour-out-right">
+			<app-match-table [queryParams]="queryParams"></app-match-table>
+		</div>
+	</div>
+
+	<div class="col-lg-13 col-md-13 col-sm-13 right-full-grid">
+		<div class="right-cont tour-out-right">
+			<!-- End lists -->
+			<div class="row">
+				<div *ngIf="tournament.group"
+					class="col-lg-24 col-md-24 col-sm-24 group-stage-container tour-less">
+					<div class="row group-stage">
+						<div class="stages-cont">
+							<ul class="nav nav-tabs stages-nav stage-slider">
+								<li *ngFor="let group of tournament.group; let i = index;">
+									<span class="group" [ngClass]="{'active':i == 0}"> <a
+										(click)="createActive($event)" data-toggle="tab"
+										href="#{{group.name | replaceSpace: '_' | replaceWith: '#' : ''}}">{{group.name}}</a>
+								</span>
+								</li>
+							</ul>
+							<div *ngFor="let group of tournament.group; let i=index;"
+								class="tab-pane fade" id="{{group.name | replaceSpace: '_' | replaceWith: '#' : ''}}">
+								<h3 class="box-heading group-title">
+									<ul class="nav nav-tabs group-slider">
+										<template ngFor let-stage_format
+											[ngForOf]="group.stage_formats" let-s="index">
+										<li
+											[ngClass]="{'playoff-btn': stage_format?.type == 1 || stage_format?.type == 0}">
+											<span class="group" [ngClass]="{'active':  i == 0 && s == 0}">
+												<a (click)="createActive($event)" data-toggle="tab"
+												href="#stage_format_{{stage_format.name | replaceSpace: '_' | replaceWith: '#' : ''}}{{i}}"><img
+													*ngIf="stage_format?.bracket_data != null"
+													src="assets/images/ico-grid.png">
+													{{stage_format.name}}</a>
+										</span>
+										</li>
+										</template>
+									</ul>
+									<!-- game running -->
+								</h3>
+								<div class="stage-format-cont">
+									<div
+										*ngFor="let stage_format of group.stage_formats; let b = index;"
+										class="tab-pane fade"
+										id="stage_format_{{stage_format.name | replaceSpace: '_' | replaceWith: '#' : ''}}{{i}}">
+										<div *ngIf="stage_format?.group_data">
+											<!-- group -->
+											<div class="no-padding group-content col-sm-12">
+												<div class="no-padding np-mobile p-right-add">
+													<table class="table group in-group">
+														<thead>
+															<tr>
+																<th>{{stage_format.name}} - {{ 'TEAMS' | translate}}</th>
+																<th title="{{ 'Played' | translate}}">{{ 'P' | translate}}</th>
+																<th title="{{ 'Won' | translate}}">{{ 'W' | translate}}</th>
+																<th title="{{ 'Draw' | translate}}">{{ 'D' | translate}}</th>
+																<th title="{{ 'Lost' | translate}}">{{ 'L' | translate}}</th>
+																<th title="{{ 'Points' | translate}}">{{ 'Pts' | translate}}</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr
+																*ngFor="let team of stage_format.group_data?.teams | orderByNumber">
+																<td><span> <img *ngIf="team.logo"
+																		src="http://static.esportsconstruct.com/{{team.logo}}"
+																		alt="logo"> <img *ngIf="!team.logo"
+																		src="assets/images/team-universal.jpg" alt="logo">
+																</span> {{team.name}}</td>
+																<td>{{team.total_matches}}</td>
+																<td>{{team.wins}}</td>
+																<td>{{team.draws}}</td>
+																<td>{{team.loses}}</td>
+																<td>{{team.points}}</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+											<!-- group -->
+											<div class="no-padding group-content col-sm-12">
+												<div class="schedule no-padding np-mobile">
+													<div class="schedule-a">
+														<table class="table">
+															<thead>
+																<tr>
+																	<th>{{ 'SCHEDULE' | translate}}</th>
+																	<th></th>
+																	<th></th>
+																	<th></th>
+																</tr>
+															</thead>
+														</table>
+														<div class="body collapse in">
+															<table class="table tour">
+																<tbody>
+																	<template ngFor let-schedule [ngForOf]="stage_format.group_data?.schedule | orderByDate">
+																		<tr *ngIf="schedule.start_date != null">
+																			<td>{{schedule.home_team}}</td>
+																			<td class="vs">{{'vs' | translate}}</td>
+																			<td>{{schedule.away_team}}</td>
+																			<td *ngIf="(schedule.start_date | timeToSeconds) < dateNow">{{schedule.home_team_score}}:{{schedule.away_team_score}} </td>
+																			<td *ngIf="(schedule.start_date | timeToSeconds) > dateNow">{{schedule.start_date | date}}</td>
+																		</tr>
+																	</template>
+																</tbody>
+															</table>
+														</div>
+													</div>
+												</div>
+												<!-- schedule -->
+											</div>
+										</div>
+										<!-- body -->
+										<div
+											class="col-md-24 bracket-cont-{{group.name | replaceSpace: '_' | replaceWith: '#' : '' }}-{{stage_format.name | replaceSpace: '_' | replaceWith: '#' : '' }}{{b}}"
+											*ngIf="stage_format?.bracket_data">
+											<app-bracket-match
+												[upperBracketOnly]="stage_format?.type == 0"
+												[singleElThirdPlace]="stage_format?.type == 0 && stage_format?.bracket_data[3] != ''"
+												[bracketData]="stage_format.bracket_data"
+												containerName="{{group.name | replaceSpace: '_' | replaceWith: '#' : ''}}-{{stage_format.name | replaceSpace: '_' | replaceWith: '#' : '' }}{{b}}"></app-bracket-match>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+<!-- 			 swiss format waiting backend support dont delete -->
+<!-- 			<div class="row"> -->
+<!-- 					<div class="col-md-24 swiss-format-holder"> -->
+<!-- 						<div class="round-holder"> -->
+<!-- 							<div class="round-name"{{ '' | translate}}>LOW</div> -->
+<!-- 							<div class="matches-holder"> -->
+<!-- 								<div class="match-holder"> -->
+<!-- 									<div class="opponent-holder"> -->
+<!-- 										<span class="winner"><img src="assets/images/flags/russia.png" -->
+<!-- 											alt="logo">Team Empire</span><span class="winner">0</span> -->
+<!-- 									</div> -->
+<!-- 									<div class="opponent-holder winner"> -->
+<!-- 										<span><img src="assets/images/flags/russia.png" -->
+<!-- 											alt="logo">Prodota Gaming</span><span>0</span> -->
+<!-- 									</div> -->
+<!-- 								</div> -->
+<!-- 								<div class="match-holder"> -->
+<!-- 									<div class="opponent-holder"> -->
+<!-- 										<span><img src="assets/images/flags/russia.png" -->
+<!-- 											alt="logo">Team Empire</span><span>0</span> -->
+<!-- 									</div> -->
+<!-- 									<div class="opponent-holder winner"> -->
+<!-- 										<span class="winner"><img src="assets/images/flags/russia.png" -->
+<!-- 											alt="logo">Prodota Gaming</span><span class="winner">0</span> -->
+<!-- 									</div> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 						<div class="round-holder"> -->
+<!-- 							<div class="round-name">{{ '' | translate}}MID</div> -->
+<!-- 							<div class="matches-holder"> -->
+<!-- 								<div class="match-holder"> -->
+<!-- 									<div class="opponent-holder"> -->
+<!-- 										<span><img src="assets/images/flags/ukraine.png" -->
+<!-- 											alt="logo"><strong>Vega Squadron</strong></span><span><strong>0</strong></span> -->
+<!-- 									</div> -->
+<!-- 									<div class="opponent-holder winner"> -->
+<!-- 										<span><img src="assets/images/flags/russia.png" -->
+<!-- 											alt="logo">Team Empire</span><span>0</span> -->
+<!-- 									</div> -->
+<!-- 								</div> -->
+<!-- 								<div class="match-holder"> -->
+<!-- 									<div class="opponent-holder"> -->
+<!-- 										<span class="winner"><img src="assets/images/flags/ukraine.png" -->
+<!-- 											alt="logo">Vega Squadron</span><span>0</span> -->
+<!-- 									</div> -->
+<!-- 									<div class="opponent-holder winner"> -->
+<!-- 										<span><img src="assets/images/flags/russia.png" -->
+<!-- 											alt="logo"><strong>Team Empire</strong></span><span>0</span> -->
+<!-- 									</div> -->
+<!-- 								</div> -->
+<!-- 								<div class="match-holder"> -->
+<!-- 									<div class="opponent-holder"> -->
+<!-- 										<span><img src="assets/images/flags/ukraine.png" -->
+<!-- 											alt="logo"><strong>Vega Squadron</strong></span><span><strong>0</strong></span> -->
+<!-- 									</div> -->
+<!-- 									<div class="opponent-holder winner"> -->
+<!-- 										<span><img src="assets/images/flags/russia.png" -->
+<!-- 											alt="logo">Team Empire</span><span>0</span> -->
+<!-- 									</div> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 						<div class="round-holder"> -->
+<!-- 							<div class="round-name">{{ '' | translate}}HIGH</div> -->
+<!-- 							<div class="matches-holder"> -->
+<!-- 								<div class="match-holder"> -->
+<!-- 									<div class="opponent-holder"> -->
+<!-- 										<span><img src="assets/images/flags/ukraine.png" -->
+<!-- 											alt="logo"><strong>Vega Squadron</strong></span><span><strong>0</strong></span> -->
+<!-- 									</div> -->
+<!-- 									<div class="opponent-holder winner"> -->
+<!-- 										<span class="loser"><img src="assets/images/flags/world.png" -->
+<!-- 											alt="logo">Opponent 2</span><span class="loser">0</span> -->
+<!-- 									</div> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
+<!-- 							<div class="matches-holder"> -->
+<!-- 								<div class="match-holder"> -->
+<!-- 									<div class="opponent-holder"> -->
+<!-- 										<span><img src="assets/images/flags/ukraine.png" -->
+<!-- 											alt="logo"><strong>Vega Squadron</strong></span><span><strong>0</strong></span> -->
+<!-- 									</div> -->
+<!-- 									<div class="opponent-holder winner"> -->
+<!-- 										<span class="loser"><img src="assets/images/flags/world.png" -->
+<!-- 											alt="logo">Opponent 2</span><span class="loser">0</span> -->
+<!-- 									</div> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 					</div> -->
+<!-- 			</div> -->
+		</div>		
+	</div>
+
+</div>

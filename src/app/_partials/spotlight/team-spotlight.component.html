@@ -1,0 +1,80 @@
+<div class="row">
+	<div class="stat-container">
+		<h3 class="main-title fixed-height reverce">
+			<span class="stat-title">{{'TEAM SPOTLIGHT' | translate}}</span> <span
+				class="stat-game"></span>
+		</h3>
+
+		<div class="col-lg-24 col-md-24 col-sm-24 stat-in">
+			<div class="row">
+				<div class="col-lg-11 col-md-11 col-sm-11">
+					<div class="row">
+						<div class="stat-cont player">
+							<img *ngIf="team.logo"
+								src="http://static.esportsconstruct.com/{{team.logo}}"
+								alt="team"> <img *ngIf="!team.logo"
+								src="assets/images/team-universal.jpg" alt="team">
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-13 col-md-13 col-sm-13">
+					<div class="row">
+						<div class="stat-desc">
+							<div class="col-lg-24 col-md-24 col-sm-24 double fix-h">
+								<div class="row">
+									<div class="col-lg-12 col-md-12 col-sm-12">
+										<div class="row nickname">{{team.name}}</div>
+									</div>
+									<div class="col-lg-12 col-md-12 col-sm-12">
+										<div class="row">
+											<div class="flag-content">
+												<img *ngIf="team.country?.countryName"
+													src="assets/images/flags/{{team.country?.countryName | replaceSpace: '-' | lowercase }}.png"
+													alt="{{team.country?.countryName}}"> <img
+													*ngIf="!team.country?.countryName"
+													src="assets/images/flags/flag-universal.png" alt="flags">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-24 col-md-24 col-sm-24">
+								<div class="row teams">
+									<span>{{'Record' | translate}}:</span>
+									{{team.total_wins}}/{{team.total_ties}}/{{team.total_loses}}
+								</div>
+							</div>
+							<div class="col-lg-24 col-md-24 col-sm-24">
+								<div class="row wins">
+									<span>{{'Winrate' | translate}}:</span> {{ (team.total_wins *
+									100)/((team.total_wins * 1 ) + (team.total_ties * 1) +
+									(team.total_loses * 1)) | number: '1.0-2'}}%
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--                                                    --------                                            -->
+				<div class="col-lg-24 col-md-24 col-sm-24 heroes">
+					<div class="row">
+						<div class="heroes-cont extra-spacing">
+							<h4 class="heroes-title">{{'Current roster' | translate}}:</h4>
+							<div class="col-sm-24 hero-text">
+								<div class="row">
+									<div *ngFor="let member of team.current_roster">
+										{{member.nickname}}</div>
+								</div>
+							</div>
+							<div class="stat-content top">
+								<div #graphContainer class="graph team-chart">
+									<chart [options]="options" (load)="saveInstance($event.context)"></chart>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

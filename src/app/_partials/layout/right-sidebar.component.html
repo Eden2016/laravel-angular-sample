@@ -1,0 +1,654 @@
+<aside class="sidebar-bet">
+    <h3 class="bet-title">{{'My bets' | translate}}</h3>
+    <div class="col-sm-24 bet-tabs">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="curent-bet" [ngClass]="{'active': betslipShown}" (click)="showBetslip()">{{'Current bet slip' | translate}}</div>
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="history-bet" [ngClass]="{'active': betHistoryShown}" (click)="loadMyBets()">{{'Bet history' | translate}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="curent-bet" class="main-tab-1" [ngClass]="{'active': betslipShown}">
+        <!--    First tab   -->
+        <div class="col-sm-24">
+            <div class="row" *ngIf="!shouldConfirmBet && !betReceipt">
+                <div *ngFor="let selection of selections">
+                    <div class="col-sm-24">
+                        <div class="row">
+                            <div class="col-sm-24 bets">
+                                <div class="col-sm-24">
+                                    <div class="row">
+                                        <h4>
+                                            <span class="info"></span>{{selection.title}}
+                                            <span class="cutom-btn" (click)="removeFromBetSlip(selection.strippedSelectionId)"><img
+                                                src="assets/images/btn.png" alt="btn"></span>
+                                        </h4>
+                                    </div>
+                                </div>
+                                <div class="col-sm-24 wings">
+                                    <div class="row">
+                                        {{selection.betTeam}} <span *ngIf="selection.handicap">{{selection.handicap}}</span> @ <span>{{selection.odd}}</span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-24 wings-gaming">
+                                    <div class="row">
+                                        {{selection.home_team.team_name}} <span class="orange">vs</span> {{selection.away_team.team_name}}
+                                        <div class="control-btn">
+                                            <input type="text" class="btn stake" placeholder="{{'Stake' | translate}}" value="{{selection.stake}}" (keyup)="stake($event, selection.strippedSelectionId)">
+                                            <input type="text" class="btn win" placeholder="{{'To Win' | translate}}" value="{{selection.toWin}}" (keyup)="toWin($event, selection.strippedSelectionId)">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--  bets -->
+                            <div class="col-sm-24 control">
+                                <div class="col-sm-24">
+                                    <div class="row">
+                                        <div class="rate-control">
+                                            <div class="rate">
+                                                <div class="first-row">
+                                                    <a class="btn" href="#no-top" (click)="addStake(selection.strippedSelectionId, 5)">+5</a>
+                                                    <a class="btn" href="#no-top" (click)="addStake(selection.strippedSelectionId, 10)">+10</a>
+                                                    <a class="btn" href="#no-top" (click)="addStake(selection.strippedSelectionId, 25)">+25</a>
+                                                </div>
+                                                <div class="second-row">
+                                                    <a class="btn" href="#no-top" (click)="addStake(selection.strippedSelectionId, 50)">+50</a>
+                                                    <a class="btn" href="#no-top" (click)="addStake(selection.strippedSelectionId, 100)">+100</a>
+                                                    <a class="btn" href="#no-top" (click)="addStake(selection.strippedSelectionId, 200)">+200</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-24">
+                                            <div class="row">
+                                                <div class="sum-control">
+                                                    <a href="#no-top" (click)="clear(selection.strippedSelectionId)">{{'Clear' | translate}}</a>
+                                                    <a href="#no-top" (click)="maxBet(selection.strippedSelectionId)">{{'Max Bet' | translate}}</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- control -->
+                        </div>
+                        <!-- row -->
+                    </div>
+                    <!-- col sm 24 -->
+                    <div class="col-sm-24 error-msg" *ngIf="selection.changed">
+                        <p><img src="assets/images/ico-alert.png">{{'The odds have changed' | translate}}.</p>
+                    </div>
+                </div>
+
+                <div class="col-sm-24">
+                    <div class="row">
+                        <!--  bets -->
+                        <div class="col-sm-24 control singles" *ngIf="selections.length > 0">
+                            <div class="col-sm-24">
+                                <div class="row">
+                                    <p>{{'Singles' | translate}}</p>
+                                    <div class="control-btn">
+                                        <div>
+                                            <input class="btn stake" type="text" placeholder="{{'Stake' | translate}}" (keyup)="singlesStake($event)">
+                                            <span>X {{ selections.length }}</span>
+                                        </div>
+                                        <span>{{ singlesToWinTotal ? singlesToWinTotal : 'To Win' }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- control -->
+                        <div class="col-sm-24 multiple-bets">
+                            <div>{{'Multiple Bets' | translate}}</div>
+                            <div>
+                                <img src="assets/images/ico-question.png" />
+                                <img src="assets/images/ico-arrow-up.png" />
+                            </div>
+                        </div>
+                        <!-- multiple bets -->
+                        <!--  bets -->
+                        <div class="col-sm-24 control singles" *ngIf="folds['doubles'].active">
+                            <div class="col-sm-24">
+                                <div class="row">
+                                    <p>{{'Doubles' | translate}}</p>
+                                    <div class="control-btn">
+                                        <div>
+                                            <input class="btn stake" type="text" value="{{folds['doubles'].stake}}"  (keyup)="stakeFold($event, 'doubles')">
+                                            <span>X {{ folds['doubles'].bets }}</span>
+                                        </div>
+                                        <span>{{ folds['doubles'].toWin ? folds['doubles'].toWin : 'To Win' }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-24 control singles" *ngIf="folds['trebles'].active">
+                            <div class="col-sm-24">
+                                <div class="row">
+                                    <p>{{'Trebles' | translate}}</p>
+                                    <div class="control-btn">
+                                        <div>
+                                            <input class="btn stake" type="text" value="{{folds['trebles'].stake}}"  (keyup)="stakeFold($event, 'trebles')">
+                                            <span>X {{ folds['trebles'].bets }}</span>
+                                        </div>
+                                        <span>{{ folds['trebles'].toWin ? folds['trebles'].toWin : 'To Win' }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-24 control singles" *ngIf="folds['fourFold'].active">
+                            <div class="col-sm-24">
+                                <div class="row">
+                                    <p>{{'Four-Fold' | translate}}</p>
+                                    <div class="control-btn">
+                                        <div>
+                                            <input class="btn stake" type="text" value="{{folds['fourFold'].stake}}"  (keyup)="stakeFold($event, 'fourFold')">
+                                            <span>X {{ folds['fourFold'].bets }}</span>
+                                        </div>
+                                        <span>{{ folds['fourFold'].toWin ? folds['fourFold'].toWin : 'To Win' }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-24 control singles" *ngIf="folds['fiveFold'].active">
+                            <div class="col-sm-24">
+                                <div class="row">
+                                    <p>{{'Four-Fold' | translate}}</p>
+                                    <div class="control-btn">
+                                        <div>
+                                            <input class="btn stake" type="text" value="{{folds['fiveFold'].stake}}"  (keyup)="stakeFold($event, 'fiveFold')">
+                                            <span>X {{ folds['fiveFold'].bets }}</span>
+                                        </div>
+                                        <span>{{ folds['fiveFold'].toWin ? folds['fiveFold'].toWin : 'To Win' }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-24 control singles" *ngIf="folds['sixFold'].active">
+                            <div class="col-sm-24">
+                                <div class="row">
+                                    <p>{{'Six-Fold' | translate}}</p>
+                                    <div class="control-btn">
+                                        <div>
+                                            <input class="btn stake" type="text" value="{{folds['sixFold'].stake}}"  (keyup)="stakeFold($event, 'sixFold')">
+                                            <span>X {{ folds['sixFold'].bets }}</span>
+                                        </div>
+                                        <span>{{ folds['sixFold'].toWin ? folds['sixFold'].toWin : 'To Win' }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-24 control singles" *ngIf="folds['sevenFold'].active">
+                            <div class="col-sm-24">
+                                <div class="row">
+                                    <p>{{'Seven-Fold' | translate}}</p>
+                                    <div class="control-btn">
+                                        <div>
+                                            <input class="btn stake" type="text" value="{{folds['sevenFold'].stake}}"  (keyup)="stakeFold($event, 'sevenFold')">
+                                            <span>X {{ folds['sevenFold'].bets }}</span>
+                                        </div>
+                                        <span>{{ folds['sevenFold'].toWin ? folds['sevenFold'].toWin : 'To Win' }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-24 control singles" *ngIf="folds['eightFold'].active">
+                            <div class="col-sm-24">
+                                <div class="row">
+                                    <p>{{'Eight-Fold' | translate}}</p>
+                                    <div class="control-btn">
+                                        <div>
+                                            <input class="btn stake" type="text" value="{{folds['eightFold'].stake}}"  (keyup)="stakeFold($event, 'eightFold')">
+                                            <span>X {{ folds['eightFold'].bets }}</span>
+                                        </div>
+                                        <span>{{ folds['eightFold'].toWin ? folds['eightFold'].toWin : 'To Win' }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-24 control singles" *ngIf="folds['nineFold'].active">
+                            <div class="col-sm-24">
+                                <div class="row">
+                                    <p>{{'Nine-Fold' | translate}}</p>
+                                    <div class="control-btn">
+                                        <div>
+                                            <input class="btn stake" type="text" value="{{folds['nineFold'].stake}}"  (keyup)="stakeFold($event, 'nineFold')">
+                                            <span>X {{ folds['nineFold'].bets }}</span>
+                                        </div>
+                                        <span>{{ folds['nineFold'].toWin ? folds['nineFold'].toWin : 'To Win' }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-24 control singles" *ngIf="folds['tenFold'].active">
+                            <div class="col-sm-24">
+                                <div class="row">
+                                    <p>{{'Ten-Fold' | translate}}</p>
+                                    <div class="control-btn">
+                                        <div>
+                                            <input class="btn stake" type="text" value="{{folds['tenFold'].stake}}"  (keyup)="stakeFold($event, 'tenFold')">
+                                            <span>X {{ folds['tenFold'].bets }}</span>
+                                        </div>
+                                        <span>{{ folds['tenFold'].toWin ? folds['tenFold'].toWin : 'To Win' }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Start of systems inputs -->
+                        <div class="col-sm-24 control singles" *ngIf="systems['trixie'].active">
+                            <div class="col-sm-24">
+                                <div class="row">
+                                    <p>{{'Trixie' | translate}}</p>
+                                    <div class="control-btn">
+                                        <div>
+                                            <input class="btn stake" type="text" value="{{systems['trixie'].stake}}"  (keyup)="stakeSystems($event, 'trixie')">
+                                            <span>X {{ systems['trixie'].bets }}</span>
+                                        </div>
+                                        <span>{{ systems['trixie'].toWin ? systems['trixie'].toWin : 'To Win' }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-24 control singles" *ngIf="systems['yankee'].active">
+                            <div class="col-sm-24">
+                                <div class="row">
+                                    <p>{{'Yankee' | translate}}</p>
+                                    <div class="control-btn">
+                                        <div>
+                                            <input class="btn stake" type="text" value="{{systems['yankee'].stake}}"  (keyup)="stakeSystems($event, 'yankee')">
+                                            <span>X {{ systems['yankee'].bets }}</span>
+                                        </div>
+                                        <span>{{ systems['yankee'].toWin ? systems['yankee'].toWin : 'To Win' }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-24 control singles" *ngIf="systems['superYankee'].active">
+                            <div class="col-sm-24">
+                                <div class="row">
+                                    <p>{{'Super Yankee' | translate}}</p>
+                                    <div class="control-btn">
+                                        <div>
+                                            <input class="btn stake" type="text" value="{{systems['superYankee'].stake}}"  (keyup)="stakeSystems($event, 'superYankee')">
+                                            <span>X {{ systems['superYankee'].bets }}</span>
+                                        </div>
+                                        <span>{{ systems['superYankee'].toWin ? systems['superYankee'].toWin : 'To Win' }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-24 control singles" *ngIf="systems['heinz'].active">
+                            <div class="col-sm-24">
+                                <div class="row">
+                                    <p>{{'Heinz' | translate}}</p>
+                                    <div class="control-btn">
+                                        <div>
+                                            <input class="btn stake" type="text" value="{{systems['heinz'].stake}}"  (keyup)="stakeSystems($event, 'heinz')">
+                                            <span>X {{ systems['heinz'].bets }}</span>
+                                        </div>
+                                        <span>{{ systems['heinz'].toWin ? systems['heinz'].toWin : 'To Win' }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-24 control singles" *ngIf="systems['superHeinz'].active">
+                            <div class="col-sm-24">
+                                <div class="row">
+                                    <p>{{'Super Heinz' | translate}}</p>
+                                    <div class="control-btn">
+                                        <div>
+                                            <input class="btn stake" type="text" value="{{systems['superHeinz'].stake}}"  (keyup)="stakeSystems($event, 'superHeinz')">
+                                            <span>X {{ systems['superHeinz'].bets }}</span>
+                                        </div>
+                                        <span>{{ systems['superHeinz'].toWin ? systems['superHeinz'].toWin : 'To Win' }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-24 control singles" *ngIf="systems['goliath'].active">
+                            <div class="col-sm-24">
+                                <div class="row">
+                                    <p>{{'Goliath' | translate}}</p>
+                                    <div class="control-btn">
+                                        <div>
+                                            <input class="btn stake" type="text" value="{{systems['goliath'].stake}}"  (keyup)="stakeSystems($event, 'goliath')">
+                                            <span>X {{ systems['goliath'].bets }}</span>
+                                        </div>
+                                        <span>{{ systems['goliath'].toWin ? systems['goliath'].toWin : 'To Win' }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-24 control singles" *ngIf="systems['blocksNine'].active">
+                            <div class="col-sm-24">
+                                <div class="row">
+                                    <p>{{'Blocks(9)' | translate}}</p>
+                                    <div class="control-btn">
+                                        <div>
+                                            <input class="btn stake" type="text" value="{{systems['blocksNine'].stake}}"  (keyup)="stakeSystems($event, 'blocksNine')">
+                                            <span>X {{ systems['blocksNine'].bets }}</span>
+                                        </div>
+                                        <span>{{ systems['blocksNine'].toWin ? systems['blocksNine'].toWin : 'To Win' }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-24 control singles" *ngIf="systems['blocksTen'].active">
+                            <div class="col-sm-24">
+                                <div class="row">
+                                    <p>{{'Blocks(10)' | translate}}</p>
+                                    <div class="control-btn">
+                                        <div>
+                                            <input class="btn stake" type="text" value="{{systems['blocksTen'].stake}}"  (keyup)="stakeSystems($event, 'blocksTen')">
+                                            <span>X {{ systems['blocksTen'].bets }}</span>
+                                        </div>
+                                        <span>{{ systems['blocksTen'].toWin ? systems['blocksTen'].toWin : 'To Win' }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- col sm 24 -->
+                </div>
+                <!-- row -->
+
+                <div class="col-sm-24 total">
+                    <div class="row">
+                        <div class="col-sm-24">
+                            <div class="row">
+                                <div class="total-bets">
+                                    <div>
+                                        <span>{{ betsTotal }}</span> {{'Total Bets' | translate}}:
+                                    </div>
+                                    <div>{{ stakesTotal }} {{ currency }}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-24">
+                            <div class="row">
+                                <div class="winning">
+                                    <div>{{'EST. WINNINGS' | translate}}</div>
+                                    <div>{{ toWinTotal }} {{ currency }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- total -->
+                <div class="login-sign-up">
+                    <a href="#no-top" *ngIf="!_sbkService.token">{{'Please Log In' | translate}}</a>
+                    <a href="#no-top" id="sign-up-link" *ngIf="!_sbkService.token">{{'Sign up' | translate}}</a>
+                    <a id="sign-up-link" (click)="confirmBet()" *ngIf="_sbkService.token">{{'PLACE BET' | translate}}</a>
+                    <a (click)="removeAll()">{{'Remove All' | translate}}</a>
+                </div>
+                <!-- login sign up -->
+            </div>
+
+            <div class="row" *ngIf="shouldConfirmBet || betReceipt">
+                <div class="col-sm-24 his-list s-list">
+                    <div class="row" *ngIf="receiptItems.selections.length">
+                        <div class="col-sm-24" *ngFor="let bet of receiptItems.selections">
+                            <div class="row his-bet win">
+                                <div class="col-sm-20">
+                                    <div class="row his-title">{{bet.betTeam} <span *ngIf="bet.handicap > 0">{{ bet.handicap }}</span>@ {{bet.od}}</div>
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <div class="row">
+                                        <a href="#" class="nth his-btn">+</a>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-24">
+                                    <div class="row description">
+                                        <div class="col-sm-20">
+                                            <div class="row his-desc">
+                                            {{bet.title}}
+                                            <p>{{bet.home_team.team_name}} vs. {{bet.away_team.team_name}}</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-24">
+                                            <div class="row his-desc-win">
+                                                <span>Stake (THB):</span> {{bet.stake}}
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-24">
+                                            <div class="row his-desc-los">
+                                                EST. Win: <span>{{bet.toWin}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-24 total">
+                    <div class="row">
+                        <div class="col-sm-24">
+                            <div class="row">
+                                <div class="total-bets">
+                                    <div>
+                                        <span>{{ receiptItems.totalBets }}</span> Total Bets:
+                                    </div>
+                                    <div>{{ receiptItems.totalStake }} {{ currency }}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-24">
+                            <div class="row">
+                                <div class="winning">
+                                    <div>EST. WINNINGS</div>
+                                    <div>{{ receiptItems.totalToWin }} {{ currency }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-24" *ngIf="shouldConfirmBet">
+                    <div class="row">
+                        <div class="confirm">
+                            <a class="remove" (click)="cancelBet()">{{'Cancel' | translate}}</a>
+                            <a class="place" (click)="placeBet()">{{'Confirm' | translate}}</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- col sm 24 -->
+
+                <div class="col-sm-24" *ngIf="betReceipt">
+                    <div class="row">
+                        <p>Your bet is confirmed</p>
+                        <div class="confirm">
+                            <input type="checkbox" value="1" name="acceptBetterOdds" id="acceptBetterOdds" />
+                            <a class="place" (click)="confirmReceipt()">Close</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- col sm 24 -->
+            </div>
+        </div>
+    </div>
+
+    <div id="history-bet" class="main-tab-2" [ngClass]="{'active': betHistoryShown}">
+
+        <div class="col-sm-24">
+            <div class="row his-tabs">
+                <div class="col-sm-8">
+                    <div class="row">
+                        <a href="#" class="active" class="s-select">{{'Settled Bets' | translate}}</a>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="row">
+                        <a href="#" class="uc-select">{{'Unsettled Bets' | translate}}</a>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="row">
+                        <img class="refresh" src="../../../assets/images/ico-refresh.png"
+                            alt="refresh" (click)="loadMyBets()">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-24 his-list s-list">
+            <div class="row" *ngIf="myBets && myBets.sl.length">
+                <div class="col-sm-24" *ngFor="let bet of myBets.sl">
+                    <div class="row his-bet win">
+                        <div class="col-sm-20">
+                            <div class="row his-title">{{bet.l[0].sn}} @ {{bet.l[0].od}}</div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="row">
+                                <a href="#" class="nth his-btn">+</a>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-24">
+                            <div class="row description">
+                                <div class="col-sm-20">
+                                    <div class="row his-desc">{{bet.wr}}</div>
+                                </div>
+
+                                <div class="col-sm-24">
+                                    <div class="row his-desc-win">
+                                        <span>{{'Stake' | translate}}:</span> {{bet.s}}
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-24">
+                                    <div class="row his-desc-los">
+                                        {{'Estimated win' | translate}}: <span>{{bet.ep}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row his-inputs" *ngIf="!myBets || !myBets.sl.length">
+                <div class="col-md-24">
+                    <div class="row select-inputs">
+                        <div class="form-group ">
+                            {{'No settled bets in the last 24 hours' | translate}}.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-24 his-list uc-list">
+            <div class="row" *ngIf="myBets && myBets.aul.length">
+                <div class="col-sm-24" *ngFor="let bet of myBets.aul">
+                    <div class="row his-bet win">
+                        <div class="col-sm-20">
+                            <div class="row his-title">{{bet.l[0].sn}} @ {{bet.l[0].od}}</div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="row">
+                                <a href="#" class="nth his-btn">+</a>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-24">
+                            <div class="row description">
+                                <div class="col-sm-20">
+                                    <div class="row his-desc">{{bet.wr}}</div>
+                                </div>
+
+                                <div class="col-sm-24">
+                                    <div class="row his-desc-win">
+                                        <span>{{'Stake' | translate}}:</span> {{bet.s}}
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-24">
+                                    <div class="row his-desc-los">
+                                        {{'Estimated win' | translate}}: <span>{{bet.ep}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-24" *ngFor="let bet of myBets.ipul">
+                    <div class="row his-bet win">
+                        <div class="col-sm-20">
+                            <div class="row his-title">{{bet.l[0].sn}} @ {{bet.l[0].od}}</div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="row">
+                                <a href="#" class="nth his-btn">+</a>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-24">
+                            <div class="row description">
+                                <div class="col-sm-20">
+                                    <div class="row his-desc">{{bet.wr}}</div>
+                                </div>
+
+                                <div class="col-sm-24">
+                                    <div class="row his-desc-win">
+                                        <span>{{'Stake' | translate}}:</span> {{bet.s}}
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-24">
+                                    <div class="row his-desc-los">
+                                        {{'Estimated win' | translate}}: <span>{{bet.ep}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row his-inputs" *ngIf="!myBets || !myBets.aul.length">
+                <div class="col-md-24">
+                    <div class="row select-inputs">
+                        <div class="form-group ">
+                            {{'No unsettled bets in the last 24 hours' | translate }}.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+
+  <matchticker *ngIf="_router.url.includes('/match')"></matchticker>
+</aside>

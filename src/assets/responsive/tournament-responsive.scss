@@ -1,0 +1,614 @@
+$table-min-padding: 2px 1%;
+$table-std-padding: 2px 8px;
+
+@media (max-width: 1900px) {
+    .main-content {
+        .content-container {
+            .main-conntent {
+
+               .table {
+                    & > thead {
+
+                        & > tbody {
+                            & > tr {
+                                & > td {
+                                    padding: $table-min-padding;
+                                }
+                            }
+                        }
+
+                        & > tr {
+                            & > td {
+                                padding: $table-min-padding;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1900px) and (min-width: 1600px) {
+    .main-content {
+        .content-container {
+            .main-conntent {
+                .right-cont {
+                    .group-stage {
+                        .schedule {
+                            .table {
+
+                                &.tour {
+                                    tbody {
+                                        tr {
+                                            td:last-child {
+                                                padding-right: 10px;
+                                            }
+                                            td:nth-child(1) {
+                                                padding-left: 5px;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                tbody {
+                                    tr {
+                                        td {
+                                            &.vs {
+                                                padding: 2px 5px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1750px) {
+    .main-content {
+        .content-container {
+            .main-conntent {
+                .table {
+                    & > tbody {
+                        & > tr {
+                            & > td {
+                                padding: 2px .1%;
+                                letter-spacing: -.5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1700px) {
+    .main-content {
+        .content-container {
+            .main-conntent {
+
+
+                .right-cont {
+                    .right-part {
+                        .bets-cont {
+                            .bets-hand {
+                                &.tour {
+                                    .bets-first-hand {
+                                        &.over-tour {
+                                            padding: 8px 0 0 12px;
+                                        }
+                                    }
+
+                                    .bets-second-hand {
+                                        &.over-tour {
+                                            padding: 12px 0 0 12px;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .bets-hand {
+                                &.tour {
+                                    .bets-first-hand {
+                                        &:before {
+                                            left: 8px;
+                                        }
+                                    }
+
+                                    .bets-second-hand {
+                                        &:before {
+                                            left: 8px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1366px) and (max-width: 1600px) {
+
+    .main-content {
+        .content-container {
+            .main-conntent {
+                .tournament-change-position {
+                    .right-cont {
+                        .right-part {
+                            .bets-cont {
+                                .bets-hand {
+                                    .bets-first-hand {
+                                        -webkit-justify-content: center;
+                                        justify-content: center;
+                                        padding-right: 22px;
+                                    }
+                                    .bets-second-hand {
+                                        -webkit-justify-content: center;
+                                        justify-content: center;
+                                        padding-right: 22px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .main-content {
+        .content-container {
+            .main-conntent {
+
+                .table {
+                    & > tbody {
+                        & > tr {
+                            & > td {
+                                padding: 2px 0;
+                                letter-spacing: 0;
+                                font-size: .6em;
+                            }
+                        }
+                    }
+                }
+
+                .left-cont {
+                    .video-bg {
+                        iframe {
+                            &.tour-iframe {
+                                height: 440px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1600px) {
+    .main-content {
+        .content-container {
+            .main-conntent {
+
+                .tournament-change-position {
+                    display: -webkit-flex;
+                    display: flex;
+                    -webkit-flex-direction: column;
+                    flex-direction: column;
+                    & > div {
+                        &:nth-child(1) {
+                            order: 2;
+                        }
+                        &:nth-child(2) {
+                            order: 1;
+                        }
+                        &:nth-child(3) {
+                            order: 3;
+                        }
+                    }
+                }
+
+                .left-cont {
+                    .statistics {
+                        margin-bottom: 15px;
+                        .tour-border {
+                            &:nth-child(1) {
+                                border-right: 2px solid #222222;
+                            }
+                        }
+
+                        .m-left {
+                            &.tour-less {
+                                margin: 0;
+                            }
+                        }
+                    }
+                    .news {
+                        .cont-news {
+                            &.tour-less {
+                                margin: 0;
+                            }
+
+                            &.m-left {
+                                &.tour-less {
+                                    border-left: 1px solid #222222;
+                                }
+                            }
+
+                            &.m-right {
+                                &.tour-less {
+                                    border-right: 1px solid #222222;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .right-cont {
+                    .group-stage-container {
+                        &.tour-less {
+                            padding-left: 15px;
+                        }
+                    }
+                }
+
+                .left-full-grid {
+                    width: 100%;
+                }
+                .right-full-grid {
+                    width: 100%;
+                    .right-cont {
+                        padding-left: 0;
+                        margin-top: 15px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1450px) {
+    .main-content {
+        .content-container {
+            .main-conntent {
+                .tournament {
+                    .tournament-content {
+
+                        .tour-list {
+                            &.tourn-page {
+                                max-width: 230px;
+                            }
+                        }
+
+                        .right-desc-list {
+                            &.tour-position {
+                                top: 78%;
+                            }
+                        }
+
+                        .tour-info {
+                            .tour-position {
+                                top: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1366px) {
+    .main-content {
+        .content-container {
+            .main-conntent {
+                .outright {
+                    .teams-container {
+                        &.slick-current {
+                            right: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1250px) {
+
+    .main-content {
+        .content-container {
+            .main-conntent {
+
+                .table {
+                    & > tbody {
+                        & > tr {
+                            & > td {
+                                padding: $table-min-padding;
+                                letter-spacing: -.5px;
+                            }
+                        }
+                    }
+                }
+             }
+        }
+    }
+}
+
+@media (max-width: 1200px) and (min-width: 768px) {
+    .main-content {
+        .content-container {
+            .main-conntent {
+                .right-cont {
+                    .group-stage-container {
+                        .playoffs {
+                            letter-spacing: -1px;
+                        }
+                    }
+
+                    .group-stage-container {
+                        .playoffs {
+                            img {
+                                width: 13px;
+                            }
+                        }
+                    }
+                }
+
+                .tournament {
+                    .tournament-content {
+
+                        .right-desc-list {
+                            &.tour-position {
+                                top: 47%;
+                            }
+                        }
+
+                        .tour-info {
+                            .tour-position {
+                                top: 72%;
+                            }
+                        }
+                    }
+                }
+
+                .right-cont {
+                    .group-stage-container {
+                        &.tour-less {
+                            .group-a {
+                                width: 100%;
+                                padding: 0;
+                            }
+                            .group-b {
+                                margin-top: 10px;
+                                width: 100%;
+                                padding: 0;
+                            }
+                            .schedule-a {
+                                width: 100%;
+                                padding: 0;
+                            }
+                            .schedule-b {
+                                margin-top: 10px;
+                                width: 100%;
+                                padding: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 991px) {
+
+    .np-mobile {
+        width: 100% !important;
+        padding-right: 0 !important;
+    }
+
+    .main-content {
+        .content-container {
+            .main-conntent {
+                .right-cont {
+                    .right-part {
+                        .bets-cont {
+                            .bets-ml {
+                                &.tour {
+                                    .bets-first-ml {
+                                        span {
+                                            margin: 7px 0 0 10px;
+                                        }
+                                    }
+
+                                    .bets-second-ml {
+                                        span {
+                                            margin: 13px 0 0 10px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .tournament {
+                    .tournament-content {
+
+                        .right-desc-list {
+                            &.tour-position {
+                                top: 59%;
+                                left: -170%;
+                                width: 225px;
+                            }
+                        }
+
+                        .tour-info {
+                            .tour-position {
+                                top: 80%;
+                            }
+                        }
+                    }
+                }
+
+                .left-cont {
+                    .news {
+                        .cont-news {
+                            &.m-left {
+                                &.tour-less {
+                                    margin-top: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        .content-container {
+            .main-conntent {
+                .left-cont {
+                    .statistics {
+                        .part {
+                            width: 50%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+
+    h3.box-heading {
+        .group {
+            font-size: .6em;
+        }
+    }
+
+    .main-content {
+        .content-container {
+            .main-conntent {
+                .right-cont {
+                    .playoffs {
+                        .rounds {
+                            .round {
+                                display: -webkit-flex;
+                                display: flex;
+                                -webkit-flex-direction: column;
+                                flex-direction: column;
+                            }
+                        }
+                        .bracket-cont {
+                            .bracket-round {
+                                width: 60px;
+                                .bracket-pair {
+
+                                    &.final {
+                                        &:after {
+                                            display: none;
+                                        }
+                                    }
+
+                                    &:nth-child(odd) {
+                                        &:after {
+                                            width: 20px;
+                                            left: calc(100% + 10px);
+                                            background-size: 100% 100%;
+                                        }
+                                    }
+                                    &:nth-child(even) {
+                                        &:after {
+                                            width: 20px;
+                                            left: calc(100% + 10px);
+                                            background-size: 100% 100%;
+                                        }
+                                    }
+                                    .opponent {
+                                        padding: 0 1px 0 1px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .table {
+                    & > tbody {
+                        & > tr {
+                            & > td {
+                                padding: 2px 6px !important;
+                            }
+                        }
+                    }
+                }
+
+
+                .topics {
+                    .game {
+                        .top-cont{
+                            &.game-date {
+                                font-size: .5em;
+                            }
+                            &.game-status {
+                                margin: 13px 0 0 0;
+                                font-size: .6em;
+                            }
+                            &.game-desc {
+                                font-size: .7em;
+                            }
+                        }
+                    }
+                }
+
+                .left-cont {
+                    .statistics {
+
+                        .tour-border:nth-child(1) {
+                            border-right: none;
+                        }
+
+                        .m-left {
+                            &.tour-less {
+                                margin-top: 10px;
+                            }
+                        }
+                        .part {
+                            width: 100%;
+                        }
+                    }
+                }
+                .participans {
+                    .participans-slider {
+                        .partic-row {
+                            -webkit-flex-wrap: wrap;
+                            flex-wrap: wrap;
+                            .participan {
+                                width: 50%;
+                                &:nth-child(2) {
+                                    border-right: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

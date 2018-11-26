@@ -1,0 +1,80 @@
+<header class="header">
+	<nav id="top-navbar" class="navbar navbar-default nav-down">
+		<div class="wrapper-header">
+			<div class="nav-menu">
+				<div class="navbar-header">
+					<a id="logo-188bet" class="navbar-brand"
+						src="assets/images/svg+xml.svg" window-open="188main" href="/{{queryParams}}"></a>
+				</div>
+				<ul id="menu-products" class="nav navbar-nav menu-products"
+					style="opacity: 1;">
+					<li><a href="/{{queryParams}}">Euro 2016</a></li>
+					<li><a href="/{{queryParams}}">Sports</a></li>
+					<li><a href="/{{queryParams}}">Esports</a></li>
+					<li><a href="/{{queryParams}}">Casino</a></li>
+					<li><a href="/{{queryParams}}">Live Casino</a></li>
+					<li><a href="/{{queryParams}}">Keno</a></li>
+					<li><a href="/{{queryParams}}">Poker</a></li>
+					<li><a href="/{{queryParams}}">Financials</a></li>
+					<li><a href="/{{queryParams}}">Bingo</a></li>
+					<li><a href="/{{queryParams}}">Promotions</a></li>
+				</ul>
+			</div>
+			<div class="nav-login">
+				<div class="lang-cont">
+					<div class="nav-time">18:06:12(GMT+08:00)</div>
+					<div class="dropdown lang-website">
+						<button class="dropdown-toggle" id="dropdownMenu1"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+							<span *ngIf="currentLang == 'en-gb'">{{ 'English' | translate}} <img alt="flag" src="assets/images/flags/united-kingdom.png"></span>
+							<span *ngIf="currentLang == 'zh-cn'">{{ 'Chinese' | translate}} <img alt="flag" src="assets/images/flags/china.png"></span>
+							<span *ngIf="currentLang == 'vi-vn'">{{ 'Vietnamese' | translate}} <img alt="flag" src="assets/images/flags/vietnam.png"></span>
+							<span *ngIf="currentLang == 'km-kh'">{{ 'Cambodian' | translate}} <img alt="flag" src="assets/images/flags/vietnam.png"></span>
+							<span *ngIf="currentLang == 'id-id'">{{ 'Indonesian' | translate}} <img alt="flag" src="assets/images/flags/indonesia.png"></span>
+							<span *ngIf="currentLang == 'pt-br'">{{ 'Portuguese' | translate}} <img alt="flag" src="assets/images/flags/brazil.png"></span>
+							<span *ngIf="currentLang == 'ko-kr'">{{ 'Korean' | translate}} <img alt="flag" src="assets/images/flags/south-korea.png"></span>
+							<span *ngIf="currentLang == 'ja-jp'">{{ 'Japanese' | translate}} <img alt="flag" src="assets/images/flags/japan.png"></span>
+							<span *ngIf="currentLang == 'th-th'">{{ 'Thai' | translate}} <img alt="flag" src="assets/images/flags/thailand.png"></span>
+							<span *ngIf="currentLang == undefined">{{ 'English' | translate}} <img alt="flag" src="assets/images/flags/united-kingdom.png"></span> 
+							<span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+							<li><a (click)="setLang('en-gb')">{{ 'English' | translate}} <img alt="flag" src="assets/images/flags/united-kingdom.png"></a></li>
+							<li><a (click)="setLang('zh-cn')">{{ 'Chinese' | translate}} <img alt="flag" src="assets/images/flags/china.png"></a></li>
+							<li><a (click)="setLang('vi-vn')">{{ 'Vietnamese' | translate}} <img alt="flag" src="assets/images/flags/vietnam.png"></a></li>
+							<li><a (click)="setLang('km-kh')">{{ 'Cambodian' | translate}} <img alt="flag" src="assets/images/flags/cambodia.png"></a></li>
+							<li><a (click)="setLang('id-id')">{{ 'Indonesian' | translate}} <img alt="flag" src="assets/images/flags/indonesia.png"></a></li>														
+							<li><a (click)="setLang('pt-br')">{{ 'Portuguese' | translate}} <img alt="flag" src="assets/images/flags/brazil.png"></a></li>
+							<li><a (click)="setLang('ko-kr')">{{ 'Korean' | translate}} <img alt="flag" src="assets/images/flags/south-korea.png"></a></li>
+							<li><a (click)="setLang('ja-jp')">{{ 'Japanese' | translate}} <img alt="flag" src="assets/images/flags/japan.png"></a></li>
+							<li><a (click)="setLang('th-th')">{{ 'Thai' | translate}} <img alt="flag" src="assets/images/flags/thailand.png"></a></li>
+						</ul>
+					</div>
+				</div>
+				<form method="POST" action="#">
+					<div class="username-content">
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="{{'Username' | translate}}">
+							<span class="input-group-btn">
+								<button class="btn btn-default question" type="button">?</button>
+							</span>
+						</div>
+					</div>
+
+					<div class="password-content">
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="{{'Password' | translate}}">
+							<span class="input-group-btn">
+								<button class="btn btn-default question" type="button">?</button>
+							</span>
+						</div>
+					</div>
+
+					<button class="btn btn-block" type="submit">{{'Log in' | translate}}</button>
+
+					<a class="btn btn-block sign-up" type="button">{{'Sign up' | translate}}</a>
+				</form>
+			</div>
+		</div>
+	</nav>
+</header>

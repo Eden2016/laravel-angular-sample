@@ -1,0 +1,105 @@
+<div class="col-lg-24 col-md-24 news">
+    <div class="row news-blocks">
+        <div *ngIf="post1" class="col-lg-12 col-md-24">
+            <div class="row">
+                <div class="cont-news m-right grey">
+                    <h3 class="main-title">
+                        <img src="assets/images/menu/{{ post1.games[0]?.slug }}.png" alt="game-logo">{{ post1.games[0]?.name | translate}}
+                        <span class="date">{{ post1?.published_at | date:"d.MMM.yyyy" }}</span>
+                    </h3>
+                    <div class="post">
+                        <img *ngIf="post1?.headline" src="{{ post1?.headline }}" alt="news">
+                        <h3 class="post-title">{{ post1?.title }}</h3>
+                        <h3 class="post-desc">{{ post1?.summary }}</h3>
+                        <div class="read-more">
+                            <a href="/{{queryParams}}">...{{'Read more' | translate}}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="post2" class="col-lg-12 col-md-24">
+            <div class="row">
+                <div class="cont-news m-left grey">
+                    <h3 class="main-title">
+                        <img src="assets/images/menu/{{ post2.games[0]?.slug }}.png" alt="game-logo">{{ post2.games[0]?.name | translate }}
+                        <span class="date">{{ post2?.published_at | date:"d.MMM.yyyy" }}</span>
+                    </h3>
+                    <div class="post">
+                        <img *ngIf="post2?.headline" src="{{ post2?.headline }}" alt="news">
+                        <h3 class="post-title">{{ post2?.title }}</h3>
+                        <h3 class="post-desc">{{ post2?.summary }}</h3>
+                        <div class="read-more">
+                            <a href="/{{queryParams}}">...{{'Read more' | translate}}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- News big -->
+
+<div class="col-lg-24 col-md-24 news big" *ngIf="HighLight">
+    <div class="row news-blocks">
+        <div class="col-lg-24 col-md-24">
+            <div class="row">
+                <div class="cont-news">
+                    <h3 class="main-title">
+                        <img src="assets/images/menu/{{ HighLight.games[0]?.slug }}.png" alt="game-logo">{{ HighLight.games[0]?.name | translate }}
+                        <span class="date">{{ HighLight?.published_at | date:"d.MMM.yyyy" }}</span>
+                    </h3>
+                    <div class="post big">
+                        <img *ngIf="HighLight?.headline" src="{{ HighLight?.headline }}" alt="news">
+                        <div class="big-news">
+                            <h3 class="post-title">{{ HighLight.title }}</h3>
+                            <h3 class="post-desc">{{ HighLight.summary }}</h3>
+                        </div>
+                        <div class="read-more big">
+                            <a href="/{{queryParams}}">...{{'Read more' | translate}}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--     Topics Left    -->
+
+<div *ngIf="topics?.length" class="col-lg-24 hidden-md hidden-sm hidden-xs topics">
+    <div class="row">
+        <h3 class="main-title only-text m-top">{{'TOPICS' | translate}}</h3>
+
+        <div *ngFor="let post of topics" class="col-lg-24 col-md-24 game">
+            <div class="row">
+                <a href="#">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="row">
+                            <div class="top-cont game-date">
+                                <img src="assets/images/menu/dota.png" alt="game-logo">
+                                <div class="top-date">{{ post.published_at | date:"d. MMM. yyyy" }}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3">
+                        <div class="row">
+                            <div class="top-cont game-status">
+                                {{'RECAP' | translate}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-15 col-md-15">
+                        <div class="row">
+                            <div class="top-cont game-desc">
+                                {{ post.summary }}
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>

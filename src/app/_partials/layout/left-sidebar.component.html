@@ -1,0 +1,89 @@
+<aside class="sidebar-menu">
+  <ul class="menu" id="accordion" role="tablist" aria-multiselectable="true">	
+    <div class="panel">
+      <li class="main-menu" role="tab" id="headingOne">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          <img src="assets/images/menu/dota.png" alt="game-logo"><span>{{'Dota 2' | translate}}</span>
+          <span class="arrow-top">
+            <span class="arrow-menu"></span>
+          </span>
+        </a>
+      </li>
+
+      <ul class="sub-menu panel-collapse collapse" id="collapseOne" role="tabpanel" aria-labelledby="headingOne">
+        <li *ngIf="gameTournaments.dota2?.tournaments == ''" class="title">{{'There is no tournaments.' | translate}}</li>
+        <li *ngIf="gameTournaments.dota2.tournamentsOngoing != ''" class="title">{{'Ongoing tournaments' | translate}}</li>
+        <li *ngFor="let tournament of gameTournaments.dota2.tournamentsOngoing" routerLinkActive="active"><a href="/tournament/dota2/{{tournament.masked_id}}{{queryParams}}">{{tournament.name}}</a></li>
+
+        <li *ngIf="gameTournaments.dota2.tournamentsUpcoming != ''" class="title">{{'Upcoming tournaments' | translate}}</li>
+        <li *ngFor="let tournament of gameTournaments.dota2.tournamentsUpcoming" routerLinkActive="active"><a href="/tournament/dota2/{{tournament.masked_id}}{{queryParams}}">{{tournament.name}}</a></li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <li class="main-menu" role="tab" id="headingTwo">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          <img src="assets/images/menu/lol.png" alt="game-logo"><span>{{'League of legends' | translate}}</span>
+          <span class="arrow-top">
+            <span class="arrow-menu"></span>
+          </span>
+        </a>
+      </li>
+      <ul class="sub-menu panel-collapse collapse" id="collapseTwo" role="tabpanel" aria-labelledby="headingTwo">
+        <li *ngIf="gameTournaments.lol?.tournaments == ''" class="title">{{'There is no tournaments.' | translate}}</li>
+        <li *ngIf="gameTournaments.lol.tournamentsOngoing != ''" class="title">{{'Ongoing tournaments' | translate}}</li>
+        <li *ngFor="let tournament of gameTournaments.lol.tournamentsOngoing" routerLinkActive="active"><a href="/tournament/lol/{{tournament.masked_id}}{{queryParams}}">{{tournament.name}}</a></li>
+
+        <li *ngIf="gameTournaments.lol.tournamentsUpcoming != ''" class="title">{{'Upcoming tournaments' | translate}}</li>
+        <li *ngFor="let tournament of gameTournaments.lol.tournamentsUpcoming" routerLinkActive="active"><a href="/tournament/lol/{{tournament.masked_id}}{{queryParams}}">{{tournament.name}}</a></li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <li class="main-menu" role="tab" id="headingFour">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+          <img src="assets/images/menu/cs-go.png" alt="game-logo"><span>{{'CS:GO' | translate}}</span>
+          <span class="arrow-top">
+            <span class="arrow-menu"></span>
+          </span>
+        </a>
+      </li>
+
+      <ul class="sub-menu panel-collapse collapse" id="collapseFour" role="tabpanel" aria-labelledby="headingFour">
+        <li *ngIf="gameTournaments.csgo?.tournaments == ''" class="title">{{'There is no tournaments.' | translate}}</li>
+        <li *ngIf="gameTournaments.csgo.tournamentsOngoing != ''" class="title">{{'Ongoing tournaments' | translate}}</li>
+        <li *ngFor="let tournament of gameTournaments.csgo.tournamentsOngoing" routerLinkActive="active"><a href="/tournament/csgo/{{tournament.masked_id}}{{queryParams}}">{{tournament.name}}</a></li>
+
+        <li *ngIf="gameTournaments.csgo.tournamentsUpcoming != ''" class="title">{{'Upcoming tournaments' | translate}}</li>
+        <li *ngFor="let tournament of gameTournaments.csgo.tournamentsUpcoming" routerLinkActive="active"><a href="/tournament/csgo/{{tournament.masked_id}}{{queryParams}}">{{tournament.name}}</a></li>
+      </ul>
+    </div>
+
+    <div class="panel blog-panel">
+      <li class="main-menu" role="tab" id="headingEight">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="true" aria-controls="collapseEight" class="">
+          <img src="assets/images/menu/blog.png" alt="game-logo"><span>{{'Blog & News' | translate}}</span>
+          <span class="arrow-top">
+            <span class="arrow-menu"></span>
+          </span>
+        </a>
+      </li>
+
+      <ul class="sub-menu panel-collapse collapse" id="collapseEight" role="tabpanel" aria-labelledby="headingEight">
+
+        <li *ngFor="let post of posts">
+          <a href="/blog/all/1/{{ post.id }}">
+            <h3>{{ post.title }}</h3>
+            <p>
+              <img src="assets/images/menu/{{ post.games[0].slug }}.png" alt="{{ post.games[0].slug }}">
+              {{ post.published_at | publicationTime }}
+            </p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </ul>
+  <div class="banner">
+    <img src="assets/images/banner.png" alt="banner">
+  </div>
+</aside>

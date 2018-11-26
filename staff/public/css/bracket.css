@@ -1,0 +1,41 @@
+#bracket {
+
+}
+
+.bracket-title {
+  display: block;
+  width: 100%;
+  height: 20px;
+  background: black;
+  color: white;
+}
+
+.bracket-holder {
+  width: 700px;
+}
+
+.round-holder {
+  float: left;
+  margin-right: 40px;
+  width: 125px;
+}
+.match-holder {
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  height: 64px;
+}
+
+.opponent-holder {
+  padding-top: 5px;
+  height: 30px;
+}
+
+.opponent-holder .opponent-select {
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 100px;
+}
+
+.clearfix {
+  clear: both;
+}

@@ -1,0 +1,458 @@
+@function emy($pxsize) {
+    @return ($pxsize/16)+em;
+}
+
+.main-content {
+    .content-container {
+        .main-conntent {
+            .left-cont {
+                .statistics {
+                    .stat-blocks {
+                        .cs-go-part {
+                            width: calc(50% - 2px);
+                            &:nth-child(1) {
+                                margin-right: 4px;
+                            }
+                        }
+
+                        .stat-container {
+                            .stat-in {
+                                &.grey {
+                                    background: #e6e6e6;
+                                }
+
+                                .heroes {
+                                    .heroes-cont {
+                                        &.cs {
+                                            padding: 0 0 0 14px;
+                                            position: relative;
+                                            display: -webkit-flex;
+                                            display: flex;
+                                            right: 1px;
+                                            .percent {
+                                                display: -webkit-flex;
+                                                display: flex;
+                                                -webkit-flex-direction: column;
+                                                flex-direction: column;
+                                                -webkit-justify-content: space-between;
+                                                justify-content: space-between;
+                                                font-size: emy(8);
+                                                font-weight: 900;
+                                                margin-top: 4px;
+                                                height: 196px;
+                                            }
+                                            .chart {
+                                                width: 250px;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .spotlight-stat-content {
+                                    display: -webkit-flex;
+                                    display: flex;
+                                    -webkit-justify-content: space-between;
+                                    justify-content: space-between;
+                                    font-size: emy(12);
+                                    font-weight: 700;
+                                    font-family: 'Arial-Bold', sans-serif;
+                                    margin: 18px 18px 0px 18px;
+                                    .spotlight-stat {
+                                        display: -webkit-flex;
+                                        display: flex;
+                                        & > div {
+                                            width: 48px;
+                                            height: 16px;
+                                            background: #fff;
+                                            display: -webkit-flex;
+                                            display: flex;
+                                            -webkit-justify-content: center;
+                                            justify-content: center;
+                                            -webkit-align-items: center;
+                                            align-items: center;
+                                            margin-right: 4px;
+                                            font-weight: 500;
+                                            span {
+                                                font-weight: 700;
+                                                font-family: 'Arial-Bold', sans-serif;
+                                                margin-left: 3px;
+                                            }
+
+                                            .blue {
+                                                color: #29abe2;
+                                            }
+
+                                            .orange {
+                                                color: #ff9200;
+                                            }
+
+                                            .light-grey {
+                                                color: #4b4b4b;
+                                            }
+
+                                            .high-grey {
+                                                color: #000;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .video-bg {
+                    &.csgo {
+                        padding: 0;
+                    }
+                }
+
+                .map-breakdown {
+                    margin-top: 15px;
+
+                    .cs1 {
+                        width: calc(50% - 3px);
+                        .chart-container {
+                            background-image: url(../assets/images/cs1.png);
+                            background-size: cover;
+                        }
+                        .map-team-title {
+                            display: -webkit-flex;
+                            display: flex;
+                            -webkit-align-items: center;
+                            align-items: center;
+                        }
+                        .map-flag {
+                            margin: 0 12px 0 15px;
+                            img {
+                                width: 22px;
+                                height: 22px;
+                            }
+                        }
+
+                        .map-chart {
+                            margin-top: 6px;
+                            .highcharts-point-hover {
+                                fill: #ff9200 !important;
+                            }
+
+                            chart {
+                                position: relative;
+                                display: block;
+                            }
+                        }
+                    }
+
+                    .cs2 {
+                        width: calc(50% - 3px);
+                        margin-left: 6px;
+                        .chart-container {
+                            background-image: url(../assets/images/cs2.png);
+                            background-size: cover;
+                        }
+                        .map-team-title {
+                            display: -webkit-flex;
+                            display: flex;
+                            -webkit-flex-direction: row-reverse;
+                            flex-direction: row-reverse;
+                            -webkit-align-items: center;
+                            align-items: center;
+                        }
+                        .map-flag {
+                            margin: 0 15px 0 15px;
+                            img {
+                                width: 22px;
+                                height: 22px;
+                            }
+                        }
+
+                        .map-chart {
+                            margin-top: 6px;
+                            .highcharts-point-hover {
+                                fill: #29abe2 !important;
+                            }
+
+                            chart {
+                                position: relative;
+                                display: block;
+                            }
+                        }
+                    }
+
+                    .chart-container {
+                        padding: 16px 0 0 10px;
+                    }
+
+                    .map-team-title {
+                        background: #363636;
+                        font-size: emy(12);
+                        height: 30px;
+                        color: #fff;
+                    }
+
+                    .chart-container {
+                        .map-stat {
+                            display: -webkit-flex;
+                            display: flex;
+                            color: #000;
+                            font-size: emy(12);
+                            text-transform: uppercase;
+                            & > div {
+                                white-space: nowrap;
+                                margin-right: 5px;
+                                background: #fff;
+                                height: 16px;
+                                width: 48px;
+                                display: -webkit-flex;
+                                display: flex;
+                                -webkit-justify-content: center;
+                                justify-content: center;
+                                -webkit-align-items: center;
+                                align-items: center;
+                                span {
+                                    margin-left: 4px;
+                                }
+                            }
+                        }
+
+                        .blue {
+                            color: #29abe2;
+                        }
+
+                        .orange {
+                            color: #ff9200;
+                        }
+
+                        .low-grey {
+                            color: #b3b3b3;
+                        }
+
+                        .medium-grey {
+                            color: #4b4b4b;
+                        }
+
+                        .high-grey {
+                            color: #000000;
+                        }
+
+                    }
+                }
+            }
+
+            .game-slider {
+
+                .slick-dots {
+                    li {
+                        &.slick-active {
+                            button {
+                                background: #666666;
+                                color: #fff;
+                            }
+                        }
+                        button {
+                            position: relative;
+                            outline: none;
+                            height: 29px;
+                            img {
+                                top: 4px;
+                                right: 7px;
+                                width: 20px;
+                                height: 20px;
+                                position: absolute;
+                            }
+                            &:hover {
+                                background: #fff;
+                                color: #000;
+                            }
+                        }
+                    }
+                }
+
+                .slide {
+                    .score-container {
+                        .home-team {
+                            &.csgo {
+                                letter-spacing: .4px;
+                                margin-bottom: 130px;
+                                margin-top: 18px;
+                                img {
+                                    margin: 13px 0px 9px 43px;
+                                }
+                                &:before {
+                                    left: 17px;
+                                }
+                            }
+                        }
+
+                        .score {
+                            font-size: 16px;
+                            &.csgo {
+                                background-image: url(images/area.png);
+                                margin-top: 88px;
+                                background-size: cover;
+                                height: 120px;
+                                display: -webkit-flex;
+                                display: flex;
+                                -webkit-flex-direction: column;
+                                flex-direction: column;
+                                -webkit-justify-content: flex-start;
+                                justify-content: flex-start;
+                                .area {
+                                    font-size: emy(42);
+                                    font-weight: 700;
+                                    font-family: 'Arial-Bold', sans-serif;
+                                    margin-top: 27px;
+                                    letter-spacing: -.3px;
+                                }
+                                .game-score {
+                                    font-size: emy(16);
+                                    white-space: nowrap;
+                                    position: relative;
+                                    top: -11px;
+                                    text-shadow: 2px 2px 3px #000;
+                                                                                                            
+                                    .orange {
+                                    	color: #ea8704;
+                                    }
+                                    
+                                    .blue {
+                                    	color: #29abe2;
+                                    }
+                                }
+                            }
+                        }
+
+                        .guest-team {
+                            margin-bottom: 0;
+                            img {
+                                margin-right: 24px;
+                            }
+                            &:after {
+                                right: 0;
+                            }
+                            span {
+                                position: absolute;
+                                right: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+h3.box-heading {
+    &.bottom-none {
+        margin-bottom: 0;
+    }
+}
+
+.highcharts-grid {
+    height: 20px;
+    stroke-width: 200em;
+}
+
+/* additional css from angular integration */
+.margin-right {
+    .stat-container {
+        margin-right: 4px;
+    }
+}
+
+.right-cont {
+
+    #group-stage-collapse {
+        .slick-track {
+            //.slick-active {
+            //    //position: relative;
+            //    //left: 5px;
+            //    &:nth-child(odd) {
+            //        position: relative;
+            //        left: -5px;
+            //    }
+            //}
+            & > div {
+                margin-left: 1px;
+                margin-right: 1px;
+            }
+        }
+    }
+
+
+    .group-stage {
+        .group-content {
+            &:nth-child(even) {
+                & > div {
+                    //padding-left: 4px;
+                }
+            }
+        }
+
+        .tab-pane {
+            .slick-arrow {
+                display: none !important;
+            }
+        }
+
+        .tab-pane {
+            &.active {
+                .slick-arrow {
+                    display: block !important;
+                }
+            }
+        }
+
+        .slick-arrow {
+            fill:#999999;
+            position: absolute;
+            top: 15px;
+            left: calc(100% - 20px);
+    		z-index: 1;
+            &:hover {
+                fill:#fff;
+            }
+        }
+
+        .prev {
+            &.slick-arrow {
+                left: calc(100% - 34px);
+                -webkit-transform: rotate(180deg);
+                -moz-transform: rotate(180deg);
+                transform: rotate(180deg);
+            }
+        }
+
+        .body {
+            & > div {
+                &:nth-child(odd) {
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+}
+
+.group-stage {
+    .tab-content {
+        overflow: hidden;
+    }
+
+    .slick-slide {
+        img {
+            display:inherit;
+        }
+    }
+}
+
+.left-cont {
+    .game-slider {
+        .slick-dots {
+            li {
+                button {
+                    height: auto;
+                }
+            }
+        }
+    }
+}

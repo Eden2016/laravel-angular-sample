@@ -1,0 +1,31 @@
+{
+  "name": "esportslytics",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Antoan Stoykov <arstoykov@gmail.com>"
+  ],
+  "license": "MIT",
+  "moduleType": [
+    "globals"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.1",
+    "bootstrap": "^3.3.6",
+    "eonasdan-bootstrap-datetimepicker": "^4.17.37",
+    "select2": "^3.4.1",
+    "angular": "angularjs#^1.5.8",
+    "datatables.net": "^2.1.1",
+    "datatables": "DataTables#^1.10.13",
+    "datatables-responsive": "^2.1.1",
+    "summernote": "^0.8.2"
+  }
+}
